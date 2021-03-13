@@ -21,7 +21,7 @@ using namespace std;
 
 void plano(float a){
 
-    ofstream fileQuadrado("plane.3d", ios_base::app | ios::trunc);
+    ofstream fileQuadrado("plane.3d", ios::trunc);
 
     //fileQuadrado << "6"<<endl;
     //Triangulo 1
@@ -132,8 +132,7 @@ void caixa(float ladoX, float ladoY,float ladoZ, int slices){
 
 void sphere(float radius, int slices, int stacks) {
 
-    ofstream fileSphere("sphere.3d", ios_base::app | ios::trunc );
-    fileSphere << (stacks - 2)*stacks + 2 << endl;
+    ofstream fileSphere("sphere.3d", ios::trunc );
 
     float stackStep = M_PI / stacks;
     float sliceStep = 2 * M_PI / slices;

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/class4.dir/main.cpp.o"
-  "CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o"
+  "CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o"
   "class4"
   "class4.pdb"
 )

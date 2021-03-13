@@ -23,10 +23,12 @@ string
 -
 sstream
 -
-tinyxml2/tinyxml2.h
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.h
+vector
+-
+tinyxml2-master/tinyxml2.h
+/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.h
 
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.h
+/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.h
 ctype.h
 -
 limits.h

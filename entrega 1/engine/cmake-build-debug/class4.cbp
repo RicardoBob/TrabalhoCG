@@ -87,10 +87,10 @@
 		<Unit filename="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/main.cpp">
 			<Option target="class4"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.cpp">
+		<Unit filename="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.cpp">
 			<Option target="class4"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.h">
+		<Unit filename="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.h">
 			<Option target="class4"/>
 		</Unit>
 		<Unit filename="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/CMakeLists.txt">

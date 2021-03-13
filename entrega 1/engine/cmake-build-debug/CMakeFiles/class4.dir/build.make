@@ -90,29 +90,29 @@ CMakeFiles/class4.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/class4.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/main.cpp" -o CMakeFiles/class4.dir/main.cpp.s
 
-CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o: CMakeFiles/class4.dir/flags.make
-CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o: ../tinyxml2/tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o -c "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.cpp"
+CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o: CMakeFiles/class4.dir/flags.make
+CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o: ../tinyxml2-master/tinyxml2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o -c "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.cpp"
 
-CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.cpp" > CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.i
+CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.cpp" > CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.i
 
-CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2/tinyxml2.cpp" -o CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.s
+CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 1/engine/tinyxml2-master/tinyxml2.cpp" -o CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.s
 
 # Object files for target class4
 class4_OBJECTS = \
 "CMakeFiles/class4.dir/main.cpp.o" \
-"CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o"
+"CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o"
 
 # External object files for target class4
 class4_EXTERNAL_OBJECTS =
 
 class4: CMakeFiles/class4.dir/main.cpp.o
-class4: CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o
+class4: CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o
 class4: CMakeFiles/class4.dir/build.make
 class4: /usr/lib/x86_64-linux-gnu/libGL.so
 class4: /usr/lib/x86_64-linux-gnu/libGLU.so

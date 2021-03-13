@@ -170,32 +170,32 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-tinyxml2/tinyxml2.o: tinyxml2/tinyxml2.cpp.o
+tinyxml2-master/tinyxml2.o: tinyxml2-master/tinyxml2.cpp.o
 
-.PHONY : tinyxml2/tinyxml2.o
+.PHONY : tinyxml2-master/tinyxml2.o
 
 # target to build an object file
-tinyxml2/tinyxml2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.o
-.PHONY : tinyxml2/tinyxml2.cpp.o
+tinyxml2-master/tinyxml2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.o
+.PHONY : tinyxml2-master/tinyxml2.cpp.o
 
-tinyxml2/tinyxml2.i: tinyxml2/tinyxml2.cpp.i
+tinyxml2-master/tinyxml2.i: tinyxml2-master/tinyxml2.cpp.i
 
-.PHONY : tinyxml2/tinyxml2.i
+.PHONY : tinyxml2-master/tinyxml2.i
 
 # target to preprocess a source file
-tinyxml2/tinyxml2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.i
-.PHONY : tinyxml2/tinyxml2.cpp.i
+tinyxml2-master/tinyxml2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.i
+.PHONY : tinyxml2-master/tinyxml2.cpp.i
 
-tinyxml2/tinyxml2.s: tinyxml2/tinyxml2.cpp.s
+tinyxml2-master/tinyxml2.s: tinyxml2-master/tinyxml2.cpp.s
 
-.PHONY : tinyxml2/tinyxml2.s
+.PHONY : tinyxml2-master/tinyxml2.s
 
 # target to generate assembly for a file
-tinyxml2/tinyxml2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/tinyxml2/tinyxml2.cpp.s
-.PHONY : tinyxml2/tinyxml2.cpp.s
+tinyxml2-master/tinyxml2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/tinyxml2-master/tinyxml2.cpp.s
+.PHONY : tinyxml2-master/tinyxml2.cpp.s
 
 # Help Target
 help:
@@ -209,9 +209,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tinyxml2/tinyxml2.o"
-	@echo "... tinyxml2/tinyxml2.i"
-	@echo "... tinyxml2/tinyxml2.s"
+	@echo "... tinyxml2-master/tinyxml2.o"
+	@echo "... tinyxml2-master/tinyxml2.i"
+	@echo "... tinyxml2-master/tinyxml2.s"
 .PHONY : help
 
 

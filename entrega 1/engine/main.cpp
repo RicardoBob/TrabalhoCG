@@ -13,7 +13,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include "tinyxml2/tinyxml2.h"
+#include "tinyxml2-master/tinyxml2.h"
 
 using namespace tinyxml2;
 using namespace std;
@@ -47,8 +47,6 @@ float frames;
 
 XMLDocument config;
 XMLError eResult = config.LoadFile("config.xml");
-
-
 
 //-----------------------------------
 
@@ -156,17 +154,24 @@ void drawFromFile() {
 
 void readFile(){
     float x,y,z;
+    string linha;
     for(string i : files){
-        ifstream file(i);
-        file >> x;
-        file >> y;
-        file >> z;
+        ifstream file("../../generator/cmake-build-debug/" + i);
+        while(std::getline(file,linha)) {
+            istringstream in(linha);
+            in >> x;
+            in >> y;
+            in >> z;
 
-        vertex.push_back(x);
-        vertex.push_back(y);
-        vertex.push_back(z);
+            vertex.push_back(x);
+            vertex.push_back(y);
+            vertex.push_back(z);
+        }
+        file.close();
     }
 }
+
+
 
 void drawEixos(){
     glBegin(GL_LINES);
@@ -202,9 +207,6 @@ void renderScene() {
 
     // put drawing instructions here
 
-    //loop que percorre lista de ficheiros no xml e corre Parser de XML?
-    //
-
     drawEixos();
 
     //------------FPS
@@ -227,21 +229,26 @@ void renderScene() {
     glutSwapBuffers();
 }
 
-void readXML(){
-    
+int readXML(){
+    XMLNode * pRoot = config.FirstChildElement("model");
+    if (pRoot == nullptr) return -1;
+
+    XMLElement *element = pRoot->FirstChildElement("path");
+    if (element == nullptr) return -1;
+
+    while (element != nullptr){
+        std::string path = element->GetText();
+        files.push_back(path);
+        element = element->NextSiblingElement("path");
+    }
+    return 1;
 }
-
-
-// write function to process keyboard events
-
-
-
-
 
 
 int main(int argc, char **argv) {
     //ler
-
+    int readOk = readXML();
+    if (readOk == -1) return -1;
     readFile();
     timebase = glutGet(GLUT_ELAPSED_TIME);
 
@@ -256,13 +263,10 @@ int main(int argc, char **argv) {
     glutDisplayFunc(renderScene);
     glutIdleFunc(renderScene);
     glutReshapeFunc(changeSize);
-    glutSpecialFunc(processSpecialKeys);
-    glutPassiveMotionFunc(mouseMove);
-
-
 
 // put here the registration of the keyboard callback
-
+    glutSpecialFunc(processSpecialKeys);
+    glutPassiveMotionFunc(mouseMove);
 
 //  OpenGL settings
     glEnable(GL_DEPTH_TEST);
