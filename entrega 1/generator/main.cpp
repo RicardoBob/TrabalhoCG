@@ -257,9 +257,6 @@ void cone(float radius, float height, int slices, int stacks) {
     float ang = 2 * M_PI / (float)slices;
 
     ofstream fileCone("cone.3d");
-    int pontos = slices * stacks + 2;
-
-    fileCone << pontos << '\n';
     //base
     for (int i = 0; i <= slices; i++) {
         float angulo = i * ang;
