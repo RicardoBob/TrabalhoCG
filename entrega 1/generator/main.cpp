@@ -23,7 +23,6 @@ void plano(float a){
 
     ofstream fileQuadrado("plane.3d", ios::trunc);
 
-    //fileQuadrado << "6"<<endl;
     //Triangulo 1
 
     fileQuadrado   << a << " 0 " << -a  << endl ;  //(1,0,-1)
@@ -157,9 +156,9 @@ void sphere(float radius, int slices, int stacks) {
     float p4z = 0.0f;
 
     //1� -> 2� stack temos setores triangulares:
-    //    p3		---------- 1� stack (topo)
+    //    p3		---------- 1 stack (topo)
     //   /  \
-	// p1 -- p2		---------- 2� stack
+	// p1 -- p2		---------- 2 stack
 
     betha -= stackStep;
 
@@ -257,9 +256,7 @@ void cone(float radius, float height, int slices, int stacks) {
     float ang = 2 * M_PI / (float)slices;
 
     ofstream fileCone("cone.3d");
-    int pontos = slices * stacks + 2;
 
-    fileCone << pontos << '\n';
     //base
     for (int i = 0; i <= slices; i++) {
         float angulo = i * ang;
