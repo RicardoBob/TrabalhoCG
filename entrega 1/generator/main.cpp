@@ -16,18 +16,15 @@
 
 using namespace std;
 
-
-
-
 void plano(float a){
 
     ofstream fileQuadrado("plane.3d", ios::trunc);
 
     //Triangulo 1
 
-    fileQuadrado   << a << " 0 " << -a  << endl ;  //(1,0,-1)
+    fileQuadrado   << a << " 0 " << -a  << endl ; //(1,0,-1)
     fileQuadrado   << -a << " 0 " << -a << endl; //(-1,0,-1)
-    fileQuadrado   << -a << " 0 " << a << endl;  //(-1,0,1)
+    fileQuadrado   << -a << " 0 " << a << endl; //(-1,0,1)
 
     //Triangulo 2
 
