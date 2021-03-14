@@ -25,17 +25,18 @@ std::vector<float> vertex;
 std::vector<string> files;
 
 //-------CAMERA ----------
-// angle of rotation for the camera direction
+//angulo da rotacao para a direcao da camera
 float angle = 0;
 float angle1 = -5000;
-// actual vector representing the camera's direction
+//vetor que representa a direcao da camera
 float lx = 0;
 float ly = 0;
 float lz = 1;
-// XZ position of the camera
+// posicao XZ da camera
 float xc = 0;
 float yc = 0;
 float zc = 10;
+//velocidade da camera
 float speed = 0.1;
 float rotSpeed = 0.0005;
 
@@ -75,6 +76,7 @@ void changeSize(int w, int h) {
     glMatrixMode(GL_MODELVIEW);
 }
 
+//Para sair da janela
 void processNormalKeys(unsigned char key, int x, int y){
     if (key == ESCAPE)
     {
@@ -82,9 +84,9 @@ void processNormalKeys(unsigned char key, int x, int y){
         exit(0);
     }
 }
-bool mouseCaptured = true;
+bool mouseCaptured = true; //se o rato esta dentro da janela
 
-void processSpecialKeys(int key, int x, int y){
+void processSpecialKeys(int key, int x, int y){ //andar com a camera
     switch (key) {
         case GLUT_KEY_UP:
             xc += lx * speed;
@@ -120,16 +122,16 @@ void processSpecialKeys(int key, int x, int y){
     }
 }
 
-bool warping = false;
+bool warp = false;
 
 void mouseMove(int x, int y){
-    if (warping)
+    if (warp)
     {
-        warping = false;
+        warp = false;
         return;
     }
-    int dx = x - 100;
-    int dy = y - 100;
+    int dx = x - 100; //reset no x
+    int dy = y - 100; //reset no y
     angle = angle + dx * rotSpeed;
     angle1 = angle1 + dy * rotSpeed;
     lx = sin(angle1)*sin(angle);
@@ -137,13 +139,13 @@ void mouseMove(int x, int y){
     lz = -sin(angle1)*cos(angle);
     if (mouseCaptured)
     {
-        warping = true;
-        glutWarpPointer(100, 100);
+        warp = true;
+        glutWarpPointer(100, 100); //colar o rato numa posicao para nao sair
     }
 }
 
 
-void drawFromFile() {
+void drawFromFile() { //desenhar a partir do vetor
     glBegin(GL_TRIANGLES);
     for(int i = 0; i<vertex.size(); i+=3){
         glColor3f(1.0f,0.5f,0.0f);
@@ -156,7 +158,7 @@ void readFile(){
     float x,y,z;
     string linha;
     for(string i : files){
-        ifstream file("../../generator/cmake-build-debug/" + i);
+        ifstream file("../../generator/cmake-build-debug/" + i); //pathing relativo
         while(std::getline(file,linha)) {
             istringstream in(linha);
             in >> x;
@@ -230,12 +232,13 @@ void renderScene() {
 }
 
 int readXML(){
+    //Buscar a root do XML
     XMLNode * pRoot = config.FirstChildElement("model");
     if (pRoot == nullptr) return -1;
-
+    //Buscar o primeiro elemento da root
     XMLElement *element = pRoot->FirstChildElement("path");
     if (element == nullptr) return -1;
-
+    //Buscar em loop o resto dos elementos e guardar em vector
     while (element != nullptr){
         std::string path = element->GetText();
         files.push_back(path);
