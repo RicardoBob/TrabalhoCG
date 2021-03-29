@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/generator.dir/main.cpp.obj"
-  "generator.exe"
-  "generator.exe.manifest"
-  "generator.lib"
+  "CMakeFiles/generator.dir/main.cpp.o"
+  "generator"
   "generator.pdb"
 )
 

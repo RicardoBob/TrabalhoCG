@@ -13,18 +13,29 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <tuple>
 #include "tinyxml2-master/tinyxml2.h"
+#include "classes.h"
+
 
 using namespace tinyxml2;
 using namespace std;
 
 #define ESCAPE 27
+//---------TREE----------
+typedef struct node{
+    Group g;
+    string label;
+    vector<struct node*> next;
+} *Tree;
 
-//----------------------- VARIAVEIS GLOBAIS
-std::vector<float> vertex;
-std::vector<string> files;
+//<>
+//------------VARIAVEIS GLOBAIS--------------
+vector<string> files;
+vector< vector<float> > vertex;
+Tree model;
 
-//-------CAMERA ----------
+//-----------------CAMERA--------------------
 //angulo da rotacao para a direcao da camera
 float angle = 0;
 float angle1 = -5000;
@@ -144,7 +155,7 @@ void mouseMove(int x, int y){
     }
 }
 
-
+/*
 void drawFromFile() { //desenhar a partir do vetor
     glBegin(GL_TRIANGLES);
     for(int i = 0; i<vertex.size(); i+=3){
@@ -159,7 +170,7 @@ void readFile(){
     string linha;
     for(string i : files){
         ifstream file("../../generator/cmake-build-debug/" + i); //pathing relativo
-        while(std::getline(file,linha)) {
+        while((file,linha)) {
             istringstream in(linha);
             in >> x;
             in >> y;
@@ -172,8 +183,7 @@ void readFile(){
         file.close();
     }
 }
-
-
+ */
 
 void drawEixos(){
     glBegin(GL_LINES);
@@ -217,15 +227,13 @@ void renderScene() {
 
     int time = glutGet(GLUT_ELAPSED_TIME);
     if (time - timebase > 1000) {
-        float fps = (frames * 1000.0) / (time - timebase);
+        float fps = frames * 1000.0 / (time - timebase);
         timebase = time;
         frames = 0;
-        std::string str = std::to_string(fps);
+        string str = to_string(fps);
         const char *c = str.c_str();
         glutSetWindowTitle(c);
     }
-    //-------------
-    drawFromFile();
 
     // End of frame
     glutSwapBuffers();
@@ -233,16 +241,16 @@ void renderScene() {
 
 int readXML(){
     //Buscar a root do XML
-    XMLNode * pRoot = config.FirstChildElement("model");
-    if (pRoot == nullptr) return -1;
-    //Buscar o primeiro elemento da root
-    XMLElement *element = pRoot->FirstChildElement("path");
-    if (element == nullptr) return -1;
-    //Buscar em loop o resto dos elementos e guardar em vector
-    while (element != nullptr){
-        std::string path = element->GetText();
-        files.push_back(path);
-        element = element->NextSiblingElement("path");
+        XMLNode * pRoot = config.FirstChildElement("model");
+        if (pRoot == nullptr) return -1;
+        //Buscar o primeiro elemento da root
+        XMLElement *element = pRoot->FirstChildElement("path");
+        if (element == nullptr) return -1;
+        //Buscar em loop o resto dos elementos e guardar em vector
+        while (element != nullptr){
+            string path = element->GetText();
+            files.push_back(path);
+            element = element->NextSiblingElement("path");
     }
     return 1;
 }
@@ -250,9 +258,8 @@ int readXML(){
 
 int main(int argc, char **argv) {
     //ler
-    int readOk = readXML();
-    if (readOk == -1) return -1;
-    readFile();
+    //int readOk = readXML();
+    //if (readOk == -1) return -1;
     timebase = glutGet(GLUT_ELAPSED_TIME);
 
 // init GLUT and the window

@@ -1,11 +1,11 @@
--cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5)
 
 # Project Name
 PROJECT(engine)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(${PROJECT_NAME} main.cpp tinyxml2-master/tinyxml2.cpp tinyxml2-master/tinyxml2.h)
+add_executable(${PROJECT_NAME} main.cpp tinyxml2-master/tinyxml2.cpp tinyxml2-master/tinyxml2.h classes.cpp classes.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})
