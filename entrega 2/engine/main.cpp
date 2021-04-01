@@ -5,7 +5,9 @@
 #include <GL/glut.h>
 #endif
 
-
+#ifndef XMLCheckResult
+#define XMLCheckResult(a_eResult) if (a_eResult != XML_SUCCESS) { printf("Erraor: %i\n", a_eResult); return a_eResult; }
+#endif
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
@@ -24,18 +26,19 @@ using namespace std;
 #define ESCAPE 27
 //---------TREE----------
 typedef struct node{
-    Group g;
+    Group* g;
     string label;
     vector<struct node*> next;
 } *Tree;
 
-//<>
 //------------VARIAVEIS GLOBAIS--------------
 vector<string> files;
 vector< vector<float> > vertex;
-Tree model;
+Tree classTree;
+int ngroup = 0;
 
 //-----------------CAMERA--------------------
+bool warp = false;
 //angulo da rotacao para a direcao da camera
 float angle = 0;
 float angle1 = -5000;
@@ -55,10 +58,7 @@ int window;
 //---------FPS
 int timebase;
 float frames;
-//------ XML
 
-XMLDocument config;
-XMLError eResult = config.LoadFile("config.xml");
 
 //-----------------------------------
 
@@ -132,8 +132,6 @@ void processSpecialKeys(int key, int x, int y){ //andar com a camera
             break;
     }
 }
-
-bool warp = false;
 
 void mouseMove(int x, int y){
     if (warp)
@@ -239,27 +237,179 @@ void renderScene() {
     glutSwapBuffers();
 }
 
+
+void groupParser(XMLElement *grupo, Tree parentNode){
+    //inicializar vars
+    grupo = grupo->FirstChildElement();
+
+    float x,y,z,angulo = 0.0f;
+    string file = "";
+
+    while (grupo != nullptr){
+        //translate
+        if(strcmp(grupo->Value(),"translate") == 0){
+            if(grupo->Attribute("X")){
+                grupo->QueryFloatAttribute("X",&x);
+            }
+            if(grupo->Attribute("Y")){
+                grupo->QueryFloatAttribute("Y",&y);
+            }
+            if(grupo->Attribute("Z")) {
+                grupo->QueryFloatAttribute("Z", &z);
+            }
+
+            Tree aux = new struct node;
+            aux->g = new Translate(x,y,z);
+            aux->label = "translate";
+            aux->next.clear();
+            parentNode->next.push_back(aux);
+            printf("translate\n");
+        }
+
+        //scale
+        if(strcmp(grupo->Value(),"scale") == 0){
+            if(grupo->Attribute("X")){
+                grupo->QueryFloatAttribute("X",&x);
+            }
+            if(grupo->Attribute("Y")){
+                grupo->QueryFloatAttribute("Y",&y);
+            }
+            if(grupo->Attribute("Z")){
+                grupo->QueryFloatAttribute("Z",&z);
+            }
+            Tree aux = new struct node;
+            aux->g = new Scale(x,y,z);
+            aux->label = "scale";
+            aux->next.clear();
+            parentNode->next.push_back(aux);
+            printf("scale\n");
+        }
+
+        //rotate
+        if(strcmp(grupo->Value(),"rotate") == 0){
+            if(grupo->Attribute("X")){
+                grupo->QueryFloatAttribute("X",&x);
+            }
+            if(grupo->Attribute("Y")){
+                grupo->QueryFloatAttribute("Y",&y);
+            }
+            if(grupo->Attribute("Z")){
+                grupo->QueryFloatAttribute("Z",&z);
+            }
+            if(grupo->Attribute("angle")){
+                grupo->QueryFloatAttribute("angle",&angulo);
+            }
+            Tree aux = new struct node;
+            aux->g = new Rotate(x,y,z,angulo);
+            aux->label = "rotate";
+            aux->next.clear();
+            parentNode->next.push_back(aux);
+            printf("rotate\n");
+        }
+
+        //Modelos
+        if(strcmp(grupo->Value(),"models") == 0){
+            XMLElement* modelos = grupo->FirstChildElement("model");
+            while(modelos != nullptr){
+                const char *nome = modelos->Attribute("file");
+                if(nome != nullptr){
+                    file = string(nome);
+                }
+                Tree aux = new struct node;
+                aux->g = new Model(file);
+                aux->label = "model";
+                aux->next.clear();
+                parentNode->next.push_back(aux);
+                modelos = modelos->NextSiblingElement();
+                printf("modelo\n");
+            }
+        }
+
+        //Subgrupos
+        if(strcmp(grupo->Value(),"group") == 0){
+            //inicializar a subarvore do grupo para ser adicionada na arvore de classes
+            Tree subTree = new struct node;
+            subTree->g = new Group(ngroup++);
+            subTree->label = "group";
+            subTree->next.clear();
+            groupParser(grupo, subTree);
+            parentNode->next.push_back(subTree);
+        }
+        grupo = grupo->NextSiblingElement();
+    }
+}
+
 int readXML(){
+    //
+    //init XML
+    XMLDocument config ;
+    XMLError eResult = config.LoadFile("config.xml");
+    XMLCheckResult(eResult);
     //Buscar a root do XML
-        XMLNode * pRoot = config.FirstChildElement("model");
-        if (pRoot == nullptr) return -1;
-        //Buscar o primeiro elemento da root
-        XMLElement *element = pRoot->FirstChildElement("path");
-        if (element == nullptr) return -1;
-        //Buscar em loop o resto dos elementos e guardar em vector
-        while (element != nullptr){
-            string path = element->GetText();
-            files.push_back(path);
-            element = element->NextSiblingElement("path");
+    XMLNode * pRoot = config.FirstChildElement("scene");
+    if (pRoot == nullptr) {
+        return -1;
+    }
+    //inicializar a arvore de classes
+    classTree = new struct node;
+    classTree->g = new Group(ngroup++);
+    classTree->label = "root";
+    classTree->next.clear();
+
+    //Procurar o primeiro group
+    XMLElement *grupo = pRoot->FirstChildElement("group");
+    if (grupo == nullptr) return -1;
+
+    //Percorrer o grupos e adicionar à arvore de classes
+    while (grupo != nullptr) {
+        printf("grupo\n");
+        //inicializar a subarvore do grupo para ser adicionada na arvore de classes
+        Tree subTree = new struct node;
+        subTree->g = new Group(ngroup++);
+        subTree->label = "group";
+        subTree->next.clear();
+        groupParser(grupo,subTree);
+        classTree->next.push_back(subTree);
+        grupo = grupo->NextSiblingElement();
     }
     return 1;
 }
 
 
+int readTree(Tree tree,string str){
+    if(tree == nullptr){ return -1;}
+    string interval = "     ";
+    printf("%s%s\n",str.c_str(),tree->label.c_str());
+    for(node *n : tree->next){
+        if(strcmp(n->label.c_str(),"group") == 0){
+            string nova = "";
+            nova.append(interval);
+            nova.append(str);
+            nova.append("1");
+            readTree(n,nova);
+        }
+        if(strcmp(n->label.c_str(),"translate") == 0){
+            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+        }
+        if(strcmp(n->label.c_str(),"rotate") == 0){
+            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+        }
+        if(strcmp(n->label.c_str(),"scale") == 0){
+            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+        }
+        if(strcmp(n->label.c_str(),"model") == 0){
+            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+        }
+    }
+    return 1;
+}
+
 int main(int argc, char **argv) {
     //ler
-    //int readOk = readXML();
-    //if (readOk == -1) return -1;
+    readXML();
+    string bruh = "";
+    readTree(classTree,bruh);
+
     timebase = glutGet(GLUT_ELAPSED_TIME);
 
 // init GLUT and the window

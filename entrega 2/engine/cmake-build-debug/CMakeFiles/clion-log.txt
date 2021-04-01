@@ -19,6 +19,9 @@ Call Stack (most recent call first):
   CMakeLists.txt:10 (find_package)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Found GLUT: /usr/lib/x86_64-linux-gnu/libglut.so  
+-- Found GLEW: /usr/include (found version "2.0.0") 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug

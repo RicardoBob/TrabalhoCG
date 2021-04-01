@@ -12,55 +12,65 @@
 using namespace std;
 
 class Group {
-public: // Access specifier
-    Group();
-    Group(int a);
-    void setId(int a);
-    int getId();
+    private:
+        int id;
+    public:
+        Group();
+        Group(int a);
+        void setId(int a);
+        int getId();
 };
 
 class Translate : public Group{
-public:
-    Translate();
-    Translate(float x, float y, float z);
-    void setX(float a);
-    void setY(float a);
-    void setZ(float a);
-    float getX();
-    float getY();
-    float getZ();
+    private:
+        float x,y,z;
+    public:
+        Translate();
+        Translate(float x, float y, float z);
+        void setX(float a);
+        void setY(float a);
+        void setZ(float a);
+        float getX();
+        float getY();
+        float getZ();
 };
 
 class Scale : public Group{
-public:
-    Scale();
-    Scale(float x, float y, float z);
-    void setX(float a);
-    void setY(float a);
-    void setZ(float a);
-    float getX();
-    float getY();
-    float getZ();
+    private:
+        float x,y,z;
+    public:
+        Scale();
+        Scale(float x, float y, float z);
+        void setX(float a);
+        void setY(float a);
+        void setZ(float a);
+        float getX();
+        float getY();
+        float getZ();
 };
 
 class Rotate : public Group{
-public:
-    Rotate();
-    Rotate(float x, float y, float z, float angle);
-    void setX(float a);
-    void setY(float a);
-    void setZ(float a);
-    void setAngle(int a);
-    float getX();
-    float getY();
-    float getZ();
-    float getAngle();
+    private:
+        float x,y,z,angle;
+    public:
+        Rotate();
+        Rotate(float x, float y, float z, float angle);
+        void setX(float a);
+        void setY(float a);
+        void setZ(float a);
+        void setAngle(int a);
+        float getX();
+        float getY();
+        float getZ();
+        float getAngle();
 };
 
 class Model : public Group{
-public:
-    Model();
-    Model(string file);
-    void setFile(string a);
-    string getFile();
+    private:
+        string file;
+    public:
+        Model();
+        Model(string file);
+        void setFile(string a);
+        string getFile();
 };

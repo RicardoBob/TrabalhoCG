@@ -2,77 +2,49 @@
 #include <string>
 
 using namespace std;
-class Group {
-    private:
-        int id;
-    public: // Access specifier
-        Group(){
-            id = 0;
-        }
-        Group(int a){
-            id = a;
-        }
-        void setId(int a){
-            id = a;
-        }
-        int getId(){
-            return id;
-        }
-};
+Group :: Group(int a){ id = a; }
+Group :: Group(){ id = 0; }
+void Group :: setId(int a){ id = a; }
+int Group :: getId(){ return id; }
 
-class Translate : public Group{
-    private:
-        float x,y,z;
-    public:
-        Translate(){ x = y = z = 0.0f;}
-        Translate(float x, float y, float z){ setX(x); setY(y); setZ(z); }
-        void setX(float a){ x = a; }
-        void setY(float a){ y = a; }
-        void setZ(float a){ z = a; }
-        float getX(){ return x; }
-        float getY(){ return y; }
-        float getZ(){ return z; }
-};
 
-class Scale : public Group{
-private:
-    float x,y,z;
-public:
-    Scale(){ x = y = z = 0.0f;}
-    Scale(float x, float y, float z){ setX(x); setY(y); setZ(z); }
-    void setX(float a){ x = a; }
-    void setY(float a){ y = a; }
-    void setZ(float a){ z = a; }
-    float getX(){ return x; }
-    float getY(){ return y; }
-    float getZ(){ return z; }
-};
+Translate :: Translate(){ x = y = z = 0.0f;}
+Translate :: Translate(float x, float y, float z){ setX(x); setY(y); setZ(z); }
+void Translate :: setX(float a){ x = a; }
+void Translate :: setY(float a){ y = a; }
+void Translate :: setZ(float a){ z = a; }
+float Translate :: getX(){ return x; }
+float Translate :: getY(){ return y; }
+float Translate :: getZ(){ return z; }
 
-class Rotate : public Group{
-private:
-    float x,y,z,angle;
-public:
-    Rotate(){ x = y = z = angle =0.0f;}
-    Rotate(float x, float y, float z, float angle){ setX(x); setY(y); setZ(z); setAngle(angle);}
-    void setX(float a){ x = a; }
-    void setY(float a){ y = a; }
-    void setZ(float a){ z = a; }
-    void setAngle(int a){ angle = a; }
-    float getX(){ return x; }
-    float getY(){ return y; }
-    float getZ(){ return z; }
-    float getAngle(){ return angle; }
-};
 
-class Model : public Group{
-    private:
-        string file;
-    public:
-        Model(){file = "";}
-        Model(string file){ setFile(file); }
-        void setFile(string a){ file = a; }
-        string getFile(){ return file; }
-};
+Scale ::Scale(){ x = y = z = 0.0f;}
+Scale ::Scale(float x, float y, float z){ setX(x); setY(y); setZ(z); }
+void Scale :: setX(float a){ x = a; }
+void Scale :: setY(float a){ y = a; }
+void Scale :: setZ(float a){ z = a; }
+float Scale :: getX(){ return x; }
+float Scale :: getY(){ return y; }
+float Scale :: getZ(){ return z; }
+
+
+Rotate :: Rotate(){ x = y = z = angle =0.0f;}
+Rotate :: Rotate(float x, float y, float z, float angle){ setX(x); setY(y); setZ(z); setAngle(angle);}
+void Rotate :: setX(float a){ x = a; }
+void Rotate :: setY(float a){ y = a; }
+void Rotate :: setZ(float a){ z = a; }
+void Rotate :: setAngle(int a){ angle = a; }
+float Rotate :: getX(){ return x; }
+float Rotate :: getY(){ return y; }
+float Rotate :: getZ(){ return z; }
+float Rotate :: getAngle(){ return angle; }
+
+
+Model :: Model(){file = "";}
+Model :: Model(string file){ setFile(file); }
+void Model :: setFile(string a){ file = a; }
+string Model :: getFile(){ return file; }
+
 
 
 
