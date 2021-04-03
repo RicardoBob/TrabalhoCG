@@ -1,6 +1,5 @@
 <scene>
     <group>
-
         <!-- Sol -->
         <group>
             <scale X="10" Y="10" Z="10" />
@@ -39,11 +38,11 @@
                 <model file="sphere.3d" />
             </models>
             <group> <!-- Lua -->
-                <rotate angle="2" axisX="0" axisY="1" axisZ="1" />
+                <rotate angle="2" X="0" Y="1" Z="1" />
                 <translate X="0" Y="0.25" Z="3" />
                 <scale X="0.22" Y="0.22" Z="0.22" />
                 <models>
-                    <model file= "sphere.3d" />
+                    <model file="sphere.3d" />
                 </models>
             </group>
         </group>
@@ -62,13 +61,13 @@
 
         <!-- Jupiter -->
         <group>
-            <translate X="75" />
+            <translate X="75 "/>
             <scale X="2.5" Y="2.5" Z="2.5" />
             <models>
                 <model file="sphere.3d" />
             </models>
             <group> <!-- Io -->
-                <rotate angle="0" axisX="0" axisY="1" axisZ="0" />
+                <rotate angle="0" X="0" Y="1" Z="0" />
                 <translate X="2" />
                 <scale X="0.05" Y="0.05" Z="0.05" />
                 <models>
@@ -76,23 +75,23 @@
                 </models>
             </group>
             <group> <!-- Europa -->
-                <rotate angle="90" axisX="0" axisY="1" axisZ="0" />
-                <translate X="2"/>
+                <rotate angle="90" X="0" Y="1" Z="0" />
+                <translate X="2" />
                 <scale X="0.1" Y="0.1" Z="0.1" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Ganimedes -->
-                <rotate angle="180" axisX="0" axisY="1" axisZ="0" />
-                <translate X="2" />
+                <rotate angle="180" X="0" Y="1" Z="0 "/>
+                <translate X="2 "/>
                 <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Calisto -->
-                <rotate angle="270" axisX="0" axisY="1" axisZ="0" />
+                <rotate angle="270" X="0" Y="1" Z="0" />
                 <translate X="2" />
                 <scale X="0.15" Y="0.15" Z="0.15" />
                 <models>
@@ -104,70 +103,79 @@
 
         <!-- Saturno -->
         <group>
-            <translate X="1" />
-            <scale X="1" Y="2" Z="3" />
+            <translate X="95" />
+            <scale X="2.5" Y="2.5" Z="2.5" />
             <models>
                 <model file="sphere.3d" />
             </models>
             <group> <!-- Mimas -->
-                <rotate angle="0" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="0" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Encélado -->
-                <rotate angle="40" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="40" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- tétis -->
-                <rotate angle="80" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="80" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Dione -->
-                <rotate angle="120" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="120" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Reia -->
-                <rotate angle="160" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="160" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Titã -->
-                <rotate angle="200" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="200" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Hipérion -->
-                <rotate angle="240" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="240" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- jápeto -->
-                <rotate angle="280" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="280" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
             </group>
             <group> <!-- Febe -->
-                <rotate angle="320" axisX="0" axisY="1" axisZ="0" />
-                <translate X="15" />
+                <rotate angle="320" X="0" Y="1" Z="0" />
+                <translate X="2" />
+                <scale X="0.2" Y="0.2" Z="0.2" />
                 <models>
                     <model file="sphere.3d" />
                 </models>
@@ -187,7 +195,7 @@
 
         <!-- Neptuno -->
         <group>
-            <translate X="128"/>
+            <translate X="128" />
             <scale X="1.3" Y="1.3" Z="1.3" />
             <models>
                 <model file="sphere.3d" />

@@ -21,10 +21,7 @@ class Group {
         Group(int a);
         void setId(int a);
         int getId();
-        virtual string applyM();
-        virtual string applyT();
-        virtual string applyS();
-        virtual string applyR();
+        virtual void apply();
 };
 
 class Translate : public Group{
@@ -39,7 +36,7 @@ class Translate : public Group{
         float getX();
         float getY();
         float getZ();
-        string applyT();
+        void apply();
 };
 
 class Scale : public Group{
@@ -54,7 +51,7 @@ class Scale : public Group{
         float getX();
         float getY();
         float getZ();
-        string applyS();
+        void apply();
 };
 
 class Rotate : public Group{
@@ -71,7 +68,7 @@ class Rotate : public Group{
         float getY();
         float getZ();
         float getAngle();
-        string applyR();
+        void apply();
 };
 
 class Model : public Group{
@@ -82,5 +79,5 @@ class Model : public Group{
         Model(string file);
         void setFile(string a);
         string getFile();
-        string applyM();
+        void apply();
 };

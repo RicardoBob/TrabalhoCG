@@ -9,22 +9,7 @@ Group :: Group(int a){ id = a; }
 Group :: Group(){ id = 0; }
 void Group :: setId(int a){ id = a; }
 int Group :: getId(){ return id; }
-string Group :: applyM() {
-    glPushMatrix();
-    return "";
-}
-string Group ::applyS(){
-    glPushMatrix();
-    return "";
-}
-string Group :: applyT(){
-    glPushMatrix();
-    return "";
-}
-string Group :: applyR(){
-    glPushMatrix();
-    return "";
-}
+void Group :: apply() { glPushMatrix(); }
 
 
 
@@ -36,10 +21,7 @@ void Translate :: setZ(float a){ z = a; }
 float Translate :: getX(){ return x; }
 float Translate :: getY(){ return y; }
 float Translate :: getZ(){ return z; }
-string Translate :: applyT(){
-    glTranslatef(x,y,z);
-    return "";
-}
+void Translate :: apply(){ glTranslatef(x,y,z);}
 
 
 Scale :: Scale(){ x = y = z = 0.0f;}
@@ -50,10 +32,7 @@ void Scale :: setZ(float a){ z = a; }
 float Scale :: getX(){ return x; }
 float Scale :: getY(){ return y; }
 float Scale :: getZ(){ return z; }
-string Scale :: applyS(){
-    glScalef(x,y,z);
-    return "";
-}
+void Scale :: apply(){ glScalef(x,y,z); }
 
 
 Rotate :: Rotate(){ x = y = z = angle =0.0f;}
@@ -66,17 +45,14 @@ float Rotate :: getX(){ return x; }
 float Rotate :: getY(){ return y; }
 float Rotate :: getZ(){ return z; }
 float Rotate :: getAngle(){ return angle; }
-string Rotate :: applyR(){
-    glRotatef(angle,x,y,z);
-    return "";
-}
+void Rotate :: apply(){ glRotatef(angle,x,y,z); }
 
 
 Model :: Model(){file = "";}
 Model :: Model(string file){ setFile(file); }
 void Model :: setFile(string a){ file = a; }
 string Model :: getFile(){ return file; }
-string Model :: applyM(){ return file; }
+void Model :: apply(){};
 
 
 

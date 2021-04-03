@@ -60,7 +60,7 @@ float xc = 0;
 float yc = 0;
 float zc = 10;
 //velocidade da camera
-float speed = 0.1;
+float speed = 0.8;
 float rotSpeed = 0.0005;
 
 int window;
@@ -163,7 +163,6 @@ void mouseMove(int x, int y){
 
 
 File readFile(string file){
-
     ifstream f("../../generator/cmake-build-debug/" + file);
     float x,y,z;
     string linha;
@@ -221,10 +220,13 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     //inicializar vars
     grupo = grupo->FirstChildElement();
 
-    float x,y,z,angulo = 0.0f;
-    string file = "";
-
     while (grupo != nullptr){
+        float x = 0.0f;
+        float y = 0.0f;
+        float z = 0.0f;
+        float angulo = 0.0f;
+        string file = "";
+
         //translate
         if(strcmp(grupo->Value(),"translate") == 0){
             if(grupo->Attribute("X")){
@@ -354,25 +356,25 @@ int readTree(Tree tree){
     if(tree == nullptr){ return -1;}
     for(node *n : tree->next){
         if(strcmp(n->label.c_str(),"group") == 0){
-            (n->g)->applyM();
+            glPushMatrix();
             readTree(n);
             glPopMatrix();
         }
         if(strcmp(n->label.c_str(),"translate") == 0){
-            (n->g)->applyT();
+            (n->g)->apply();
         }
         if(strcmp(n->label.c_str(),"rotate") == 0){
-            (n->g)->applyR();
+            (n->g)->apply();
         }
         if(strcmp(n->label.c_str(),"scale") == 0){
-            (n->g)->applyS();
+            (n->g)->apply();
         }
 
         if(strcmp(n->label.c_str(),"model") == 0){
             int flag = 0;
             File aux;
             for(File vbo : Vbos){
-                if(strcmp(n->label.c_str(),vbo->name.c_str()) == 0) {
+                if(strcmp((dynamic_cast<Model*>(n->g))->getFile().c_str(),vbo->name.c_str()) == 0) {
                     aux = vbo;
                     flag = 1;
                     break;
@@ -381,6 +383,7 @@ int readTree(Tree tree){
 
             if (flag == 0){
                 aux = readFile((dynamic_cast<Model*>(n->g))->getFile());
+                Vbos.push_back(aux);
             }
 
             glBindBuffer(GL_ARRAY_BUFFER,aux->index);
@@ -405,8 +408,8 @@ void renderScene() {
               0, 1, 0);
 
     // put the geometric transformations here
-
-
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    drawEixos();
     // put drawing instructions here
 
     //------------FPS
