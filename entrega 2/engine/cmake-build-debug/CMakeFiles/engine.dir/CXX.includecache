@@ -9,9 +9,17 @@
 /home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/classes.h
 string
 -
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
 
 /home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/main.cpp
 GLUT/glut.h
+-
+GL/glew.h
 -
 stdlib.h
 -

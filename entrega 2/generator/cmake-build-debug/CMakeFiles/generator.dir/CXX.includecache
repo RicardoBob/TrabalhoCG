@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/generator/main.cpp
+cmath
+-
+iostream
+-
+fstream
+-
+cstring
+-
+

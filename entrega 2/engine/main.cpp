@@ -1,6 +1,7 @@
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
+#include <GL/glew.h>
 #include <stdlib.h>
 #include <GL/glut.h>
 #endif
@@ -23,6 +24,8 @@
 using namespace tinyxml2;
 using namespace std;
 
+
+
 #define ESCAPE 27
 //---------TREE----------
 typedef struct node{
@@ -31,9 +34,15 @@ typedef struct node{
     vector<struct node*> next;
 } *Tree;
 
+//file struct
+typedef struct ficheiro{
+    string name;
+    vector<float> vertex;
+    GLuint index,size;
+} *File;
+
 //------------VARIAVEIS GLOBAIS--------------
-vector<string> files;
-vector< vector<float> > vertex;
+vector<File> Vbos;
 Tree classTree;
 int ngroup = 0;
 
@@ -58,7 +67,6 @@ int window;
 //---------FPS
 int timebase;
 float frames;
-
 
 //-----------------------------------
 
@@ -153,35 +161,44 @@ void mouseMove(int x, int y){
     }
 }
 
-/*
-void drawFromFile() { //desenhar a partir do vetor
-    glBegin(GL_TRIANGLES);
-    for(int i = 0; i<vertex.size(); i+=3){
-        glColor3f(1.0f,0.5f,0.0f);
-        glVertex3f(vertex[i],vertex[i+1],vertex[i+2]);
-    }
-    glEnd();
-}
 
-void readFile(){
+File readFile(string file){
+
+    ifstream f("../../generator/cmake-build-debug/" + file);
     float x,y,z;
     string linha;
-    for(string i : files){
-        ifstream file("../../generator/cmake-build-debug/" + i); //pathing relativo
-        while((file,linha)) {
-            istringstream in(linha);
-            in >> x;
-            in >> y;
-            in >> z;
+    File vbo = new struct ficheiro;
+    vbo->name = file;
+    vbo->vertex.clear();
 
-            vertex.push_back(x);
-            vertex.push_back(y);
-            vertex.push_back(z);
-        }
-        file.close();
+    while(getline(f,linha)) {
+        istringstream in(linha);
+        in >> x;
+        in >> y;
+        in >> z;
+
+        vbo->vertex.push_back(x);
+        vbo->vertex.push_back(y);
+        vbo->vertex.push_back(z);
     }
+    vbo->size = vbo->vertex.size()/3;
+    f.close();
+    Vbos.push_back(vbo);
+
+    //criar vbo
+    glGenBuffers(1,&(vbo->index));
+
+
+    //copiar vbo para a grafica
+    glBindBuffer(GL_ARRAY_BUFFER,vbo->index);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (vbo->vertex).size(), vbo->vertex.data(),GL_STATIC_DRAW);
+
+
+    return vbo;
 }
- */
+
+
+
 
 void drawEixos(){
     glBegin(GL_LINES);
@@ -199,44 +216,6 @@ void drawEixos(){
         glVertex3f(0.0f, 0.0f, 100.0f);
     glEnd();
 }
-
-
-void renderScene() {
-
-    // clear buffers
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // set the camera
-    glLoadIdentity();
-    gluLookAt(xc, yc, zc,
-              xc + lx, yc + ly, zc + lz,
-              0, 1, 0);
-
-    // put the geometric transformations here
-
-
-    // put drawing instructions here
-
-    drawEixos();
-
-    //------------FPS
-
-    frames++;
-
-    int time = glutGet(GLUT_ELAPSED_TIME);
-    if (time - timebase > 1000) {
-        float fps = frames * 1000.0 / (time - timebase);
-        timebase = time;
-        frames = 0;
-        string str = to_string(fps);
-        const char *c = str.c_str();
-        glutSetWindowTitle(c);
-    }
-
-    // End of frame
-    glutSwapBuffers();
-}
-
 
 void groupParser(XMLElement *grupo, Tree parentNode){
     //inicializar vars
@@ -263,7 +242,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             aux->label = "translate";
             aux->next.clear();
             parentNode->next.push_back(aux);
-            printf("translate\n");
         }
 
         //scale
@@ -282,7 +260,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             aux->label = "scale";
             aux->next.clear();
             parentNode->next.push_back(aux);
-            printf("scale\n");
         }
 
         //rotate
@@ -304,7 +281,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             aux->label = "rotate";
             aux->next.clear();
             parentNode->next.push_back(aux);
-            printf("rotate\n");
         }
 
         //Modelos
@@ -321,7 +297,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
                 aux->next.clear();
                 parentNode->next.push_back(aux);
                 modelos = modelos->NextSiblingElement();
-                printf("modelo\n");
             }
         }
 
@@ -362,7 +337,6 @@ int readXML(){
 
     //Percorrer o grupos e adicionar à arvore de classes
     while (grupo != nullptr) {
-        printf("grupo\n");
         //inicializar a subarvore do grupo para ser adicionada na arvore de classes
         Tree subTree = new struct node;
         subTree->g = new Group(ngroup++);
@@ -376,39 +350,88 @@ int readXML(){
 }
 
 
-int readTree(Tree tree,string str){
+int readTree(Tree tree){
     if(tree == nullptr){ return -1;}
-    string interval = "     ";
-    printf("%s%s\n",str.c_str(),tree->label.c_str());
     for(node *n : tree->next){
         if(strcmp(n->label.c_str(),"group") == 0){
-            string nova = "";
-            nova.append(interval);
-            nova.append(str);
-            nova.append("1");
-            readTree(n,nova);
+            (n->g)->applyM();
+            readTree(n);
+            glPopMatrix();
         }
         if(strcmp(n->label.c_str(),"translate") == 0){
-            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+            (n->g)->applyT();
         }
         if(strcmp(n->label.c_str(),"rotate") == 0){
-            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+            (n->g)->applyR();
         }
         if(strcmp(n->label.c_str(),"scale") == 0){
-            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+            (n->g)->applyS();
         }
+
         if(strcmp(n->label.c_str(),"model") == 0){
-            printf("%s%s\n",(interval+str+"1").c_str(),n->label.c_str());
+            int flag = 0;
+            File aux;
+            for(File vbo : Vbos){
+                if(strcmp(n->label.c_str(),vbo->name.c_str()) == 0) {
+                    aux = vbo;
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag == 0){
+                aux = readFile((dynamic_cast<Model*>(n->g))->getFile());
+            }
+
+            glBindBuffer(GL_ARRAY_BUFFER,aux->index);
+            glVertexPointer(3,GL_FLOAT,0,0);
+            glDrawArrays(GL_TRIANGLES,0,aux->size);
+
         }
     }
     return 1;
 }
 
+
+void renderScene() {
+
+    // clear buffers
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // set the camera
+    glLoadIdentity();
+    gluLookAt(xc, yc, zc,
+              xc + lx, yc + ly, zc + lz,
+              0, 1, 0);
+
+    // put the geometric transformations here
+
+
+    // put drawing instructions here
+
+    //------------FPS
+
+    frames++;
+
+    int time = glutGet(GLUT_ELAPSED_TIME);
+    if (time - timebase > 1000) {
+        float fps = frames * 1000.0 / (time - timebase);
+        timebase = time;
+        frames = 0;
+        string str = to_string(fps);
+        const char *c = str.c_str();
+        glutSetWindowTitle(c);
+    }
+
+    readTree(classTree);
+    // End of frame
+    glutSwapBuffers();
+}
+
+
 int main(int argc, char **argv) {
     //ler
     readXML();
-    string bruh = "";
-    readTree(classTree,bruh);
 
     timebase = glutGet(GLUT_ELAPSED_TIME);
 
@@ -429,8 +452,10 @@ int main(int argc, char **argv) {
     glutPassiveMotionFunc(mouseMove);
 
 //  OpenGL settings
+    glewInit();
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
+    glEnableClientState(GL_VERTEX_ARRAY);
 
 // enter GLUT's main cycle
     glutMainLoop();

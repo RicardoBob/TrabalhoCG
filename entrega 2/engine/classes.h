@@ -8,7 +8,9 @@
 #endif //MAIN_CPP_CLASSES_H
 
 #include <string>
-
+#include <GL/glew.h>
+#include <stdlib.h>
+#include <GL/glut.h>
 using namespace std;
 
 class Group {
@@ -19,6 +21,10 @@ class Group {
         Group(int a);
         void setId(int a);
         int getId();
+        virtual string applyM();
+        virtual string applyT();
+        virtual string applyS();
+        virtual string applyR();
 };
 
 class Translate : public Group{
@@ -33,6 +39,7 @@ class Translate : public Group{
         float getX();
         float getY();
         float getZ();
+        string applyT();
 };
 
 class Scale : public Group{
@@ -47,6 +54,7 @@ class Scale : public Group{
         float getX();
         float getY();
         float getZ();
+        string applyS();
 };
 
 class Rotate : public Group{
@@ -63,6 +71,7 @@ class Rotate : public Group{
         float getY();
         float getZ();
         float getAngle();
+        string applyR();
 };
 
 class Model : public Group{
@@ -73,4 +82,5 @@ class Model : public Group{
         Model(string file);
         void setFile(string a);
         string getFile();
+        string applyM();
 };
