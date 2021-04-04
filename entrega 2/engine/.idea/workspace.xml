@@ -65,22 +65,14 @@
       <change beforePath="$PROJECT_DIR$/../../entrega 1/engine/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../entrega 1/engine/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 1/engine/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/classes.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.h" beforeDir="false" afterPath="$PROJECT_DIR$/classes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <list id="5d00c843-3e90-4f62-a5fd-ce471feaa770" name="Changes by Bruna" comment="" />
-    <list id="75aceced-529d-4fab-b58b-785754d25cec" name="Changes by Guilherme" comment="">
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
-    <list id="0297fbbb-2317-4be9-a0f0-8200da9103c9" name="Changes by Igor" comment="">
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list id="75aceced-529d-4fab-b58b-785754d25cec" name="Changes by Guilherme" comment="" />
+    <list id="0297fbbb-2317-4be9-a0f0-8200da9103c9" name="Changes by Igor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,26 +85,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/main.cpp">
-      <ranges>
-        <range start1="25" end1="25" start2="25" end2="27" changelist="75aceced-529d-4fab-b58b-785754d25cec" />
-        <range start1="26" end1="28" start2="28" end2="28" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="62" end1="63" start2="62" end2="63" changelist="0297fbbb-2317-4be9-a0f0-8200da9103c9" />
-        <range start1="165" end1="166" start2="165" end2="165" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="223" end1="226" start2="222" end2="222" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="227" end1="227" start2="223" end2="229" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="356" end1="357" start2="358" end2="359" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="361" end1="362" start2="363" end2="364" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="364" end1="365" start2="366" end2="367" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="367" end1="368" start2="369" end2="370" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="374" end1="375" start2="376" end2="377" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="383" end1="383" start2="385" end2="386" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="393" end1="393" start2="396" end2="433" changelist="75aceced-529d-4fab-b58b-785754d25cec" />
-        <range start1="394" end1="431" start2="434" end2="434" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1qZV7IfDOWjhsZsTh25hbHIqPqM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -133,11 +105,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -149,7 +116,8 @@
       <updated>1617286931004</updated>
       <workItem from="1617286934308" duration="6096000" />
       <workItem from="1617457265400" duration="5040000" />
-      <workItem from="1617462407113" duration="12474000" />
+      <workItem from="1617462407113" duration="12708000" />
+      <workItem from="1617562890126" duration="154000" />
     </task>
     <servers />
   </component>

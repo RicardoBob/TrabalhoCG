@@ -409,7 +409,6 @@ void renderScene() {
 
     // put the geometric transformations here
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    drawEixos();
     // put drawing instructions here
 
     //------------FPS

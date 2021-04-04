@@ -61,7 +61,7 @@
 
         <!-- Jupiter -->
         <group>
-            <translate X="75 "/>
+            <translate X="55"/>
             <scale X="2.5" Y="2.5" Z="2.5" />
             <models>
                 <model file="sphere.3d" />
@@ -103,7 +103,7 @@
 
         <!-- Saturno -->
         <group>
-            <translate X="95" />
+            <translate X="75" />
             <scale X="2.5" Y="2.5" Z="2.5" />
             <models>
                 <model file="sphere.3d" />
@@ -185,7 +185,7 @@
 
         <!-- Urano -->
         <group>
-            <translate X="110" />
+            <translate X="90" />
             <scale X="1.5" Y="1.5" Z="1.5" />
             <models>
                 <model file="sphere.3d" />
@@ -195,7 +195,7 @@
 
         <!-- Neptuno -->
         <group>
-            <translate X="128" />
+            <translate X="108" />
             <scale X="1.3" Y="1.3" Z="1.3" />
             <models>
                 <model file="sphere.3d" />
@@ -206,7 +206,7 @@
 
         <!-- Plutão -->
         <group>
-            <translate X="160" />
+            <translate X="120" />
             <scale X="0.18" Y="0.18" Z="0.18" />
             <models>
                 <model file="sphere.3d" />
