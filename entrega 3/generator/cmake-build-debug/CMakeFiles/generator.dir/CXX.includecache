@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/main.cpp
+cmath
+-
+iostream
+-
+fstream
+-
+cstring
+-
+modelos/modelos.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/modelos.h
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/modelos.h
+cmath
+-
+iostream
+-
+fstream
+-
+cstring
+-
+string
+-
+

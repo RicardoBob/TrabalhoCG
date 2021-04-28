@@ -4,14 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/classes.cpp" "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.o"
-  "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/main.cpp" "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"
-  "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/tinyxml2-master/tinyxml2.cpp" "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.o"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/matrizes.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/matrizes.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew"
   )
 
 # Targets to which this target links.

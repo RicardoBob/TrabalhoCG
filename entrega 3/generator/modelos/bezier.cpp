@@ -1,8 +1,8 @@
 //
-// Created by luisaraujo on 31/05/20.
+// Created by igor1 on 26/04/2021.
 //
 
-#include "bezier.h"
+#include "modelos.h"
 using namespace std;
 
 

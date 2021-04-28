@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/classes.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.cpp
+classes.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.h
 string
 -
 GL/glew.h
@@ -16,7 +18,17 @@ stdlib.h
 GL/glut.h
 -
 
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/main.cpp
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.h
+string
+-
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp
 GLUT/glut.h
 -
 GL/glew.h
@@ -40,11 +52,25 @@ vector
 tuple
 -
 tinyxml2-master/tinyxml2.h
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/tinyxml2-master/tinyxml2.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.h
 classes.h
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/classes.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.h
 
-/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/tinyxml2-master/tinyxml2.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp
+tinyxml2.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.h
+new
+-
+stddef.h
+-
+stdarg.h
+-
+cstddef
+-
+cstdarg
+-
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.h
 ctype.h
 -
 limits.h
@@ -72,5 +98,27 @@ stdint.h
 android/log.h
 -
 assert.h
+-
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew/GL/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut/GL/glut.h
+windows.h
+-
+GL/gl.h
+-
+GL/glu.h
 -
 

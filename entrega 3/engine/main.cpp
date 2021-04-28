@@ -19,6 +19,7 @@
 #include <tuple>
 #include "tinyxml2-master/tinyxml2.h"
 #include "classes.h"
+#include "matrizes.h"
 
 
 using namespace tinyxml2;
@@ -68,7 +69,10 @@ int window;
 int timebase;
 float frames;
 
+
+
 //-----------------------------------
+
 
 void changeSize(int w, int h) {
 
@@ -162,6 +166,7 @@ void mouseMove(int x, int y){
 }
 
 
+
 File readFile(string file){
     ifstream f("../../generator/cmake-build-debug/" + file);
     float x,y,z;
@@ -196,7 +201,136 @@ File readFile(string file){
     return vbo;
 }
 
+//Catmull
+float camX = 0, camY, camZ = 5;
+int startX, startY, tracking = 0;
 
+int alpha = 0, beta = 0, r = 5;
+
+#define POINT_COUNT 5
+// Points that make up the loop for catmull-rom interpolation
+float p[POINT_COUNT][3] = {{-1,-1,0},{-1,1,0},{1,1,0},{0,0,0},{1,-1,0}};
+
+void buildRotMatrix(float *x, float *y, float *z, float *m) {
+
+    m[0] = x[0]; m[1] = x[1]; m[2] = x[2]; m[3] = 0;
+    m[4] = y[0]; m[5] = y[1]; m[6] = y[2]; m[7] = 0;
+    m[8] = z[0]; m[9] = z[1]; m[10] = z[2]; m[11] = 0;
+    m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
+}
+
+
+void cross(float *a, float *b, float *res) {
+
+    res[0] = a[1]*b[2] - a[2]*b[1];
+    res[1] = a[2]*b[0] - a[0]*b[2];
+    res[2] = a[0]*b[1] - a[1]*b[0];
+}
+
+
+void normalize(float *a) {
+
+    float l = sqrt(a[0]*a[0] + a[1] * a[1] + a[2] * a[2]);
+    a[0] = a[0]/l;
+    a[1] = a[1]/l;
+    a[2] = a[2]/l;
+}
+
+
+float length(float *v) {
+
+    float res = sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
+    return res;
+
+}
+
+void multMatrixVector(float *m, float *v, float *res) {
+
+    for (int j = 0; j < 4; ++j) {
+        res[j] = 0;
+        for (int k = 0; k < 4; ++k) {
+            res[j] += v[k] * m[j * 4 + k];
+        }
+    }
+
+}
+
+//t = tessellation (?) , vecP = vector de pontos de translacao
+void getCatmullRomPoint(float t, vector<vector<float>>vecP, vector<float> *pos, vector<float> *deriv) {
+
+    // catmull-rom matrix
+    Matriz catmull = Matriz::MatrizCatmull();
+
+    // compute A = M * P
+    Matriz P =  Matriz(4,3);
+    P.adicionaColunas(vecP);
+    Matriz A = catmull * P;
+
+    // compute pos = T * A;
+    vector<float> tempT = {t*t*t, t*t, t,1};
+    Matriz tempTMatriz = Matriz(1,4);
+    tempTMatriz.adicionaColuna(tempT,0);
+    *pos = (tempTMatriz*A).getLinV(0);
+
+    // compute deriv = T' * A
+
+    vector<float> tempTDeriv = {3*t*t, 2*t, 1,0};
+    Matriz tempTMatrizDeriv = Matriz(4,1);
+    tempTMatriz.adicionaLinha(tempTDeriv,0);
+    *deriv = (tempTMatrizDeriv*A).getLinV(0);
+
+}
+
+
+// given  global t, returns the point in the curve
+void getGlobalCatmullRomPoint(float gt, vector<float> *pos, vector<float> *deriv, vector<float> pontosControlo) {
+
+    int nPontos = pontosControlo.size();
+    float t = gt * nPontos; // this is the real global t
+    int index = floor(t);  // which segment
+    t = t - index; // where within  the segment
+
+    // indices store the points
+    int indices[4];
+    indices[0] = (index + nPontos-1)%nPontos;
+    indices[1] = (indices[0]+1)%nPontos;
+    indices[2] = (indices[1]+1)%nPontos;
+    indices[3] = (indices[2]+1)%nPontos;
+
+    vector<vector<float>>vecP;
+    vector<float>vecPAux;
+    for (int i = 0; i<4;i++ ){
+        vecPAux.push_back(pontosControlo[indices[i]]);
+        vecP.push_back(vecPAux);
+        vecPAux.clear();
+    }
+
+    getCatmullRomPoint(t,vecP, pos, deriv);
+}
+
+void renderCatmullRomCurve(vector<float> PontosControlo) {
+
+// draw curve using line segments with GL_LINE_LOOP
+    vector <float> *pos = new vector<float>(3);
+    vector <float> *deriv = new vector<float>(3);
+
+    float gt = 0;
+
+    glDisable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);
+    glBegin(GL_LINE_LOOP);
+
+    for (int i = 0; i < 100; i++) {
+        getGlobalCatmullRomPoint(gt, pos, deriv, PontosControlo);
+        glVertex3f(pos->at(0), pos->at(1), pos->at(2));
+        gt += 0.01;
+    }
+    glEnd();
+    glEnable(GL_LIGHTING);
+
+}
+
+//Para desenhar orbitas saber o num de grupos??
 
 
 void drawEixos(){
@@ -398,6 +532,8 @@ int readTree(Tree tree){
 
 void renderScene() {
 
+    static float t = 0;
+    float pos[3], deriv[3];
     // clear buffers
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -410,6 +546,16 @@ void renderScene() {
     // put the geometric transformations here
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     // put drawing instructions here
+
+    renderCatmullRomCurve(pontosControlo do XML)
+
+    glPushMatrix();
+        getGlobalCatmullRomPoint(t,pos,deriv,pontosControlo);
+        glTranslatef(pos[0],pos[1],pos[2]);
+        glScalef(0.5,0.5, 0.5);
+        glutWireTeapot(1);
+    glPopMatrix();
+
 
     //------------FPS
 
@@ -428,6 +574,9 @@ void renderScene() {
     readTree(classTree);
     // End of frame
     glutSwapBuffers();
+    //Usar o contador de frames para tempo tmb?
+    t+=0.01;
+
 }
 
 

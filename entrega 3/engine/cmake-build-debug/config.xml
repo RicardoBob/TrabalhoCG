@@ -4,7 +4,7 @@
         <group>
             <scale X="10" Y="10" Z="10" />
             <models>
-                <model file="sphere.3d" />
+                <model file="beziercurve.3d" />
             </models>
         </group>
 

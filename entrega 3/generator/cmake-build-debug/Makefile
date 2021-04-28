@@ -127,33 +127,6 @@ generator\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\build
 .PHONY : generator\fast
 
-bezier.obj: bezier.cpp.obj
-
-.PHONY : bezier.obj
-
-# target to build an object file
-bezier.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\bezier.cpp.obj
-.PHONY : bezier.cpp.obj
-
-bezier.i: bezier.cpp.i
-
-.PHONY : bezier.i
-
-# target to preprocess a source file
-bezier.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\bezier.cpp.i
-.PHONY : bezier.cpp.i
-
-bezier.s: bezier.cpp.s
-
-.PHONY : bezier.s
-
-# target to generate assembly for a file
-bezier.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\bezier.cpp.s
-.PHONY : bezier.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -181,6 +154,141 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\main.cpp.s
 .PHONY : main.cpp.s
 
+modelos\bezier.obj: modelos\bezier.cpp.obj
+
+.PHONY : modelos\bezier.obj
+
+# target to build an object file
+modelos\bezier.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\bezier.cpp.obj
+.PHONY : modelos\bezier.cpp.obj
+
+modelos\bezier.i: modelos\bezier.cpp.i
+
+.PHONY : modelos\bezier.i
+
+# target to preprocess a source file
+modelos\bezier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\bezier.cpp.i
+.PHONY : modelos\bezier.cpp.i
+
+modelos\bezier.s: modelos\bezier.cpp.s
+
+.PHONY : modelos\bezier.s
+
+# target to generate assembly for a file
+modelos\bezier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\bezier.cpp.s
+.PHONY : modelos\bezier.cpp.s
+
+modelos\box.obj: modelos\box.cpp.obj
+
+.PHONY : modelos\box.obj
+
+# target to build an object file
+modelos\box.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\box.cpp.obj
+.PHONY : modelos\box.cpp.obj
+
+modelos\box.i: modelos\box.cpp.i
+
+.PHONY : modelos\box.i
+
+# target to preprocess a source file
+modelos\box.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\box.cpp.i
+.PHONY : modelos\box.cpp.i
+
+modelos\box.s: modelos\box.cpp.s
+
+.PHONY : modelos\box.s
+
+# target to generate assembly for a file
+modelos\box.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\box.cpp.s
+.PHONY : modelos\box.cpp.s
+
+modelos\cone.obj: modelos\cone.cpp.obj
+
+.PHONY : modelos\cone.obj
+
+# target to build an object file
+modelos\cone.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\cone.cpp.obj
+.PHONY : modelos\cone.cpp.obj
+
+modelos\cone.i: modelos\cone.cpp.i
+
+.PHONY : modelos\cone.i
+
+# target to preprocess a source file
+modelos\cone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\cone.cpp.i
+.PHONY : modelos\cone.cpp.i
+
+modelos\cone.s: modelos\cone.cpp.s
+
+.PHONY : modelos\cone.s
+
+# target to generate assembly for a file
+modelos\cone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\cone.cpp.s
+.PHONY : modelos\cone.cpp.s
+
+modelos\plane.obj: modelos\plane.cpp.obj
+
+.PHONY : modelos\plane.obj
+
+# target to build an object file
+modelos\plane.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\plane.cpp.obj
+.PHONY : modelos\plane.cpp.obj
+
+modelos\plane.i: modelos\plane.cpp.i
+
+.PHONY : modelos\plane.i
+
+# target to preprocess a source file
+modelos\plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\plane.cpp.i
+.PHONY : modelos\plane.cpp.i
+
+modelos\plane.s: modelos\plane.cpp.s
+
+.PHONY : modelos\plane.s
+
+# target to generate assembly for a file
+modelos\plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\plane.cpp.s
+.PHONY : modelos\plane.cpp.s
+
+modelos\sphere.obj: modelos\sphere.cpp.obj
+
+.PHONY : modelos\sphere.obj
+
+# target to build an object file
+modelos\sphere.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\sphere.cpp.obj
+.PHONY : modelos\sphere.cpp.obj
+
+modelos\sphere.i: modelos\sphere.cpp.i
+
+.PHONY : modelos\sphere.i
+
+# target to preprocess a source file
+modelos\sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\sphere.cpp.i
+.PHONY : modelos\sphere.cpp.i
+
+modelos\sphere.s: modelos\sphere.cpp.s
+
+.PHONY : modelos\sphere.s
+
+# target to generate assembly for a file
+modelos\sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\sphere.cpp.s
+.PHONY : modelos\sphere.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -190,12 +298,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... generator
-	@echo ... bezier.obj
-	@echo ... bezier.i
-	@echo ... bezier.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... modelos/bezier.obj
+	@echo ... modelos/bezier.i
+	@echo ... modelos/bezier.s
+	@echo ... modelos/box.obj
+	@echo ... modelos/box.i
+	@echo ... modelos/box.s
+	@echo ... modelos/cone.obj
+	@echo ... modelos/cone.i
+	@echo ... modelos/cone.s
+	@echo ... modelos/plane.obj
+	@echo ... modelos/plane.i
+	@echo ... modelos/plane.s
+	@echo ... modelos/sphere.obj
+	@echo ... modelos/sphere.i
+	@echo ... modelos/sphere.s
 .PHONY : help
 
 

@@ -4,8 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/bezier.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/bezier.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/main.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/main.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/bezier.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/bezier.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/box.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/box.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/cone.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/cone.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/plane.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/plane.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/sphere.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/sphere.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

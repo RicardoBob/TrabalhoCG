@@ -82,13 +82,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/bezier.cpp">
-			<Option target="generator"/>
-		</Unit>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/bezier.h">
-			<Option target="generator"/>
-		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/main.cpp">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/bezier.cpp">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/box.cpp">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/cone.cpp">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/modelos.h">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/plane.cpp">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/modelos/sphere.cpp">
 			<Option target="generator"/>
 		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/CMakeLists.txt">
