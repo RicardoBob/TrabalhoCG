@@ -18,8 +18,7 @@
 #include <vector>
 #include <tuple>
 #include "tinyxml2-master/tinyxml2.h"
-#include "classes.h"
-#include "matrizes.h"
+#include "headers/Group.h"
 
 
 using namespace tinyxml2;
@@ -31,7 +30,6 @@ using namespace std;
 //---------TREE----------
 typedef struct node{
     Group* g;
-    string label;
     vector<struct node*> next;
 } *Tree;
 
@@ -45,7 +43,6 @@ typedef struct ficheiro{
 //------------VARIAVEIS GLOBAIS--------------
 vector<File> Vbos;
 Tree classTree;
-int ngroup = 0;
 
 //-----------------CAMERA--------------------
 bool warp = false;
@@ -201,138 +198,6 @@ File readFile(string file){
     return vbo;
 }
 
-//Catmull
-float camX = 0, camY, camZ = 5;
-int startX, startY, tracking = 0;
-
-int alpha = 0, beta = 0, r = 5;
-
-#define POINT_COUNT 5
-// Points that make up the loop for catmull-rom interpolation
-float p[POINT_COUNT][3] = {{-1,-1,0},{-1,1,0},{1,1,0},{0,0,0},{1,-1,0}};
-
-void buildRotMatrix(float *x, float *y, float *z, float *m) {
-
-    m[0] = x[0]; m[1] = x[1]; m[2] = x[2]; m[3] = 0;
-    m[4] = y[0]; m[5] = y[1]; m[6] = y[2]; m[7] = 0;
-    m[8] = z[0]; m[9] = z[1]; m[10] = z[2]; m[11] = 0;
-    m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
-}
-
-
-void cross(float *a, float *b, float *res) {
-
-    res[0] = a[1]*b[2] - a[2]*b[1];
-    res[1] = a[2]*b[0] - a[0]*b[2];
-    res[2] = a[0]*b[1] - a[1]*b[0];
-}
-
-
-void normalize(float *a) {
-
-    float l = sqrt(a[0]*a[0] + a[1] * a[1] + a[2] * a[2]);
-    a[0] = a[0]/l;
-    a[1] = a[1]/l;
-    a[2] = a[2]/l;
-}
-
-
-float length(float *v) {
-
-    float res = sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
-    return res;
-
-}
-
-void multMatrixVector(float *m, float *v, float *res) {
-
-    for (int j = 0; j < 4; ++j) {
-        res[j] = 0;
-        for (int k = 0; k < 4; ++k) {
-            res[j] += v[k] * m[j * 4 + k];
-        }
-    }
-
-}
-
-//t = tessellation (?) , vecP = vector de pontos de translacao
-void getCatmullRomPoint(float t, vector<vector<float>>vecP, vector<float> *pos, vector<float> *deriv) {
-
-    // catmull-rom matrix
-    Matriz catmull = Matriz::MatrizCatmull();
-
-    // compute A = M * P
-    Matriz P =  Matriz(4,3);
-    P.adicionaColunas(vecP);
-    Matriz A = catmull * P;
-
-    // compute pos = T * A;
-    vector<float> tempT = {t*t*t, t*t, t,1};
-    Matriz tempTMatriz = Matriz(1,4);
-    tempTMatriz.adicionaColuna(tempT,0);
-    *pos = (tempTMatriz*A).getLinV(0);
-
-    // compute deriv = T' * A
-
-    vector<float> tempTDeriv = {3*t*t, 2*t, 1,0};
-    Matriz tempTMatrizDeriv = Matriz(4,1);
-    tempTMatriz.adicionaLinha(tempTDeriv,0);
-    *deriv = (tempTMatrizDeriv*A).getLinV(0);
-
-}
-
-
-// given  global t, returns the point in the curve
-void getGlobalCatmullRomPoint(float gt, vector<float> *pos, vector<float> *deriv, vector<float> pontosControlo) {
-
-    int nPontos = pontosControlo.size();
-    float t = gt * nPontos; // this is the real global t
-    int index = floor(t);  // which segment
-    t = t - index; // where within  the segment
-
-    // indices store the points
-    int indices[4];
-    indices[0] = (index + nPontos-1)%nPontos;
-    indices[1] = (indices[0]+1)%nPontos;
-    indices[2] = (indices[1]+1)%nPontos;
-    indices[3] = (indices[2]+1)%nPontos;
-
-    vector<vector<float>>vecP;
-    vector<float>vecPAux;
-    for (int i = 0; i<4;i++ ){
-        vecPAux.push_back(pontosControlo[indices[i]]);
-        vecP.push_back(vecPAux);
-        vecPAux.clear();
-    }
-
-    getCatmullRomPoint(t,vecP, pos, deriv);
-}
-
-void renderCatmullRomCurve(vector<float> PontosControlo) {
-
-// draw curve using line segments with GL_LINE_LOOP
-    vector <float> *pos = new vector<float>(3);
-    vector <float> *deriv = new vector<float>(3);
-
-    float gt = 0;
-
-    glDisable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
-    glBegin(GL_LINE_LOOP);
-
-    for (int i = 0; i < 100; i++) {
-        getGlobalCatmullRomPoint(gt, pos, deriv, PontosControlo);
-        glVertex3f(pos->at(0), pos->at(1), pos->at(2));
-        gt += 0.01;
-    }
-    glEnd();
-    glEnable(GL_LIGHTING);
-
-}
-
-//Para desenhar orbitas saber o num de grupos??
-
-
 void drawEixos(){
     glBegin(GL_LINES);
         // X axis in red
@@ -354,12 +219,23 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     //inicializar vars
     grupo = grupo->FirstChildElement();
 
+    Group* g = new Group();
+
+    Translate trans = Translate();
+    Rotate rot = Rotate();
+    Scale sca = Scale();
+    vector<string> ficheiros;
+
     while (grupo != nullptr){
+        ficheiros.clear();
         float x = 0.0f;
         float y = 0.0f;
         float z = 0.0f;
         float angulo = 0.0f;
+        float timeTran = 0.0f;
+        float timeRot = 0.0f;
         string file = "";
+
 
         //translate
         if(strcmp(grupo->Value(),"translate") == 0){
@@ -372,13 +248,33 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             if(grupo->Attribute("Z")) {
                 grupo->QueryFloatAttribute("Z", &z);
             }
+            if(grupo->Attribute("time")) {
+                vector<float> vertices;
+                grupo->QueryFloatAttribute("time", &timeTran);
+                XMLElement* ponto = grupo->FirstChildElement("point");
+                while(ponto != nullptr){
+                    if(ponto->Attribute("X")){
+                        ponto->QueryFloatAttribute("X",&x);
+                    }
+                    if(ponto->Attribute("Y")){
+                        ponto->QueryFloatAttribute("Y",&y);
+                    }
+                    if(ponto->Attribute("Z")) {
+                        ponto->QueryFloatAttribute("Z", &z);
+                    }
+                    vertices.push_back(x);
+                    vertices.push_back(y);
+                    vertices.push_back(z);
+                }
+                trans.setTime(timeTran);
+                trans.setCurve(vertices);
+            }
 
-            Tree aux = new struct node;
-            aux->g = new Translate(x,y,z);
-            aux->label = "translate";
-            aux->next.clear();
-            parentNode->next.push_back(aux);
+            trans.setX(x);
+            trans.setY(y);
+            trans.setZ(z);
         }
+
 
         //scale
         if(strcmp(grupo->Value(),"scale") == 0){
@@ -391,11 +287,9 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             if(grupo->Attribute("Z")){
                 grupo->QueryFloatAttribute("Z",&z);
             }
-            Tree aux = new struct node;
-            aux->g = new Scale(x,y,z);
-            aux->label = "scale";
-            aux->next.clear();
-            parentNode->next.push_back(aux);
+            sca.setX(x);
+            sca.setY(y);
+            sca.setZ(z);
         }
 
         //rotate
@@ -412,11 +306,16 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             if(grupo->Attribute("angle")){
                 grupo->QueryFloatAttribute("angle",&angulo);
             }
-            Tree aux = new struct node;
-            aux->g = new Rotate(x,y,z,angulo);
-            aux->label = "rotate";
-            aux->next.clear();
-            parentNode->next.push_back(aux);
+
+            if(grupo->Attribute("time")){
+                grupo->QueryFloatAttribute("time",&timeRot);
+            }
+
+            rot.setX(x);
+            rot.setY(y);
+            rot.setZ(z);
+            rot.setTime(timeRot);
+            rot.setAngle(angulo);
         }
 
         //Modelos
@@ -424,14 +323,10 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             XMLElement* modelos = grupo->FirstChildElement("model");
             while(modelos != nullptr){
                 const char *nome = modelos->Attribute("file");
-                if(nome != nullptr){
+                if(nome != nullptr) {
                     file = string(nome);
+                    ficheiros.push_back(file);
                 }
-                Tree aux = new struct node;
-                aux->g = new Model(file);
-                aux->label = "model";
-                aux->next.clear();
-                parentNode->next.push_back(aux);
                 modelos = modelos->NextSiblingElement();
             }
         }
@@ -440,15 +335,18 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         if(strcmp(grupo->Value(),"group") == 0){
             //inicializar a subarvore do grupo para ser adicionada na arvore de classes
             Tree subTree = new struct node;
-            subTree->g = new Group(ngroup++);
-            subTree->label = "group";
             subTree->next.clear();
             groupParser(grupo, subTree);
             parentNode->next.push_back(subTree);
         }
         grupo = grupo->NextSiblingElement();
     }
+    Transformation transformation = Transformation(trans,rot,sca);
+    g->setTransformation(transformation);
+    g->setFile(ficheiros);
+    parentNode->g = g;
 }
+
 
 int readXML(){
     //
@@ -456,30 +354,23 @@ int readXML(){
     XMLDocument config ;
     XMLError eResult = config.LoadFile("config.xml");
     XMLCheckResult(eResult);
-    //Buscar a root do XML
-    XMLNode * pRoot = config.FirstChildElement("scene");
-    if (pRoot == nullptr) {
-        return -1;
-    }
-    //inicializar a arvore de classes
+
     classTree = new struct node;
-    classTree->g = new Group(ngroup++);
-    classTree->label = "root";
+    classTree->g = new Group();
     classTree->next.clear();
 
     //Procurar o primeiro group
-    XMLElement *grupo = pRoot->FirstChildElement("group");
-    if (grupo == nullptr) return -1;
+    XMLElement *grupo = config.FirstChildElement("scene");
+    if (grupo == nullptr) {
+        return -1;
+    }
 
-    //Percorrer o grupos e adicionar à arvore de classes
     while (grupo != nullptr) {
         //inicializar a subarvore do grupo para ser adicionada na arvore de classes
         Tree subTree = new struct node;
-        subTree->g = new Group(ngroup++);
-        subTree->label = "group";
         subTree->next.clear();
-        groupParser(grupo,subTree);
         classTree->next.push_back(subTree);
+        groupParser(grupo,subTree);
         grupo = grupo->NextSiblingElement();
     }
     return 1;
@@ -488,43 +379,34 @@ int readXML(){
 
 int readTree(Tree tree){
     if(tree == nullptr){ return -1;}
-    for(node *n : tree->next){
-        if(strcmp(n->label.c_str(),"group") == 0){
-            glPushMatrix();
-            readTree(n);
-            glPopMatrix();
-        }
-        if(strcmp(n->label.c_str(),"translate") == 0){
-            (n->g)->apply();
-        }
-        if(strcmp(n->label.c_str(),"rotate") == 0){
-            (n->g)->apply();
-        }
-        if(strcmp(n->label.c_str(),"scale") == 0){
-            (n->g)->apply();
-        }
+    for(node *n : tree->next) {
+        glPushMatrix();
+        n->g->getTransformation().apply();
 
-        if(strcmp(n->label.c_str(),"model") == 0){
-            int flag = 0;
-            File aux;
-            for(File vbo : Vbos){
-                if(strcmp((dynamic_cast<Model*>(n->g))->getFile().c_str(),vbo->name.c_str()) == 0) {
+        int flag = 0;
+        File aux;
+
+        for (string nome : n->g->getFile()){
+            for (File vbo : Vbos) {
+                if (strcmp(nome.c_str(), vbo->name.c_str()) == 0) {
                     aux = vbo;
                     flag = 1;
                     break;
                 }
             }
 
-            if (flag == 0){
-                aux = readFile((dynamic_cast<Model*>(n->g))->getFile());
+            if (flag == 0) {
+                aux = readFile(nome);
                 Vbos.push_back(aux);
             }
 
-            glBindBuffer(GL_ARRAY_BUFFER,aux->index);
-            glVertexPointer(3,GL_FLOAT,0,0);
-            glDrawArrays(GL_TRIANGLES,0,aux->size);
-
+            glBindBuffer(GL_ARRAY_BUFFER, aux->index);
+            glVertexPointer(3, GL_FLOAT, 0, 0);
+            glDrawArrays(GL_TRIANGLES, 0, aux->size);
         }
+
+        readTree(n);
+        glPopMatrix();
     }
     return 1;
 }
@@ -532,8 +414,6 @@ int readTree(Tree tree){
 
 void renderScene() {
 
-    static float t = 0;
-    float pos[3], deriv[3];
     // clear buffers
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -546,15 +426,6 @@ void renderScene() {
     // put the geometric transformations here
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     // put drawing instructions here
-
-    renderCatmullRomCurve(pontosControlo do XML)
-
-    glPushMatrix();
-        getGlobalCatmullRomPoint(t,pos,deriv,pontosControlo);
-        glTranslatef(pos[0],pos[1],pos[2]);
-        glScalef(0.5,0.5, 0.5);
-        glutWireTeapot(1);
-    glPopMatrix();
 
 
     //------------FPS
@@ -574,8 +445,6 @@ void renderScene() {
     readTree(classTree);
     // End of frame
     glutSwapBuffers();
-    //Usar o contador de frames para tempo tmb?
-    t+=0.01;
 
 }
 

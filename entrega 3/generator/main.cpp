@@ -13,7 +13,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include "modelos\modelos.h"
+#include "modelos/modelos.h"
 using namespace std;
 
 

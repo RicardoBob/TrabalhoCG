@@ -1,5 +1,5 @@
 <scene>
-    <group>
+
         <!-- Sol -->
         <group>
             <scale X="10" Y="10" Z="10" />
@@ -212,5 +212,4 @@
                 <model file="sphere.3d" />
             </models>
         </group>
-    </group>
 </scene>

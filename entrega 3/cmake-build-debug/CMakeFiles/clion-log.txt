@@ -1,1 +1,1 @@
-CMakeLists.txt not found in C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3 Select CMakeLists.txt
+CMakeLists.txt not found in /home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3 Select CMakeLists.txt

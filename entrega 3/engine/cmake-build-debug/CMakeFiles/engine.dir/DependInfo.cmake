@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Group.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Point.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj"
+  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/matrizes.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/matrizes.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/matrizes.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/matrizes.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")

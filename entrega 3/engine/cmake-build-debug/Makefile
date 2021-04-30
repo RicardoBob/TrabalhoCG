@@ -127,32 +127,140 @@ engine\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\build
 .PHONY : engine\fast
 
-classes.obj: classes.cpp.obj
+classes\Group.obj: classes\Group.cpp.obj
 
-.PHONY : classes.obj
+.PHONY : classes\Group.obj
 
 # target to build an object file
-classes.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes.cpp.obj
-.PHONY : classes.cpp.obj
+classes\Group.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Group.cpp.obj
+.PHONY : classes\Group.cpp.obj
 
-classes.i: classes.cpp.i
+classes\Group.i: classes\Group.cpp.i
 
-.PHONY : classes.i
+.PHONY : classes\Group.i
 
 # target to preprocess a source file
-classes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes.cpp.i
-.PHONY : classes.cpp.i
+classes\Group.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Group.cpp.i
+.PHONY : classes\Group.cpp.i
 
-classes.s: classes.cpp.s
+classes\Group.s: classes\Group.cpp.s
 
-.PHONY : classes.s
+.PHONY : classes\Group.s
 
 # target to generate assembly for a file
-classes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes.cpp.s
-.PHONY : classes.cpp.s
+classes\Group.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Group.cpp.s
+.PHONY : classes\Group.cpp.s
+
+classes\Point.obj: classes\Point.cpp.obj
+
+.PHONY : classes\Point.obj
+
+# target to build an object file
+classes\Point.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Point.cpp.obj
+.PHONY : classes\Point.cpp.obj
+
+classes\Point.i: classes\Point.cpp.i
+
+.PHONY : classes\Point.i
+
+# target to preprocess a source file
+classes\Point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Point.cpp.i
+.PHONY : classes\Point.cpp.i
+
+classes\Point.s: classes\Point.cpp.s
+
+.PHONY : classes\Point.s
+
+# target to generate assembly for a file
+classes\Point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Point.cpp.s
+.PHONY : classes\Point.cpp.s
+
+classes\Transformation.obj: classes\Transformation.cpp.obj
+
+.PHONY : classes\Transformation.obj
+
+# target to build an object file
+classes\Transformation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Transformation.cpp.obj
+.PHONY : classes\Transformation.cpp.obj
+
+classes\Transformation.i: classes\Transformation.cpp.i
+
+.PHONY : classes\Transformation.i
+
+# target to preprocess a source file
+classes\Transformation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Transformation.cpp.i
+.PHONY : classes\Transformation.cpp.i
+
+classes\Transformation.s: classes\Transformation.cpp.s
+
+.PHONY : classes\Transformation.s
+
+# target to generate assembly for a file
+classes\Transformation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\Transformation.cpp.s
+.PHONY : classes\Transformation.cpp.s
+
+classes\catmull.obj: classes\catmull.cpp.obj
+
+.PHONY : classes\catmull.obj
+
+# target to build an object file
+classes\catmull.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\catmull.cpp.obj
+.PHONY : classes\catmull.cpp.obj
+
+classes\catmull.i: classes\catmull.cpp.i
+
+.PHONY : classes\catmull.i
+
+# target to preprocess a source file
+classes\catmull.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\catmull.cpp.i
+.PHONY : classes\catmull.cpp.i
+
+classes\catmull.s: classes\catmull.cpp.s
+
+.PHONY : classes\catmull.s
+
+# target to generate assembly for a file
+classes\catmull.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\catmull.cpp.s
+.PHONY : classes\catmull.cpp.s
+
+classes\matrizes.obj: classes\matrizes.cpp.obj
+
+.PHONY : classes\matrizes.obj
+
+# target to build an object file
+classes\matrizes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\matrizes.cpp.obj
+.PHONY : classes\matrizes.cpp.obj
+
+classes\matrizes.i: classes\matrizes.cpp.i
+
+.PHONY : classes\matrizes.i
+
+# target to preprocess a source file
+classes\matrizes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\matrizes.cpp.i
+.PHONY : classes\matrizes.cpp.i
+
+classes\matrizes.s: classes\matrizes.cpp.s
+
+.PHONY : classes\matrizes.s
+
+# target to generate assembly for a file
+classes\matrizes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\matrizes.cpp.s
+.PHONY : classes\matrizes.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -180,33 +288,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\main.cpp.s
 .PHONY : main.cpp.s
-
-matrizes.obj: matrizes.cpp.obj
-
-.PHONY : matrizes.obj
-
-# target to build an object file
-matrizes.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\matrizes.cpp.obj
-.PHONY : matrizes.cpp.obj
-
-matrizes.i: matrizes.cpp.i
-
-.PHONY : matrizes.i
-
-# target to preprocess a source file
-matrizes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\matrizes.cpp.i
-.PHONY : matrizes.cpp.i
-
-matrizes.s: matrizes.cpp.s
-
-.PHONY : matrizes.s
-
-# target to generate assembly for a file
-matrizes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\matrizes.cpp.s
-.PHONY : matrizes.cpp.s
 
 tinyxml2-master\tinyxml2.obj: tinyxml2-master\tinyxml2.cpp.obj
 
@@ -244,15 +325,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... engine
-	@echo ... classes.obj
-	@echo ... classes.i
-	@echo ... classes.s
+	@echo ... classes/Group.obj
+	@echo ... classes/Group.i
+	@echo ... classes/Group.s
+	@echo ... classes/Point.obj
+	@echo ... classes/Point.i
+	@echo ... classes/Point.s
+	@echo ... classes/Transformation.obj
+	@echo ... classes/Transformation.i
+	@echo ... classes/Transformation.s
+	@echo ... classes/catmull.obj
+	@echo ... classes/catmull.i
+	@echo ... classes/catmull.s
+	@echo ... classes/matrizes.obj
+	@echo ... classes/matrizes.i
+	@echo ... classes/matrizes.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... matrizes.obj
-	@echo ... matrizes.i
-	@echo ... matrizes.s
 	@echo ... tinyxml2-master/tinyxml2.obj
 	@echo ... tinyxml2-master/tinyxml2.i
 	@echo ... tinyxml2-master/tinyxml2.s

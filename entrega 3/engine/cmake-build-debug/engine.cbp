@@ -86,19 +86,37 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Group.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes.h">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Point.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/matrizes.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Group.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Point.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Transformation.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/catmull.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/matrizes.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp">
-			<Option target="engine"/>
-		</Unit>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/matrizes.cpp">
-			<Option target="engine"/>
-		</Unit>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/matrizes.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp">

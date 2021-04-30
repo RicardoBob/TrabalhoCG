@@ -1601,10 +1601,10 @@ public:
     	Convenience method to query the value of a child text node. This is probably best
     	shown by example. Given you have a document is this form:
     	@verbatim
-    		<point>
+    		<Point>
     			<x>1</x>
     			<y>1.4</y>
-    		</point>
+    		</Point>
     	@endverbatim
 
     	The QueryIntText() and similar functions provide a safe and easier way to get to the

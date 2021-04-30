@@ -99,63 +99,126 @@ CMakeFiles\engine.dir\tinyxml2-master\tinyxml2.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\tinyxml2-master\tinyxml2.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\tinyxml2-master\tinyxml2.cpp"
 <<
 
-CMakeFiles\engine.dir\classes.cpp.obj: CMakeFiles\engine.dir\flags.make
-CMakeFiles\engine.dir\classes.cpp.obj: ..\classes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/classes.cpp.obj"
+CMakeFiles\engine.dir\classes\matrizes.cpp.obj: CMakeFiles\engine.dir\flags.make
+CMakeFiles\engine.dir\classes\matrizes.cpp.obj: ..\classes\matrizes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/classes/matrizes.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\classes.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\classes\matrizes.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\matrizes.cpp"
 <<
 
-CMakeFiles\engine.dir\classes.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/classes.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\classes.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes.cpp"
+CMakeFiles\engine.dir\classes\matrizes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/classes/matrizes.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\classes\matrizes.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\matrizes.cpp"
 <<
 
-CMakeFiles\engine.dir\classes.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/classes.cpp.s"
+CMakeFiles\engine.dir\classes\matrizes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/classes/matrizes.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\classes.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\classes\matrizes.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\matrizes.cpp"
 <<
 
-CMakeFiles\engine.dir\matrizes.cpp.obj: CMakeFiles\engine.dir\flags.make
-CMakeFiles\engine.dir\matrizes.cpp.obj: ..\matrizes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/matrizes.cpp.obj"
+CMakeFiles\engine.dir\classes\catmull.cpp.obj: CMakeFiles\engine.dir\flags.make
+CMakeFiles\engine.dir\classes\catmull.cpp.obj: ..\classes\catmull.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/classes/catmull.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\matrizes.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\matrizes.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\classes\catmull.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\catmull.cpp"
 <<
 
-CMakeFiles\engine.dir\matrizes.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/matrizes.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\matrizes.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\matrizes.cpp"
+CMakeFiles\engine.dir\classes\catmull.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/classes/catmull.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\classes\catmull.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\catmull.cpp"
 <<
 
-CMakeFiles\engine.dir\matrizes.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/matrizes.cpp.s"
+CMakeFiles\engine.dir\classes\catmull.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/classes/catmull.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\matrizes.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\matrizes.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\classes\catmull.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\catmull.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Group.cpp.obj: CMakeFiles\engine.dir\flags.make
+CMakeFiles\engine.dir\classes\Group.cpp.obj: ..\classes\Group.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/classes/Group.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\classes\Group.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Group.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/classes/Group.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\classes\Group.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Group.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/classes/Group.cpp.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\classes\Group.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Group.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Transformation.cpp.obj: CMakeFiles\engine.dir\flags.make
+CMakeFiles\engine.dir\classes\Transformation.cpp.obj: ..\classes\Transformation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/classes/Transformation.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\classes\Transformation.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Transformation.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Transformation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/classes/Transformation.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\classes\Transformation.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Transformation.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Transformation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/classes/Transformation.cpp.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\classes\Transformation.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Transformation.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Point.cpp.obj: CMakeFiles\engine.dir\flags.make
+CMakeFiles\engine.dir\classes\Point.cpp.obj: ..\classes\Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/classes/Point.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\engine.dir\classes\Point.cpp.obj /FdCMakeFiles\engine.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Point.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/classes/Point.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\engine.dir\classes\Point.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Point.cpp"
+<<
+
+CMakeFiles\engine.dir\classes\Point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/classes/Point.cpp.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\engine.dir\classes\Point.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\classes\Point.cpp"
 <<
 
 # Object files for target engine
 engine_OBJECTS = \
 "CMakeFiles\engine.dir\main.cpp.obj" \
 "CMakeFiles\engine.dir\tinyxml2-master\tinyxml2.cpp.obj" \
-"CMakeFiles\engine.dir\classes.cpp.obj" \
-"CMakeFiles\engine.dir\matrizes.cpp.obj"
+"CMakeFiles\engine.dir\classes\matrizes.cpp.obj" \
+"CMakeFiles\engine.dir\classes\catmull.cpp.obj" \
+"CMakeFiles\engine.dir\classes\Group.cpp.obj" \
+"CMakeFiles\engine.dir\classes\Transformation.cpp.obj" \
+"CMakeFiles\engine.dir\classes\Point.cpp.obj"
 
 # External object files for target engine
 engine_EXTERNAL_OBJECTS =
 
 engine.exe: CMakeFiles\engine.dir\main.cpp.obj
 engine.exe: CMakeFiles\engine.dir\tinyxml2-master\tinyxml2.cpp.obj
-engine.exe: CMakeFiles\engine.dir\classes.cpp.obj
-engine.exe: CMakeFiles\engine.dir\matrizes.cpp.obj
+engine.exe: CMakeFiles\engine.dir\classes\matrizes.cpp.obj
+engine.exe: CMakeFiles\engine.dir\classes\catmull.cpp.obj
+engine.exe: CMakeFiles\engine.dir\classes\Group.cpp.obj
+engine.exe: CMakeFiles\engine.dir\classes\Transformation.cpp.obj
+engine.exe: CMakeFiles\engine.dir\classes\Point.cpp.obj
 engine.exe: CMakeFiles\engine.dir\build.make
 engine.exe: C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glut\glut32.lib
 engine.exe: C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glew\glew32.lib
 engine.exe: CMakeFiles\engine.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable engine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable engine.exe"
 	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\engine.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\engine.dir\objects1.rsp @<<
  /out:engine.exe /implib:engine.lib /pdb:"C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 3\engine\cmake-build-debug\engine.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  opengl32.lib glu32.lib C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glut\glut32.lib C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glew\glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

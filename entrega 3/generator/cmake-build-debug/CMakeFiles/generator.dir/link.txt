@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/generator.dir/main.cpp.o CMakeFiles/generator.dir/modelos/bezier.cpp.o CMakeFiles/generator.dir/modelos/box.cpp.o CMakeFiles/generator.dir/modelos/plane.cpp.o CMakeFiles/generator.dir/modelos/cone.cpp.o CMakeFiles/generator.dir/modelos/sphere.cpp.o -o generator 
