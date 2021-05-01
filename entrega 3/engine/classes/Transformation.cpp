@@ -4,6 +4,8 @@
 
 #include "../headers/Transformation.h"
 #include <GL/glew.h>
+
+#include <iostream>
 #include "../headers/catmull.h"
 
 using namespace std;
@@ -17,19 +19,9 @@ Translate Transformation :: getTranslate(){ return translate; }
 Rotate Transformation :: getRotate(){ return rotate; }
 Scale Transformation :: getScale(){ return scale; }
 void Transformation ::apply(){
-    float time = (glutGet(GLUT_ELAPSED_TIME))/((float) 1000);
 
-    if (translate.getTime() != 0.0f){
-        float pos[3];
-        float deriv[3];
-        float gt = (translate.getCurve().size()+time)/translate.getTime();
-        renderCatmullRomCurve(translate.getCurve());
-        getGlobalCatmullRomPoint(gt,pos,deriv,translate.getCurve());
-        glTranslatef(pos[0],pos[1],pos[2]);
-    }
-    else {
-        glTranslatef(translate.getX(),translate.getY(),translate.getZ());
-    }
+
+    float time = (glutGet(GLUT_ELAPSED_TIME))/((float) 1000);
 
     if(rotate.getTime() == 0.0) {
         glRotatef(rotate.getAngle(), rotate.getX(), rotate.getY(), rotate.getZ());
@@ -38,29 +30,45 @@ void Transformation ::apply(){
         glRotatef((time/rotate.getTime())*360, rotate.getX(), rotate.getY(), rotate.getZ());
     }
 
+    if (translate.getTime() != 0.0f){
+
+        float pos[4];
+        float deriv[4];
+        float X[4];
+        float Y[4] = {0,1,0};
+        float Z[4];
+
+        float gt = (translate.getCurve().size()*3.0+time)/translate.getTime();
+
+        //cout  << gt << endl; //chega aqui
+
+        renderCatmullRomCurve(translate.getCurve());
+        getGlobalCatmullRomPoint(gt,pos,deriv,translate.getCurve());
+
+        //cout  << pos[0]  << pos[1]<<pos[2] << endl;
+        glTranslatef(pos[0],pos[1],pos[2]);
+
+        X[0] = deriv[0]; X[1] = deriv[1]; X[2] = deriv[2]; X[3] = deriv[3];
+        normalize(X);
+        cross(X, Y, Z);
+
+        // normalize ZZ and get YY
+        normalize(Z);
+        cross(Z, X, Y);
+
+        // normalize YY and up = YY
+        normalize(Y);
+        //memcpy(up, Y, 3 * sizeof(float));
+
+        // build rotation matrix
+        float m[4][4];
+        buildRotMatrix(X, Y, Z, (float*)m);
+        glMultMatrixf((float*)m);
+    }
+    else {
+        glTranslatef(translate.getX(),translate.getY(),translate.getZ());
+    }
+
     glScalef(scale.getX(),scale.getY(),scale.getZ());
 }
-
-/*
-        int pointer =i*grupos[i].getVertices().size()/3;
-
-        //Desenhar os corpos com os vbos e texturas
-        glBindBuffer(GL_ARRAY_BUFFER,verticesVBO[0]);
-        glVertexPointer(3,GL_FLOAT,0,0);
-
-        glBindBuffer(GL_ARRAY_BUFFER,normaisVBO[0]);
-        glNormalPointer(GL_FLOAT,0,0);
-
-        glBindTexture(GL_TEXTURE_2D, idsTextura[i]);
-        glBindBuffer(GL_ARRAY_BUFFER,texturaVBO[0]);
-        glTexCoordPointer(2,GL_FLOAT,0,0);
-
-        glDrawArrays(GL_TRIANGLES,pointer,grupos[i].getVertices().size()*3);
-        glBindTexture(GL_TEXTURE_2D, 0);
-
-        glPopMatrix();
-
-    }
-}
- */
 

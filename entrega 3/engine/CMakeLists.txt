@@ -5,7 +5,7 @@ PROJECT(engine)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(${PROJECT_NAME} main.cpp tinyxml2-master/tinyxml2.cpp tinyxml2-master/tinyxml2.h classes/matrizes.cpp headers/matrizes.h classes/catmull.cpp  headers/catmull.h classes/Group.cpp headers/Group.h classes/Transformation.cpp  headers/Transformation.h classes/Point.cpp headers/Point.h)
+add_executable(${PROJECT_NAME} main.cpp tinyxml2-master/tinyxml2.cpp tinyxml2-master/tinyxml2.h classes/catmull.cpp  headers/catmull.h classes/Group.cpp headers/Group.h classes/Transformation.cpp  headers/Transformation.h classes/Point.cpp headers/Point.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})

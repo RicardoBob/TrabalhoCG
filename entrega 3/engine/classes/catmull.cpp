@@ -1,9 +1,10 @@
-#include "../headers/matrizes.h"
 #include <GL/glew.h>
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <vector>
+#include <iostream>
 
+using namespace std;
 
 //Catmull
 
@@ -52,79 +53,74 @@ void multMatrixVector(float *m, float *v, float *res) {
 }
 
 //t = tessellation , vecP = vector de pontos de translacao
-void getCatmullRomPoint(float t, vector<vector<float>>vecP, float *pos, float *deriv) {
+void getCatmullRomPoint(float t, vector<vector<float>>vecP,  float* pos, float* deriv) {
+
 
     // catmull-rom matrix
-    Matriz catmull = Matriz::MatrizCatmull();
+    float m[4][4] = {{-0.5f, 1.5f,  -1.5f, 0.5f},
+                     {1.0f,  -2.5f, 2.0f,  -0.5f},
+                     {-0.5f, 0.0f,  0.5f,  0.0f},
+                     {0.0f,  1.0f,  0.0f,  0.0f}};
 
-    // compute A = M * P
-    Matriz P =  Matriz(4,3);
-    P.adicionaColunas(vecP);
-    Matriz A = catmull * P;
+    float T[4] = {t * t * t, t * t, t, 1};
+    float Td[4] = {3 * t * t, 2 * t, 1, 0};
+    float A[4][4];
 
+    // Compute A = M * P
     // compute pos = T * A;
-    vector<float> vpos;
-    vector<float> tempT = {t*t*t, t*t, t,1};
-    Matriz tempTMatriz = Matriz(1,4);
-    tempTMatriz.adicionaColuna(tempT,0);
-    vpos = (tempTMatriz*A).getLinV(0);
-    for (int i = 0; i<4; i++){
-        pos[i] = vpos[i];
+    // compute pos = T' * A;
+    for (int i = 0; i < 3; i++) {
+        float p[4] = {vecP[0][i], vecP[1][i], vecP[2][i], vecP[3][i]};
+        multMatrixVector((float *) m, p, A[i]);
+        pos[i] = A[i][0] * T[0] + A[i][1] * T[1] + A[i][2] * T[2] + A[i][3] * T[3];
+        deriv[i] = A[i][0] * Td[0] + A[i][1] * Td[1] + A[i][2] * Td[2] + A[i][3] * Td[3];
     }
-
-    // compute deriv = T' * A
-    vector<float> vderiv;
-    vector<float> tempTDeriv = {3*t*t, 2*t, 1,0};
-    Matriz tempTMatrizDeriv = Matriz(4,1);
-    tempTMatriz.adicionaLinha(tempTDeriv,0);
-    vderiv = (tempTMatrizDeriv*A).getLinV(0);
-    for (int i = 0; i<4; i++){
-        deriv[i] = vderiv[i];
-    }
-
 }
 
 
 // given  global t, returns the Point in the curve
-void getGlobalCatmullRomPoint(float gt, float *pos, float *deriv, vector<float> pontosControlo) {
+void getGlobalCatmullRomPoint(float gt, float* pos, float* deriv, vector<vector<float>> pontosControlo) {
 
     int nPontos = pontosControlo.size();
+
     float t = gt * nPontos; // this is the real global t
     int index = floor(t);  // which segment
     t = t - index; // where within  the segment
 
     // indices store the points
+
     int indices[4];
     indices[0] = (index + nPontos-1)%nPontos;
     indices[1] = (indices[0]+1)%nPontos;
     indices[2] = (indices[1]+1)%nPontos;
     indices[3] = (indices[2]+1)%nPontos;
 
-    vector<vector<float>>vecP;
-    vector<float>vecPAux;
-    for (int i = 0; i<4;i++ ){
-        vecPAux.push_back(pontosControlo[indices[i]]);
-        vecP.push_back(vecPAux);
-        vecPAux.clear();
-    }
 
-    getCatmullRomPoint(t,vecP, pos, deriv);
+    vector <vector<float>> pvec = {pontosControlo[indices[0]], pontosControlo[indices[1]], pontosControlo[indices[2]], pontosControlo[indices[3]]};
+
+
+    getCatmullRomPoint(t,pvec, pos, deriv);
+
+
+
+    //getCatmullRomPoint(t,pontosControlo[indices[i]], pos, deriv);
 }
 
-void renderCatmullRomCurve(vector<float> PontosControlo) {
+void renderCatmullRomCurve(vector<vector<float>>PontosControlo) {
 
 // draw curve using line segments with GL_LINE_LOOP
-    float pos[3];
-    float deriv[3];
+    float pos[4];
+    float deriv[4];
 
     float gt = 0;
 
     glDisable(GL_LIGHTING);
     glEnable(GL_COLOR_MATERIAL);
     glBegin(GL_LINE_LOOP);
+
         for (int i = 0; i < 100; i++) {
             getGlobalCatmullRomPoint(gt, pos, deriv, PontosControlo);
-            glVertex3f(pos[0], pos[1],pos[2]);
+            glVertex3f(pos[0],pos[1],pos[2]);
             gt += 0.01;
         }
     glEnd();
@@ -134,31 +130,6 @@ void renderCatmullRomCurve(vector<float> PontosControlo) {
 
 
 /*
-void draw(){
-    static float time = 0;
-    float pos[3], deriv[3];
-    renderCatmullRomCurve(pontosControlo do XML)
 
-    glPushMatrix();
-    getGlobalCatmullRomPoint(time,pos,deriv,pontosControlo);
-    glTranslatef(pos[0],pos[1],pos[2]);
-    glScalef(0.5,0.5, 0.5);
-    glutWireTeapot(1);
-    glPopMatrix();
-///////----
-    void Translate :: apply(){
-    if(time == 0) {
-        glTranslatef(x, y, z);
-    }
-    else{
-        float tempo = glutGet(GLUT_ELAPSED_TIME)/time;
-        float pos[3];
-        float deriv[3];
-        renderCatmullRomCurve(curve);
-        getGlobalCatmullRomPoint(tempo,pos,deriv,curve);
-        glTranslatef(pos[0],pos[1],pos[2]);
-    }
-}
 
-}
  */

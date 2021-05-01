@@ -43,7 +43,7 @@ public:
 
     vector<vector<float>> getMatrizVetores();
 
-    void setMatriz(vector<vector<float>> &NovaMatriz);
+    void setMatriz(vector<vector<float>> NovaMatriz);
 
     vector<float> getLinV(int l);
 
@@ -56,6 +56,8 @@ public:
     void adicionaLinha(vector<float> linha, int pos);
 
     void adicionaLinhas(vector<vector<float>> linhas);
+
+    void toString();
 };
 
 

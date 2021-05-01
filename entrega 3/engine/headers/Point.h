@@ -40,7 +40,7 @@ public:
     void setCurve(vector<float> curve);
 
     float getTime();
-    vector<float> getCurve();
+    vector<vector<float>> getCurve();
 };
 
 class Scale : public Point{

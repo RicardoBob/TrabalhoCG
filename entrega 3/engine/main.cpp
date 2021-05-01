@@ -189,7 +189,6 @@ File readFile(string file){
     //criar vbo
     glGenBuffers(1,&(vbo->index));
 
-
     //copiar vbo para a grafica
     glBindBuffer(GL_ARRAY_BUFFER,vbo->index);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (vbo->vertex).size(), vbo->vertex.data(),GL_STATIC_DRAW);
@@ -218,7 +217,6 @@ void drawEixos(){
 void groupParser(XMLElement *grupo, Tree parentNode){
     //inicializar vars
     grupo = grupo->FirstChildElement();
-
     Group* g = new Group();
 
     Translate trans = Translate();
@@ -227,7 +225,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     vector<string> ficheiros;
 
     while (grupo != nullptr){
-        ficheiros.clear();
         float x = 0.0f;
         float y = 0.0f;
         float z = 0.0f;
@@ -249,6 +246,7 @@ void groupParser(XMLElement *grupo, Tree parentNode){
                 grupo->QueryFloatAttribute("Z", &z);
             }
             if(grupo->Attribute("time")) {
+
                 vector<float> vertices;
                 grupo->QueryFloatAttribute("time", &timeTran);
                 XMLElement* ponto = grupo->FirstChildElement("point");
@@ -265,7 +263,10 @@ void groupParser(XMLElement *grupo, Tree parentNode){
                     vertices.push_back(x);
                     vertices.push_back(y);
                     vertices.push_back(z);
+
+                    ponto = ponto->NextSiblingElement();
                 }
+
                 trans.setTime(timeTran);
                 trans.setCurve(vertices);
             }
@@ -326,14 +327,17 @@ void groupParser(XMLElement *grupo, Tree parentNode){
                 if(nome != nullptr) {
                     file = string(nome);
                     ficheiros.push_back(file);
+
                 }
                 modelos = modelos->NextSiblingElement();
             }
         }
 
+
         //Subgrupos
         if(strcmp(grupo->Value(),"group") == 0){
             //inicializar a subarvore do grupo para ser adicionada na arvore de classes
+
             Tree subTree = new struct node;
             subTree->next.clear();
             groupParser(grupo, subTree);
@@ -341,6 +345,7 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
         grupo = grupo->NextSiblingElement();
     }
+
     Transformation transformation = Transformation(trans,rot,sca);
     g->setTransformation(transformation);
     g->setFile(ficheiros);
@@ -369,9 +374,11 @@ int readXML(){
         //inicializar a subarvore do grupo para ser adicionada na arvore de classes
         Tree subTree = new struct node;
         subTree->next.clear();
-        classTree->next.push_back(subTree);
         groupParser(grupo,subTree);
+        classTree->next.push_back(subTree);
+
         grupo = grupo->NextSiblingElement();
+
     }
     return 1;
 }
@@ -379,6 +386,7 @@ int readXML(){
 
 int readTree(Tree tree){
     if(tree == nullptr){ return -1;}
+
     for(node *n : tree->next) {
         glPushMatrix();
         n->g->getTransformation().apply();
@@ -405,9 +413,13 @@ int readTree(Tree tree){
             glDrawArrays(GL_TRIANGLES, 0, aux->size);
         }
 
+
+
         readTree(n);
         glPopMatrix();
+
     }
+
     return 1;
 }
 
@@ -426,7 +438,6 @@ void renderScene() {
     // put the geometric transformations here
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     // put drawing instructions here
-
 
     //------------FPS
 
@@ -475,6 +486,8 @@ int main(int argc, char **argv) {
     glewInit();
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
+    glEnable(GL_NORMALIZE);
+    glShadeModel (GL_SMOOTH);
     glEnableClientState(GL_VERTEX_ARRAY);
 
 // enter GLUT's main cycle

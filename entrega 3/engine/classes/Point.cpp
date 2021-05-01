@@ -4,10 +4,11 @@
 
 #include "../headers/Point.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-Point :: Point(){ x = y = z = 0.0f; }
+Point :: Point(){ x = 0.0f ;y =0.0f ; z = 0.0f; }
 Point ::Point(float x1, float y1, float z1) { x = x1 ; y = y1; z = z1; }
 float Point ::getX(){return x ;}
 float Point ::getY(){return y;}
@@ -23,7 +24,21 @@ Translate :: Translate(float x, float y, float z){ setX(x); setY(y); setZ(z); se
 void Translate :: setTime(float a){ time = a; }
 void Translate :: setCurve(vector<float>curva){ curve = curva; }
 float Translate :: getTime(){ return time; }
-vector<float> Translate :: getCurve(){ return curve; }
+vector<vector<float>> Translate :: getCurve(){
+
+    vector<vector<float>> curva;
+
+    for(int i = 0 ; i < (curve.size()/3) ;i++  ){ //i entre 0 e 4
+        vector<float> vaux;
+        for (int j = 0; j <3 ; j++){ //j entre 0 e 3
+            float aux = curve.at((i*3)+j);
+            vaux.push_back(aux);
+        }
+        curva.push_back(vaux);
+        vaux.clear();
+    }
+    return curva;
+}
 
 
 Scale :: Scale() : Point(1,1,1) {}

@@ -11,6 +11,8 @@ C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp
 C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Transformation.h
 GL/glew.h
 -
+iostream
+-
 ../headers/catmull.h
 C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/catmull.h
 

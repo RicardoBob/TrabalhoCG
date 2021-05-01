@@ -5,6 +5,10 @@
 #include "../headers/matrizes.h"
 
 #include <utility>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 //Construtor vazio
 //Construtor de copia
@@ -67,7 +71,7 @@ Matriz Matriz::MatrizCatmull() {
 //Adicionar linhas e colunas a uma matriz , da jeito para preencher com os vetores do xml
 
 void Matriz::adicionaLinha(vector<float>linha , int pos){
-    this->matriz.at(pos) = std::move(linha);
+    this->matriz[pos] = (linha);
 }
 
 void Matriz::adicionaLinhas(vector<vector<float>>linhas){
@@ -78,47 +82,46 @@ void Matriz::adicionaLinhas(vector<vector<float>>linhas){
 
 void Matriz::adicionaColuna(vector<float>coluna , int pos){ //virar ao contrario, meter como linha e voltar a virar
     Matriz temp = this->transposta();
-    temp.adicionaLinha(std::move(coluna),pos);
-    vector<vector<float>> vecTemp = temp.transposta().getMatrizVetores();
+    temp.adicionaLinha(coluna,pos);
+    vector<vector<float>> vecTemp = temp.getMatrizVetores();
     this->setMatriz(vecTemp);
 }
 
 void Matriz::adicionaColunas(vector<vector<float>>colunas){ //colunas todas ao contrario = matriz normal
 
-    this->setMatriz(colunas);
-    vector<vector<float>>temp = this->transposta().getMatrizVetores();
-    this->setMatriz(temp);
+    for(int i = 0;i<colunas.size();i++){
+        vector <float> col = {colunas[i][0],colunas[i][1],colunas[i][2]};
+        this->matriz[i]=col;
+    }
+
 }
-
-
-
-
-
-
 
 
 
 //multiplicar Matriz A Matriz B  C = B * A
 
-Matriz Matriz::operator*(Matriz & M) {
-    Matriz mult(nlinhas,M.getColunas());
-    if(ncolunas == M.getLinhas())
+Matriz Matriz::operator*(Matriz & B){
+
+    Matriz multip(this->nlinhas,B.getColunas());
+    if(this->ncolunas == B.getLinhas())
     {
-        int i,j,x;
-        float aux;
-        for(i= 0;i < nlinhas; i++ ){
-            for(j = 0; j < M.getColunas();j++){
-                aux = 0.0;
-                for(x = 0; x < ncolunas;x++)
+        unsigned i,j,k;
+        float temp = 0.0;
+        for (i = 0; i < this->nlinhas; i++)
+        {
+            for (j = 0; j < B.getColunas(); j++)
+            {
+                temp = 0.0;
+                for (k = 0; k < this->ncolunas; k++)
                 {
-                    aux += matriz[i][x] * M(x,j);
+                    temp += this->matriz[i][k] * B(k,j);
                 }
-                mult(i,j) = aux;
+                multip(i,j) = temp;
             }
         }
-        return mult;
+        return multip;
     }
-
+    else return -1;
 }
 
 
@@ -130,12 +133,16 @@ float &Matriz::operator()(const int lin, const int col) {
 
 Matriz Matriz::transposta() {
 
-    Matriz T(ncolunas,nlinhas);
+    //cout << this->toString() << endl;
+    Matriz T = Matriz(ncolunas,nlinhas);
+    //this->toString();
+
     for(int i = 0; i < ncolunas;i++ ){
         for (int j = 0; j < nlinhas;j++ ){
             T(i,j) = this->matriz[j][i];
         }
     }
+
     return T;
 }
 
@@ -166,8 +173,19 @@ vector<vector<float>> Matriz::getMatrizVetores() {
 }
 
 //set matriz
-void Matriz::setMatriz( vector<vector<float>> &NovaMatriz) {
-    matriz = NovaMatriz;
+void Matriz::setMatriz( vector<vector<float>> NovaMatriz) {
 
+    this->matriz = NovaMatriz;
+    //this->toString();
+}
 
+void Matriz::toString(){
+
+    for(int i = 0; i < nlinhas;i++ ){
+        for (int j = 0; j < ncolunas;j++ ){
+            cout  <<  this->matriz[i][j]<< " ";//Not here
+
+        }
+        cout<< " "<< endl;
+    }
 }

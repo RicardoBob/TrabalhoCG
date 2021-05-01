@@ -12,307 +12,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a475d398-e8f7-480b-8ce5-499f3a9245da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/entrega 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/entrega 1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/engine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/engine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Point.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Point.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Transformation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Transformation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/catmull.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/catmull.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/matrizes.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/matrizes.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/matrizes.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/Point.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/Point.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/catmull.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/catmull.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/matrizes.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrizes.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrizes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/.github/workflows/ci-unixish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/.github/workflows/ci-unixish.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/Config.cmake.in" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/Config.cmake.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/appveyor.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/biicode.conf" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/biicode.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/cmake_uninstall.cmake.in" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/cmake_uninstall.cmake.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/contrib/html5-printer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/contrib/html5-printer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/_example_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/_example_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/_example_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/_example_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/_example_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/_example_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/_example_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/_example_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/annotated.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/annotated.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_attribute-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_attribute-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_attribute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_comment-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_comment-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_const_handle-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_const_handle-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_const_handle.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_const_handle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_declaration-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_declaration-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_declaration.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_declaration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_document-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_document-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_document.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_document.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_element-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_element-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_element.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_handle-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_handle-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_handle.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_handle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_node-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_node-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_node.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_node.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_printer-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_printer-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_printer.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_printer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_text-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_text-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_text.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_text.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_unknown-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_unknown-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_unknown.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_unknown.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_visitor-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_visitor-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_visitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/classtinyxml2_1_1_x_m_l_visitor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/doxygen.css" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/doxygen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/dynsections.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/dynsections.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_b.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_b.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_c.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_c.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_d.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_d.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_e.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_e.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_f.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_f.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_b.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_b.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_c.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_c.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_d.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_d.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_e.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_e.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_f.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_f.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_g.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_g.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_h.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_h.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_i.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_i.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_l.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_l.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_n.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_n.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_o.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_o.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_p.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_p.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_q.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_q.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_r.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_r.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_s.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_s.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_t.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_t.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_u.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_u.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_v.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_v.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_x.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_func_x.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_g.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_g.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_h.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_h.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_i.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_i.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_l.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_l.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_n.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_n.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_o.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_o.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_p.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_p.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_q.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_q.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_r.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_r.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_s.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_s.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_t.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_t.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_u.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_u.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_v.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_v.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/functions_x.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/functions_x.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/hierarchy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/menudata.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/menudata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/pages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_0.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_10.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_11.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_11.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_12.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_12.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_13.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_13.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_13.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_8.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_9.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_a.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_a.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_a.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_b.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_b.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_b.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_b.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_c.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_c.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_c.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_c.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_d.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_d.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_d.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_d.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_e.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_e.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_e.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_e.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_f.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_f.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_f.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/all_f.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/classes_0.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/classes_0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/classes_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/classes_0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_0.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_10.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_11.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_11.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_12.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_12.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_13.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_13.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_13.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_7.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_8.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_9.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_a.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_a.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_a.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_b.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_b.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_b.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_b.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_c.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_c.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_c.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_c.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_d.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_d.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_d.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_d.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_e.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_e.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_e.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_e.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_f.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_f.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_f.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/functions_f.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/nomatches.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/nomatches.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_0.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/pages_4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/search/searchdata.js" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/search/searchdata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/docs/tinyxml2_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/docs/tinyxml2_8h_source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/dox" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/dox" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/meson.build" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/meson.build" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/meson_options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/meson_options.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/premake5.lua" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/premake5.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/resources/dream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/resources/dream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/resources/utf8test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/resources/utf8test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/resources/utf8testverify.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/resources/utf8testverify.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/setversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/setversion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2.h" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2.pc.in" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2.pc.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/test.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/test.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/test.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/test.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2-cbp/README" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2-cbp/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2-cbp/tinyxml2-cbp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2-cbp/tinyxml2-cbp.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.sln" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/tinyxml2/tinyxml2.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinyxml2-master/xmltest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2-master/xmltest.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/.idea/generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/.idea/generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/bezier.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/bezier.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/beziercurve.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/beziercurve.3d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/box.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/box.3d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/cone.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/cone.3d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/plane.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/plane.3d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/sphere.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/sphere.3d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/bezier.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/bezier.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/box.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/box.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/cone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/cone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/modelos.h" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/modelos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/plane.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/sphere.cpp" afterDir="false" />
     </list>
     <list id="5d00c843-3e90-4f62-a5fd-ce471feaa770" name="Changes by Bruna" comment="" />
-    <list id="75aceced-529d-4fab-b58b-785754d25cec" name="Changes by Guilherme" comment="" />
+    <list id="75aceced-529d-4fab-b58b-785754d25cec" name="Changes by Guilherme" comment="">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.xml" afterDir="false" />
+    </list>
     <list id="0297fbbb-2317-4be9-a0f0-8200da9103c9" name="Changes by Igor" comment="" />
     <list id="de60e777-0d32-4648-96f0-913742789edd" name="Changes by igor1" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
+    <list id="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" name="Changes by ricardo" comment="">
+      <change beforePath="$PROJECT_DIR$/classes/Transformation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Transformation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
+    <list id="fe9d72a1-a1ee-4e1a-bbcd-e2210862769f" name="Changes by UserLen" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -327,41 +63,47 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/classes/Transformation.cpp">
+      <ranges>
+        <range start1="6" end1="6" start2="6" end2="8" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="19" end1="19" start2="21" end2="23" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="21" end1="21" start2="25" end2="32" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="22" end1="25" start2="33" end2="44" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="27" end1="27" start2="46" end2="48" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="28" end1="28" start2="49" end2="66" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="33" end1="40" start2="71" end2="71" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="42" end1="65" start2="73" end2="73" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+      </ranges>
+    </file>
     <file path="$PROJECT_DIR$/main.cpp">
       <ranges>
-        <range start1="20" end1="22" start2="20" end2="21" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="33" end1="34" start2="32" end2="32" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="47" end1="48" start2="45" end2="45" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="202" end1="334" start2="199" end2="199" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="355" end1="355" start2="220" end2="227" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="357" end1="357" start2="229" end2="230" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="361" end1="361" start2="234" end2="236" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="363" end1="363" start2="238" end2="239" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="374" end1="374" start2="250" end2="271" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="375" end1="380" start2="272" end2="275" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="381" end1="381" start2="276" end2="277" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="393" end1="398" start2="289" end2="292" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="414" end1="419" start2="308" end2="318" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="426" end1="427" start2="325" end2="326" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="428" end1="428" start2="327" end2="328" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="429" end1="434" start2="329" end2="329" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="442" end1="444" start2="337" end2="337" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="450" end1="450" start2="343" end2="347" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="451" end1="451" start2="348" end2="349" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="458" end1="461" start2="356" end2="364" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="463" end1="468" start2="366" end2="366" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="469" end1="474" start2="367" end2="367" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="477" end1="479" start2="370" end2="370" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="480" end1="481" start2="371" end2="371" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="482" end1="482" start2="372" end2="373" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="490" end1="505" start2="381" end2="384" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="506" end1="511" start2="385" end2="391" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="517" end1="519" start2="397" end2="399" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="522" end1="526" start2="402" end2="405" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="527" end1="527" start2="406" end2="409" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="534" end1="536" start2="416" end2="416" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="548" end1="557" start2="428" end2="428" changelist="de60e777-0d32-4648-96f0-913742789edd" />
-        <range start1="576" end1="578" start2="447" end2="447" changelist="de60e777-0d32-4648-96f0-913742789edd" />
+        <range start1="190" end1="191" start2="190" end2="190" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="220" end1="220" start2="219" end2="225" changelist="de60e777-0d32-4648-96f0-913742789edd" />
+        <range start1="221" end1="228" start2="226" end2="226" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="229" end1="230" start2="227" end2="227" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="251" end1="251" start2="248" end2="249" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="267" end1="267" start2="265" end2="267" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="268" end1="268" start2="268" end2="269" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="328" end1="328" start2="329" end2="330" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="332" end1="332" start2="334" end2="335" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="336" end1="336" start2="339" end2="340" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="343" end1="343" start2="347" end2="348" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="371" end1="371" start2="376" end2="377" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="372" end1="373" start2="378" end2="379" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="374" end1="374" start2="380" end2="381" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="381" end1="381" start2="388" end2="389" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="407" end1="407" start2="415" end2="417" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="409" end1="409" start2="419" end2="420" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="410" end1="410" start2="421" end2="422" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="428" end1="429" start2="440" end2="440" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="477" end1="477" start2="488" end2="490" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/cmake-build-debug/config.xml">
+      <ranges>
+        <range start1="6" end1="7" start2="6" end2="7" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="13" end1="14" start2="13" end2="51" changelist="75aceced-529d-4fab-b58b-785754d25cec" />
+        <range start1="18" end1="18" start2="55" end2="85" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
       </ranges>
     </file>
   </component>
@@ -379,7 +121,8 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../bruh" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Aulas praticas/8/code(5)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -389,11 +132,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="engine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="engine" TARGET_NAME="engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="engine" RUN_TARGET_NAME="engine">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -421,11 +159,34 @@
       <workItem from="1619519414944" duration="12562000" />
       <workItem from="1619625786475" duration="9534000" />
       <workItem from="1619777162117" duration="17658000" />
-      <workItem from="1619809767714" duration="1595000" />
+      <workItem from="1619809767714" duration="7703000" />
+      <workItem from="1619824896766" duration="3887000" />
+      <workItem from="1619862931161" duration="9481000" />
+      <workItem from="1619876025632" duration="122000" />
+      <workItem from="1619876194745" duration="15952000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="deriv" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
