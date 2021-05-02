@@ -20,7 +20,6 @@ Rotate Transformation :: getRotate(){ return rotate; }
 Scale Transformation :: getScale(){ return scale; }
 void Transformation ::apply(){
 
-
     float time = (glutGet(GLUT_ELAPSED_TIME))/((float) 1000);
 
     if(rotate.getTime() == 0.0) {
@@ -40,9 +39,6 @@ void Transformation ::apply(){
 
         float gt = (translate.getCurve().size()*3.0+time)/translate.getTime();
 
-        //cout  << gt << endl; //chega aqui
-
-        renderCatmullRomCurve(translate.getCurve());
         getGlobalCatmullRomPoint(gt,pos,deriv,translate.getCurve());
 
         //cout  << pos[0]  << pos[1]<<pos[2] << endl;

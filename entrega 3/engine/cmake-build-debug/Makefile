@@ -235,33 +235,6 @@ classes\catmull.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\catmull.cpp.s
 .PHONY : classes\catmull.cpp.s
 
-classes\matrizes.obj: classes\matrizes.cpp.obj
-
-.PHONY : classes\matrizes.obj
-
-# target to build an object file
-classes\matrizes.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\matrizes.cpp.obj
-.PHONY : classes\matrizes.cpp.obj
-
-classes\matrizes.i: classes\matrizes.cpp.i
-
-.PHONY : classes\matrizes.i
-
-# target to preprocess a source file
-classes\matrizes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\matrizes.cpp.i
-.PHONY : classes\matrizes.cpp.i
-
-classes\matrizes.s: classes\matrizes.cpp.s
-
-.PHONY : classes\matrizes.s
-
-# target to generate assembly for a file
-classes\matrizes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\engine.dir\classes\matrizes.cpp.s
-.PHONY : classes\matrizes.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -337,9 +310,6 @@ help:
 	@echo ... classes/catmull.obj
 	@echo ... classes/catmull.i
 	@echo ... classes/catmull.s
-	@echo ... classes/matrizes.obj
-	@echo ... classes/matrizes.i
-	@echo ... classes/matrizes.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

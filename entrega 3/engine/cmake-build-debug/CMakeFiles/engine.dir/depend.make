@@ -21,15 +21,12 @@ CMakeFiles\engine.dir\classes\Transformation.cpp.obj: C:\Users\igor1\Desktop\CG\
 CMakeFiles\engine.dir\classes\Transformation.cpp.obj: C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glut\GL\glut.h
 
 CMakeFiles\engine.dir\classes\catmull.cpp.obj: ..\classes\catmull.cpp
-CMakeFiles\engine.dir\classes\catmull.cpp.obj: ..\headers\matrizes.h
 CMakeFiles\engine.dir\classes\catmull.cpp.obj: C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glew\GL\glew.h
-
-CMakeFiles\engine.dir\classes\matrizes.cpp.obj: ..\classes\matrizes.cpp
-CMakeFiles\engine.dir\classes\matrizes.cpp.obj: ..\headers\matrizes.h
 
 CMakeFiles\engine.dir\main.cpp.obj: ..\headers\Group.h
 CMakeFiles\engine.dir\main.cpp.obj: ..\headers\Point.h
 CMakeFiles\engine.dir\main.cpp.obj: ..\headers\Transformation.h
+CMakeFiles\engine.dir\main.cpp.obj: ..\headers\catmull.h
 CMakeFiles\engine.dir\main.cpp.obj: ..\main.cpp
 CMakeFiles\engine.dir\main.cpp.obj: ..\tinyxml2-master\tinyxml2.h
 CMakeFiles\engine.dir\main.cpp.obj: C:\Users\igor1\Desktop\CG\TrabalhoCG\toolkit\toolkits\glew\GL\glew.h

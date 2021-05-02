@@ -26,7 +26,6 @@ void cross(float *a, float *b, float *res) {
 
 
 void normalize(float *a) {
-
     float l = sqrt(a[0]*a[0] + a[1] * a[1] + a[2] * a[2]);
     a[0] = a[0]/l;
     a[1] = a[1]/l;
@@ -49,7 +48,6 @@ void multMatrixVector(float *m, float *v, float *res) {
             res[j] += v[k] * m[j * 4 + k];
         }
     }
-
 }
 
 //t = tessellation , vecP = vector de pontos de translacao
@@ -114,22 +112,11 @@ void renderCatmullRomCurve(vector<vector<float>>PontosControlo) {
 
     float gt = 0;
 
-    glDisable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
     glBegin(GL_LINE_LOOP);
-
         for (int i = 0; i < 100; i++) {
             getGlobalCatmullRomPoint(gt, pos, deriv, PontosControlo);
             glVertex3f(pos[0],pos[1],pos[2]);
             gt += 0.01;
         }
     glEnd();
-    glEnable(GL_LIGHTING);
-
 }
-
-
-/*
-
-
- */

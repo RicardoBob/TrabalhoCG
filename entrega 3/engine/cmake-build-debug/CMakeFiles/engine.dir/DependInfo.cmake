@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Point.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/matrizes.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/matrizes.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj"
   "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj"
   )

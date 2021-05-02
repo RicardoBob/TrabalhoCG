@@ -98,9 +98,6 @@
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/matrizes.cpp">
-			<Option target="engine"/>
-		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Group.h">
 			<Option target="engine"/>
 		</Unit>
@@ -111,9 +108,6 @@
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/catmull.h">
-			<Option target="engine"/>
-		</Unit>
-		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/matrizes.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp">

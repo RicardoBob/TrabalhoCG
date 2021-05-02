@@ -22,15 +22,12 @@ CMakeFiles/engine.dir/classes/Transformation.cpp.obj
  C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut/GL/glut.h
 CMakeFiles/engine.dir/classes/catmull.cpp.obj
  C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp
- C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/matrizes.h
  C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew/GL/glew.h
-CMakeFiles/engine.dir/classes/matrizes.cpp.obj
- C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/matrizes.cpp
- C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/matrizes.h
 CMakeFiles/engine.dir/main.cpp.obj
  C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Group.h
  C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Point.h
  C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Transformation.h
+ C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/catmull.h
  C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp
  C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.h
  C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew/GL/glew.h
