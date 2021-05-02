@@ -7,7 +7,7 @@
 #endif
 
 #ifndef XMLCheckResult
-#define XMLCheckResult(a_eResult) if (a_eResult != XML_SUCCESS) { printf("Erraor: %i\n", a_eResult); return a_eResult; }
+#define XMLCheckResult(a_eResult) if (a_eResult != XML_SUCCESS) { printf("Error: %i\n", a_eResult); return a_eResult; }
 #endif
 #define _USE_MATH_DEFINES
 #include <cmath>
@@ -44,7 +44,6 @@ typedef struct ficheiro{
 //------------VARIAVEIS GLOBAIS--------------
 vector<File> Vbos;
 Tree classTree;
-vector<File> VbosOrbitas;
 
 //-----------------CAMERA--------------------
 bool warp = false;
@@ -198,14 +197,15 @@ File readFile(string file){
     return vbo;
 }
 
-void buildOrbita(vector<float> vertices){
+vector<float> buildOrbita(vector<float> vertices){
     float pos[4];
     float deriv[4];
     float gt = 0;
-    File vbo = new struct ficheiro;
-    vbo->name = "";
-    vbo->vertex.clear();
+    vector<float> vertex;
     vector<vector<float>> pontos;
+    File vbo = new struct ficheiro;
+    //vbo->name = file;
+    vbo->vertex.clear();
     for(int i = 0;i < vertices.size();i+=3){
         vector<float> aux;
         aux.push_back(vertices[i]);
@@ -215,18 +215,19 @@ void buildOrbita(vector<float> vertices){
     }
     for (int i = 0; i < 100; i++) {
         getGlobalCatmullRomPoint(gt, pos, deriv, pontos);
-        vbo->vertex.push_back(pos[0]);
-        vbo->vertex.push_back(pos[1]);
-        vbo->vertex.push_back(pos[2]);
+        vertex.push_back(pos[0]);
+        vertex.push_back(pos[1]);
+        vertex.push_back(pos[2]);
         gt += 0.01;
     }
-    vbo->size = vbo->vertex.size()/3;
-    VbosOrbitas.push_back(vbo);
+
     //criar vbo
-    glGenBuffers(1,&(vbo->index));
+    //glGenBuffers(1,&(vbo->index));
     //copiar vbo para a grafica
-    glBindBuffer(GL_ARRAY_BUFFER,vbo->index);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (vbo->vertex).size(), vbo->vertex.data(),GL_STATIC_DRAW);
+    //glBindBuffer(GL_ARRAY_BUFFER,vbo->index);
+    //glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (vbo->vertex).size(), vbo->vertex.data(),GL_STATIC_DRAW);
+
+    return vertex;
 }
 
 void drawEixos(){
@@ -301,7 +302,7 @@ void groupParser(XMLElement *grupo, Tree parentNode){
 
                 trans.setTime(timeTran);
                 trans.setCurve(vertices);
-                buildOrbita(vertices);
+                trans.setOrbita(buildOrbita(vertices));
             }
             trans.setX(x);
             trans.setY(y);
@@ -444,8 +445,6 @@ int readTree(Tree tree){
             glDrawArrays(GL_TRIANGLES, 0, aux->size);
         }
 
-
-
         readTree(n);
         glPopMatrix();
 
@@ -453,16 +452,6 @@ int readTree(Tree tree){
 
     return 1;
 }
-
-
-void drawOrbitas(){
-    for(File vbo : VbosOrbitas){
-        glBindBuffer(GL_ARRAY_BUFFER, vbo->index);
-        glVertexPointer(3, GL_FLOAT, 0, 0);
-        glDrawArrays(GL_LINE_LOOP, 0, vbo->size);
-    }
-}
-
 
 void renderScene() {
 
@@ -492,8 +481,6 @@ void renderScene() {
         const char *c = str.c_str();
         glutSetWindowTitle(c);
     }
-
-    drawOrbitas();
     readTree(classTree);
     // End of frame
     glutSwapBuffers();

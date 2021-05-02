@@ -30,17 +30,18 @@ public:
 class Translate : public Point{
 private:
     float time;
-    vector<float> curve{};
+    vector<float> curve;
+    vector<float> orbita;
 public:
     Translate();
     Translate(float x, float y, float z);
-    Translate(float x, float y, float z, float time, vector<float> curve);
-
+    Translate(float x, float y, float z, float time, vector<float> curve,vector<float>orbit);
     void setTime(float a);
     void setCurve(vector<float> curve);
-
+    void setOrbita(vector<float> o);
     float getTime();
     vector<vector<float>> getCurve();
+    vector<float> getOrbita();
 };
 
 class Scale : public Point{

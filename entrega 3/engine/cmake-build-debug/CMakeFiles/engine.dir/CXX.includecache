@@ -6,19 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Group.h
-string
--
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp
+../headers/Transformation.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Transformation.h
 GL/glew.h
 -
-stdlib.h
+iostream
 -
-GL/glut.h
--
-vector
--
-Transformation.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Transformation.h
+../headers/catmull.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/catmull.h
 
 C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Point.h
 string
@@ -56,66 +52,6 @@ stdlib.h
 GL/glut.h
 -
 vector
--
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp
-GLUT/glut.h
--
-GL/glew.h
--
-stdlib.h
--
-GL/glut.h
--
-cmath
--
-iostream
--
-fstream
--
-string
--
-sstream
--
-vector
--
-tuple
--
-tinyxml2-master/tinyxml2.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.h
-headers/Group.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/Group.h
-headers/catmull.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/headers/catmull.h
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.h
-ctype.h
--
-limits.h
--
-stdio.h
--
-stdlib.h
--
-string.h
--
-stddef.h
--
-cctype
--
-climits
--
-cstdio
--
-cstdlib
--
-cstring
--
-stdint.h
--
-android/log.h
--
-assert.h
 -
 
 C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew/GL/glew.h

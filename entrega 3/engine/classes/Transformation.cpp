@@ -22,13 +22,6 @@ void Transformation ::apply(){
 
     float time = (glutGet(GLUT_ELAPSED_TIME))/((float) 1000);
 
-    if(rotate.getTime() == 0.0) {
-        glRotatef(rotate.getAngle(), rotate.getX(), rotate.getY(), rotate.getZ());
-    }
-    else{
-        glRotatef((time/rotate.getTime())*360, rotate.getX(), rotate.getY(), rotate.getZ());
-    }
-
     if (translate.getTime() != 0.0f){
 
         float pos[4];
@@ -36,6 +29,8 @@ void Transformation ::apply(){
         float X[4];
         float Y[4] = {0,1,0};
         float Z[4];
+
+        drawOrbita(translate.getOrbita());
 
         float gt = (translate.getCurve().size()*3.0+time)/translate.getTime();
 
@@ -60,11 +55,27 @@ void Transformation ::apply(){
         float m[4][4];
         buildRotMatrix(X, Y, Z, (float*)m);
         glMultMatrixf((float*)m);
+
+        if(rotate.getTime() == 0.0) {
+            glRotatef(rotate.getAngle(), rotate.getX(), rotate.getY(), rotate.getZ());
+        }
+        else{
+            glRotatef((time/rotate.getTime())*360, rotate.getX(), rotate.getY(), rotate.getZ());
+        }
+
     }
     else {
+        if(rotate.getTime() == 0.0) {
+            glRotatef(rotate.getAngle(), rotate.getX(), rotate.getY(), rotate.getZ());
+        }
+        else{
+            glRotatef((time/rotate.getTime())*360, rotate.getX(), rotate.getY(), rotate.getZ());
+        }
+
         glTranslatef(translate.getX(),translate.getY(),translate.getZ());
     }
 
     glScalef(scale.getX(),scale.getY(),scale.getZ());
+
 }
 

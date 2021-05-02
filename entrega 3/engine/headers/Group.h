@@ -18,6 +18,7 @@ class Group {
 private:
     Transformation transformation;
     vector<string> file;
+    vector<float> orbita;
 public:
     Group();
     Group(Transformation t,vector<string> f);
