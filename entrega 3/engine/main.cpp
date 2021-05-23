@@ -14,6 +14,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <map>
+#include <iterator>
 #include <sstream>
 #include <vector>
 #include <tuple>
@@ -44,7 +46,8 @@ typedef struct ficheiro{
 //------------VARIAVEIS GLOBAIS--------------
 vector<File> Vbos;
 Tree classTree;
-
+int iread ;
+bool render = true;
 //-----------------CAMERA--------------------
 bool warp = false;
 //angulo da rotacao para a direcao da camera
@@ -107,6 +110,8 @@ void processNormalKeys(unsigned char key, int x, int y){
 }
 bool mouseCaptured = true; //se o rato esta dentro da janela
 
+void drawAsteroides(int asteroides, float x, float z, node *pNode);
+
 void processSpecialKeys(int key, int x, int y){ //andar com a camera
     switch (key) {
         case GLUT_KEY_UP:
@@ -137,6 +142,9 @@ void processSpecialKeys(int key, int x, int y){ //andar com a camera
             {
                 glutSetCursor(GLUT_CURSOR_INHERIT);
             }
+            break;
+        case GLUT_KEY_F2:
+            render = !render;
             break;
         default:
             break;
@@ -256,7 +264,15 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     Rotate rot = Rotate();
     Scale sca = Scale();
     vector<string> ficheiros;
+    //
 
+    int numAsteroides = 0;
+
+    float maxX = 0.0f;
+
+    float maxZ = 0.0f;
+
+    //
     while (grupo != nullptr){
         float x = 0.0f;
         float y = 0.0f;
@@ -264,8 +280,22 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         float angulo = 0.0f;
         float timeTran = 0.0f;
         float timeRot = 0.0f;
+
         string file = "";
 
+        //Asteroides
+        if(strcmp(grupo->Value(),"asteroide") == 0){
+            if(grupo->Attribute("num")){
+                grupo->QueryIntAttribute("num",&numAsteroides);
+            }
+            if(grupo->Attribute("maxX")){
+                grupo->QueryFloatAttribute("maxX",&maxX);
+            }
+            if(grupo->Attribute("maxZ")) {
+                grupo->QueryFloatAttribute("maxZ", &maxZ);
+            }
+
+        }
 
         //translate
         if(strcmp(grupo->Value(),"translate") == 0){
@@ -377,7 +407,7 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
         grupo = grupo->NextSiblingElement();
     }
-
+    g->setAsteroides(maxX,maxZ,numAsteroides);
     Transformation transformation = Transformation(trans,rot,sca);
     g->setTransformation(transformation);
     g->setFile(ficheiros);
@@ -421,14 +451,27 @@ int readTree(Tree tree){
 
     for(node *n : tree->next) {
         glPushMatrix();
-        n->g->getTransformation().apply();
+
+        //Detetar que é um grupo de asteroides
+        if(n->g->getNumAst() != 0){
+            //
+            n->g->getTransformation().apply(render);
+            int numAsteroides = n->g->getNumAst();
+            float maxX = n->g->getmaxX();
+            float maxZ = n->g->getmaxZ();
+            drawAsteroides(numAsteroides, maxX, maxZ, n);
+            readTree(n);
+            glPopMatrix();
+        }
+        else{
+        n->g->getTransformation().apply(render);
 
         int flag = 0;
         File aux;
 
         for (string nome : n->g->getFile()){
             for (File vbo : Vbos) {
-                if (strcmp(nome.c_str(), vbo->name.c_str()) == 0) {
+                if (nome == vbo->name) {
                     aux = vbo;
                     flag = 1;
                     break;
@@ -449,8 +492,72 @@ int readTree(Tree tree){
         glPopMatrix();
 
     }
-
+    }
     return 1;
+}
+
+void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
+
+    map<float,float> pontos;
+
+    int flagPonto = 1;
+    srand(5151);
+    float r ,xf,zf,alpha;
+    for(int i = 0; i<=asteroides;i++ ){
+
+
+
+        r = sqrt(rand())+40 / RAND_MAX;
+        alpha = rand() * 2 * M_PI / RAND_MAX;
+
+        xf = cos(alpha) * (r+ maxX*7);
+        zf = sin(alpha) * (r+ maxZ*8);
+
+
+        // 1 caso não exista overlap de asteroides & 0 caso exista
+        for (auto itr : pontos) {
+            float fst= itr.first;
+            float snd = itr.second;
+            float dst = (fst-xf) - (snd-zf); //guarda a dist. entre as asteroides
+            if(fabs(dst) < 8.0f){
+                flagPonto = 0;
+            }else{
+                flagPonto = 1;
+            }
+        }
+
+        if (fabs(xf) < r + maxX*7 && fabs(zf) < r + maxZ*8 && flagPonto ) {
+            glPushMatrix();
+            glTranslatef(xf,0.0f,zf);
+            glRotatef(90,0.0f,0.0f,1.0f);
+
+            int flag = 0;
+            File aux;
+
+            for (string nome : pNode->g->getFile()){
+                for (File vbo : Vbos) {
+                    if (nome == vbo->name) {
+                        aux = vbo;
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                if (flag == 0) {
+                    aux = readFile(nome);
+                    Vbos.push_back(aux);
+                }
+
+                glBindBuffer(GL_ARRAY_BUFFER, aux->index);
+                glVertexPointer(3, GL_FLOAT, 0, 0);
+                glDrawArrays(GL_TRIANGLES, 0, aux->size);
+            }
+            glPopMatrix();
+
+            pontos.insert(pair<float,float>(xf,zf));
+        }
+    }
+
 }
 
 void renderScene() {
@@ -482,6 +589,7 @@ void renderScene() {
         glutSetWindowTitle(c);
     }
     readTree(classTree);
+    //cout << Vbos.size() << endl;
     // End of frame
     glutSwapBuffers();
 

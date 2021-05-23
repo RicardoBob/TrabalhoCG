@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="engine" targetName="engine" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a475d398-e8f7-480b-8ce5-499f3a9245da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/classes/Group.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/classes/Group.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/classes/Transformation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/classes/Transformation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/vc140.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/engine.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/engine.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/engine.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/cmake-build-debug/engine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/headers/Group.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/headers/Group.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/headers/Transformation.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/headers/Transformation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/engine/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/engine/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/sphere.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/sphere.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/CMakeFiles/generator.dir/vc140.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/cone.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/cone.3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/generator.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/generator.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/generator.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/generator.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/generator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/generator.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/sphere.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/cmake-build-debug/sphere.3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entrega 3/generator/modelos/sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../entrega 3/generator/modelos/sphere.cpp" afterDir="false" />
+    </list>
+    <list id="5d00c843-3e90-4f62-a5fd-ce471feaa770" name="Changes by Bruna" comment="" />
+    <list id="75aceced-529d-4fab-b58b-785754d25cec" name="Changes by Guilherme" comment="" />
+    <list id="0297fbbb-2317-4be9-a0f0-8200da9103c9" name="Changes by Igor" comment="" />
+    <list id="de60e777-0d32-4648-96f0-913742789edd" name="Changes by igor1" comment="" />
+    <list id="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" name="Changes by ricardo" comment="" />
+    <list id="fe9d72a1-a1ee-4e1a-bbcd-e2210862769f" name="Changes by UserLen" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1qZV7IfDOWjhsZsTh25hbHIqPqM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classes" />
+      <recent name="$PROJECT_DIR$/headers" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="engine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="engine" TARGET_NAME="engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="engine" RUN_TARGET_NAME="engine">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a475d398-e8f7-480b-8ce5-499f3a9245da" name="Default Changelist" comment="" />
+      <created>1617286931004</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617286931004</updated>
+      <workItem from="1617286934308" duration="6096000" />
+      <workItem from="1617457265400" duration="5040000" />
+      <workItem from="1617462407113" duration="12708000" />
+      <workItem from="1617562890126" duration="154000" />
+      <workItem from="1619517784273" duration="942000" />
+      <workItem from="1619519414944" duration="12562000" />
+      <workItem from="1619625786475" duration="9534000" />
+      <workItem from="1619777162117" duration="17658000" />
+      <workItem from="1619809767714" duration="7703000" />
+      <workItem from="1619824896766" duration="3887000" />
+      <workItem from="1619862931161" duration="9481000" />
+      <workItem from="1619876025632" duration="122000" />
+      <workItem from="1619876194745" duration="18460000" />
+      <workItem from="1619904353708" duration="254000" />
+      <workItem from="1619950215882" duration="1078000" />
+      <workItem from="1619961826177" duration="17770000" />
+      <workItem from="1619981135754" duration="596000" />
+      <workItem from="1619998558168" duration="3062000" />
+      <workItem from="1620038592597" duration="2551000" />
+      <workItem from="1620291672634" duration="1974000" />
+      <workItem from="1620324740729" duration="7547000" />
+      <workItem from="1620385447474" duration="3856000" />
+      <workItem from="1620389436517" duration="325000" />
+      <workItem from="1620413889447" duration="363000" />
+      <workItem from="1620497264385" duration="32000" />
+      <workItem from="1621190247816" duration="308000" />
+      <workItem from="1621212904292" duration="643000" />
+      <workItem from="1621243980031" duration="598000" />
+      <workItem from="1621765307423" duration="1131000" />
+      <workItem from="1621766882098" duration="3090000" />
+      <workItem from="1621774014114" duration="3447000" />
+      <workItem from="1621777783127" duration="1185000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="deriv" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

@@ -1,0 +1,3 @@
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/CMakeFiles/engine.dir
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

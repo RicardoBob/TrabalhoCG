@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine"
+-- Toolkits_DIR set to: C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug
