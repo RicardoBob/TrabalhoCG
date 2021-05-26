@@ -18,12 +18,12 @@ void Point ::setY(float y1){ this->y = y1; }
 void Point ::setZ(float z1){ this->z = z1; }
 
 
-Translate :: Translate() : Point() { time = 0.0f; curve = vector<float>(); orbita = vector<float>(); }
-Translate :: Translate(float x, float y, float z, float time, vector<float> curva, vector<float> orbit ) : Point(x,y,z) { setTime(time); setCurve(curva); setOrbita(orbit);}
-Translate :: Translate(float x, float y, float z){ setX(x); setY(y); setZ(z); setTime(0.0f); curve = vector<float>(); orbita = vector<float>();}
+Translate :: Translate() : Point() { time = 0.0f; curve = vector<float>(); orbita = -1; }
+Translate :: Translate(float x, float y, float z, float time, vector<float> curva, GLuint orbit ) : Point(x,y,z) { setTime(time); setCurve(curva); setOrbita(orbit);}
+Translate :: Translate(float x, float y, float z){ setX(x); setY(y); setZ(z); setTime(0.0f); curve = vector<float>(); orbita = -1;}
 void Translate :: setTime(float a){ time = a; }
 void Translate :: setCurve(vector<float>curva){ curve = curva; }
-void Translate :: setOrbita(vector<float> o){ this->orbita = o; }
+void Translate :: setOrbita(GLuint o){ this->orbita = o; }
 float Translate :: getTime(){ return time; }
 vector<vector<float>> Translate :: getCurve(){
 
@@ -40,7 +40,11 @@ vector<vector<float>> Translate :: getCurve(){
     }
     return curva;
 }
-vector<float> Translate ::getOrbita() { return this->orbita; }
+GLuint Translate ::getOrbita() { return this->orbita; }
+
+void Translate::setSize(GLuint s) { this->size = s; }
+
+GLuint Translate::getSize() { return this->size; }
 
 
 Scale :: Scale() : Point(1,1,1) {}

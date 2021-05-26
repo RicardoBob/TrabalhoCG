@@ -40,8 +40,7 @@ typedef struct node{
 //file struct
 typedef struct ficheiro{
     string name;
-    vector<float> vertex;
-    GLuint index,size;
+    GLuint indexp,sizep,indexn,sizen,indext,sizet;
 } *File;
 
 //------------VARIAVEIS GLOBAIS--------------
@@ -182,80 +181,73 @@ File readFile(string file){
     float tx,ty,tz; // textura
     float nx,ny,nz; // normal
     string linha;
+
     File vbo = new struct ficheiro;
     vbo->name = file;
-    vbo->vertex.clear();
+    vector<float> vertexp;
 
-    File vboTex = new struct ficheiro;
-    vboTex->name = file;
-    vboTex->vertex.clear();
+    vector<float> vertexn;
 
-    File vboNorm = new struct ficheiro;
-    vboNorm->name = file;
-    vboNorm->vertex.clear();
+    vector<float> vertext;
 
     while(getline(f,linha)) {
         istringstream in(linha);
         in >> x;
         in >> y;
         in >> z;
+        in >> nx;
+        in >> ny;
+        in >> nz;
+        in >> tx;
+        in >> ty;
 
-        vbo->vertex.push_back(x);
-        vbo->vertex.push_back(y);
-        vbo->vertex.push_back(z);
 
-        // normais
-        getline(f,linha);
-        istringstream inNorm(linha);
-        inNorm >> nx;
-        inNorm >> ny;
-        inNorm >> nz;
+        vertexp.push_back(x);
+        vertexp.push_back(y);
+        vertexp.push_back(z);
 
-        vboNorm->vertex.push_back(nx);
-        vboNorm->vertex.push_back(ny);
-        vboNorm->vertex.push_back(nz);
+        vertexn.push_back(nx);
+        vertexn.push_back(ny);
+        vertexn.push_back(nz);
 
-        // texturas
-        getline(f,linha);
-        istringstream inTex(linha);
-        inTex >> tx;
-        inTex >> ty;
-        inTex >> tz;
-
-        vboTex->vertex.push_back(tx);
-        vboTex->vertex.push_back(ty);
-        vboTex->vertex.push_back(tz);
+        vertext.push_back(tx);
+        vertext.push_back(ty);
 
     }
-    vbo->size = vbo->vertex.size()/3;
-    vboNorm->size = vboNorm->vertex.size()/3;
-    vboTex->size = vboTex->vertex.size()/3;
+    vbo->sizep = vertexp.size()/3;
+    vbo->sizen = vertexn.size()/3;
+    vbo->sizet = vertext.size()/2;
     f.close();
+
     Vbos.push_back(vbo);
-    VbosNormais.push_back(vboNorm);
-    VbosTextura.push_back(vboTex);
 
     //criar vbo
-    glGenBuffers(1,&(vbo->index));
-
+    glGenBuffers(1,&(vbo->indexp));
     //copiar vbo para a grafica
-    glBindBuffer(GL_ARRAY_BUFFER,vbo->index);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (vbo->vertex).size(), vbo->vertex.data(),GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER,vbo->indexp);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexp.size(), vertexp.data(),GL_STATIC_DRAW);
 
+    //criar vbo
+    glGenBuffers(1,&(vbo->indexn));
+    //copiar vbo para a grafica
+    glBindBuffer(GL_ARRAY_BUFFER,vbo->indexn);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexn.size(), vertexn.data(),GL_STATIC_DRAW);
 
+    //criar vbo
+    glGenBuffers(1,&(vbo->indext));
+    //copiar vbo para a grafica
+    glBindBuffer(GL_ARRAY_BUFFER,vbo->indext);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertext.size(), vertext.data(),GL_STATIC_DRAW);
 
     return vbo;
 }
 
-vector<float> buildOrbita(vector<float> vertices){
+vector<GLuint> buildOrbita(vector<float> vertices){
     float pos[4];
     float deriv[4];
     float gt = 0;
     vector<float> vertex;
     vector<vector<float>> pontos;
-    File vbo = new struct ficheiro;
-    //vbo->name = file;
-    vbo->vertex.clear();
     for(int i = 0;i < vertices.size();i+=3){
         vector<float> aux;
         aux.push_back(vertices[i]);
@@ -271,31 +263,20 @@ vector<float> buildOrbita(vector<float> vertices){
         gt += 0.01;
     }
 
-    //criar vbo
-    //glGenBuffers(1,&(vbo->index));
-    //copiar vbo para a grafica
-    //glBindBuffer(GL_ARRAY_BUFFER,vbo->index);
-    //glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (vbo->vertex).size(), vbo->vertex.data(),GL_STATIC_DRAW);
+    GLuint res[2];
+    res[1] = vertex.size()/3;
 
-    return vertex;
+    glGenBuffers(1,&(res[0]));
+    glBindBuffer(GL_ARRAY_BUFFER,res[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), vertex.data(),GL_STATIC_DRAW);
+
+    vector<GLuint> vbo;
+    vbo.push_back(res[0]);
+    vbo.push_back(res[1]);
+    return vbo;
 }
 
-void drawEixos(){
-    glBegin(GL_LINES);
-        // X axis in red
-        glColor3f(1.0f, 0.0f, 0.0f);
-        glVertex3f(-100.0f, 0.0f, 0.0f);
-        glVertex3f(100.0f, 0.0f, 0.0f);
-        // Y Axis in Green
-        glColor3f(0.0f, 1.0f, 0.0f);
-        glVertex3f(0.0f,-100.0f, 0.0f);
-        glVertex3f(0.0f, 100.0f, 0.0f);
-        // Z Axis in Blue
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex3f(0.0f, 0.0f,-100.0f);
-        glVertex3f(0.0f, 0.0f, 100.0f);
-    glEnd();
-}
+
 
 void groupParser(XMLElement *grupo, Tree parentNode){
     //inicializar vars
@@ -306,7 +287,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     Rotate rot = Rotate();
     Scale sca = Scale();
     vector<string> ficheiros;
-    //
 
     int numAsteroides = 0;
 
@@ -374,7 +354,10 @@ void groupParser(XMLElement *grupo, Tree parentNode){
 
                 trans.setTime(timeTran);
                 trans.setCurve(vertices);
-                trans.setOrbita(buildOrbita(vertices));
+                vector<GLuint> orbita;
+                orbita = buildOrbita(vertices);
+                trans.setOrbita(orbita[0]);
+                trans.setSize(orbita[1]);
             }
             trans.setX(x);
             trans.setY(y);
@@ -431,7 +414,6 @@ void groupParser(XMLElement *grupo, Tree parentNode){
                 if(nome != nullptr) {
                     file = string(nome);
                     ficheiros.push_back(file);
-
                 }
                 modelos = modelos->NextSiblingElement();
             }
@@ -620,6 +602,8 @@ void renderScene() {
     //------------FPS
 
     frames++;
+
+
 
     int time = glutGet(GLUT_ELAPSED_TIME);
     if (time - timebase > 1000) {

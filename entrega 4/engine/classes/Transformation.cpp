@@ -30,7 +30,7 @@ void Transformation ::apply(bool render){
         float Y[4] = {0,1,0};
         float Z[4];
 
-        if(render){drawOrbita(translate.getOrbita());}
+        if(render){drawOrbita(translate.getOrbita(),translate.getSize());}
 
 
         float gt = ((translate.getCurve().size())+time)/translate.getTime();

@@ -121,11 +121,8 @@ void renderCatmullRomCurve(vector<vector<float>>PontosControlo) {
     glEnd();
 }
 
-void drawOrbita(vector<float> vertex){
-
-    glBegin(GL_LINE_LOOP);
-    for(int i = 0;i<vertex.size();i+=3){
-        glVertex3f(vertex.at(i),vertex.at(i+1),vertex.at(i+2));
-    }
-    glEnd();
+void drawOrbita(GLuint index,GLuint size){
+    glBindBuffer(GL_ARRAY_BUFFER, index);
+    glVertexPointer(3, GL_FLOAT, 0, 0);
+    glDrawArrays(GL_LINE_LOOP, 0, size);
 }

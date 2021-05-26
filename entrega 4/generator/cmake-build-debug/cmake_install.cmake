@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator
+# Install script for directory: C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/generator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

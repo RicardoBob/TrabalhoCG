@@ -31,17 +31,19 @@ class Translate : public Point{
 private:
     float time;
     vector<float> curve;
-    vector<float> orbita;
+    GLuint orbita,size;
 public:
     Translate();
     Translate(float x, float y, float z);
-    Translate(float x, float y, float z, float time, vector<float> curve,vector<float>orbit);
+    Translate(float x, float y, float z, float time, vector<float> curve,GLuint orbit);
     void setTime(float a);
     void setCurve(vector<float> curve);
-    void setOrbita(vector<float> o);
+    void setOrbita(GLuint o);
+    void setSize(GLuint s);
     float getTime();
     vector<vector<float>> getCurve();
-    vector<float> getOrbita();
+    GLuint getOrbita();
+    GLuint getSize();
 };
 
 class Scale : public Point{
