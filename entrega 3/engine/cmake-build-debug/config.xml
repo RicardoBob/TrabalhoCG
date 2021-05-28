@@ -1,16 +1,13 @@
 <scene>
-    <lights>
-        <lights type="POINT" posX ="0" posY = "0" posZ = "0"/>
-    </lights>
 
-    <!-- Universo -->
     <group>
-        <scale X="80" Y="80" Z="80" />
+        <scale X="0.1" Y="0.1" Z="0.1" />
+        <asteroide num = "1000"  maxX ="70" maxZ = "140" />
         <models>
-            <model texture = "universo.jpg"  />
-            <model file="sphere.3d" />
+            <model file="cone.3d" />
         </models>
     </group>
+
 
     <!-- Sol -->
     <group>

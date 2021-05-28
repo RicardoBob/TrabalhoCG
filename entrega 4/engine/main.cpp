@@ -1,16 +1,19 @@
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
+
 #include <GL/glew.h>
 #include <stdlib.h>
 #include <GL/glut.h>
 #include <IL/il.h>
+
 #endif
 
 #ifndef XMLCheckResult
 #define XMLCheckResult(a_eResult) if (a_eResult != XML_SUCCESS) { printf("Error: %i\n", a_eResult); return a_eResult; }
 #endif
 #define _USE_MATH_DEFINES
+
 #include <cmath>
 #include <iostream>
 #include <fstream>
@@ -29,16 +32,15 @@ using namespace tinyxml2;
 using namespace std;
 
 
-
 #define ESCAPE 27
 //---------TREE----------
-typedef struct node{
-    Group* g;
-    vector<struct node*> next;
+typedef struct node {
+    Group *g;
+    vector<struct node *> next;
 } *Tree;
 
 //file struct
-typedef struct ficheiro{
+typedef struct ficheiro {
     string name;
     GLuint indexp;
     GLuint indexn;
@@ -49,7 +51,7 @@ typedef struct ficheiro{
 //------------VARIAVEIS GLOBAIS--------------
 vector<File> Vbos;
 Tree classTree;
-int iread ;
+int iread;
 bool render = true;
 //-----------------CAMERA--------------------
 bool warp = false;
@@ -82,7 +84,7 @@ void changeSize(int w, int h) {
 
     // Prevent a divide by zero, when window is too short
     // (you cant make a window with zero width).
-    if(h == 0)
+    if (h == 0)
         h = 1;
 
     // compute window's aspect ratio
@@ -97,24 +99,24 @@ void changeSize(int w, int h) {
     glViewport(0, 0, w, h);
 
     // Set perspective
-    gluPerspective(45.0f ,ratio, 1.0f ,1000.0f);
+    gluPerspective(45.0f, ratio, 1.0f, 1000.0f);
 
     // return to the model view matrix mode
     glMatrixMode(GL_MODELVIEW);
 }
 
 //Para sair da janela
-void processNormalKeys(unsigned char key, int x, int y){
-    if (key == ESCAPE)
-    {
+void processNormalKeys(unsigned char key, int x, int y) {
+    if (key == ESCAPE) {
         glutDestroyWindow(window);
         exit(0);
     }
 }
+
 bool mouseCaptured = true; //se o rato esta dentro da janela
 
 
-void processSpecialKeys(int key, int x, int y){ //andar com a camera
+void processSpecialKeys(int key, int x, int y) { //andar com a camera
     switch (key) {
         case GLUT_KEY_UP:
             xc += lx * speed;
@@ -136,12 +138,9 @@ void processSpecialKeys(int key, int x, int y){ //andar com a camera
             break;
         case GLUT_KEY_F1:
             mouseCaptured = !mouseCaptured;
-            if (mouseCaptured)
-            {
+            if (mouseCaptured) {
                 glutSetCursor(GLUT_CURSOR_NONE);
-            }
-            else
-            {
+            } else {
                 glutSetCursor(GLUT_CURSOR_INHERIT);
             }
             break;
@@ -153,9 +152,8 @@ void processSpecialKeys(int key, int x, int y){ //andar com a camera
     }
 }
 
-void mouseMove(int x, int y){
-    if (warp)
-    {
+void mouseMove(int x, int y) {
+    if (warp) {
         warp = false;
         return;
     }
@@ -163,23 +161,21 @@ void mouseMove(int x, int y){
     int dy = y - 100; //reset no y
     angle = angle + dx * rotSpeed;
     angle1 = angle1 + dy * rotSpeed;
-    lx = sin(angle1)*sin(angle);
+    lx = sin(angle1) * sin(angle);
     ly = -cos(angle1);
-    lz = -sin(angle1)*cos(angle);
-    if (mouseCaptured)
-    {
+    lz = -sin(angle1) * cos(angle);
+    if (mouseCaptured) {
         warp = true;
         glutWarpPointer(100, 100); //colar o rato numa posicao para nao sair
     }
 }
 
 
-
-File readFile(string file){
+File readFile(string file) {
     ifstream f("../../generator/cmake-build-debug/" + file);
-    float x,y,z; // ponto
-    float tx,ty; // textura
-    float nx,ny,nz; // normal
+    float x, y, z; // ponto
+    float tx, ty; // textura
+    float nx, ny, nz; // normal
     string linha;
 
     File vbo = new struct ficheiro;
@@ -194,7 +190,7 @@ File readFile(string file){
     vertexn.clear();
     vertext.clear();
 
-    while(getline(f,linha)) {
+    while (getline(f, linha)) {
         istringstream in(linha);
         in >> x;
         in >> y;
@@ -217,15 +213,15 @@ File readFile(string file){
         vertext.push_back(ty);
 
     }
-    vbo->size = vertexp.size()/3;
+    vbo->size = vertexp.size() / 3;
     f.close();
     Vbos.push_back(vbo);
 
     //criar vbo
-    glGenBuffers(1,&(vbo->indexp));
+    glGenBuffers(1, &(vbo->indexp));
     //copiar vbo para a grafica
-    glBindBuffer(GL_ARRAY_BUFFER,vbo->indexp);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexp.size(), vertexp.data(),GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo->indexp);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexp.size(), vertexp.data(), GL_STATIC_DRAW);
 
     /*
     //criar vbo
@@ -244,17 +240,17 @@ File readFile(string file){
 
 }
 
-vector<GLuint> buildOrbita(vector<float> vertices){
+vector<GLuint> buildOrbita(vector<float> vertices) {
     float pos[4];
     float deriv[4];
     float gt = 0;
     vector<float> vertex;
     vector<vector<float>> pontos;
-    for(int i = 0;i < vertices.size();i+=3){
+    for (int i = 0; i < vertices.size(); i += 3) {
         vector<float> aux;
         aux.push_back(vertices[i]);
-        aux.push_back(vertices[i+1]);
-        aux.push_back(vertices[i+2]);
+        aux.push_back(vertices[i + 1]);
+        aux.push_back(vertices[i + 2]);
         pontos.push_back(aux);
     }
     for (int i = 0; i < 100; i++) {
@@ -267,11 +263,11 @@ vector<GLuint> buildOrbita(vector<float> vertices){
 
     GLuint res0;
     GLuint res1;
-    res1 = vertex.size()/3;
+    res1 = vertex.size() / 3;
 
-    glGenBuffers(1,&res0);
-    glBindBuffer(GL_ARRAY_BUFFER,res0);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), vertex.data(),GL_STATIC_DRAW);
+    glGenBuffers(1, &res0);
+    glBindBuffer(GL_ARRAY_BUFFER, res0);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), vertex.data(), GL_STATIC_DRAW);
 
     vector<GLuint> vbo;
     vbo.push_back(res0);
@@ -280,11 +276,10 @@ vector<GLuint> buildOrbita(vector<float> vertices){
 }
 
 
-
-void groupParser(XMLElement *grupo, Tree parentNode){
+void groupParser(XMLElement *grupo, Tree parentNode) {
     //inicializar vars
     grupo = grupo->FirstChildElement();
-    Group* g = new Group();
+    Group *g = new Group();
 
     Translate trans = Translate();
     Rotate rot = Rotate();
@@ -309,7 +304,7 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     vector<GLuint> size;
     vector<string> tex;
     //
-    while (grupo != nullptr){
+    while (grupo != nullptr) {
         float x = 0.0f;
         float y = 0.0f;
         float z = 0.0f;
@@ -320,14 +315,14 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         string file = "";
 
         //Asteroides
-        if(strcmp(grupo->Value(),"asteroide") == 0){
-            if(grupo->Attribute("num")){
-                grupo->QueryIntAttribute("num",&numAsteroides);
+        if (strcmp(grupo->Value(), "asteroide") == 0) {
+            if (grupo->Attribute("num")) {
+                grupo->QueryIntAttribute("num", &numAsteroides);
             }
-            if(grupo->Attribute("maxX")){
-                grupo->QueryFloatAttribute("maxX",&maxX);
+            if (grupo->Attribute("maxX")) {
+                grupo->QueryFloatAttribute("maxX", &maxX);
             }
-            if(grupo->Attribute("maxZ")) {
+            if (grupo->Attribute("maxZ")) {
                 grupo->QueryFloatAttribute("maxZ", &maxZ);
             }
 
@@ -336,29 +331,29 @@ void groupParser(XMLElement *grupo, Tree parentNode){
 
 
         //translate
-        if(strcmp(grupo->Value(),"translate") == 0){
-            if(grupo->Attribute("X")){
-                grupo->QueryFloatAttribute("X",&x);
+        if (strcmp(grupo->Value(), "translate") == 0) {
+            if (grupo->Attribute("X")) {
+                grupo->QueryFloatAttribute("X", &x);
             }
-            if(grupo->Attribute("Y")){
-                grupo->QueryFloatAttribute("Y",&y);
+            if (grupo->Attribute("Y")) {
+                grupo->QueryFloatAttribute("Y", &y);
             }
-            if(grupo->Attribute("Z")) {
+            if (grupo->Attribute("Z")) {
                 grupo->QueryFloatAttribute("Z", &z);
             }
-            if(grupo->Attribute("time")) {
+            if (grupo->Attribute("time")) {
 
                 vector<float> vertices;
                 grupo->QueryFloatAttribute("time", &timeTran);
-                XMLElement* ponto = grupo->FirstChildElement("point");
-                while(ponto != nullptr){
-                    if(ponto->Attribute("X")){
-                        ponto->QueryFloatAttribute("X",&x);
+                XMLElement *ponto = grupo->FirstChildElement("point");
+                while (ponto != nullptr) {
+                    if (ponto->Attribute("X")) {
+                        ponto->QueryFloatAttribute("X", &x);
                     }
-                    if(ponto->Attribute("Y")){
-                        ponto->QueryFloatAttribute("Y",&y);
+                    if (ponto->Attribute("Y")) {
+                        ponto->QueryFloatAttribute("Y", &y);
                     }
-                    if(ponto->Attribute("Z")) {
+                    if (ponto->Attribute("Z")) {
                         ponto->QueryFloatAttribute("Z", &z);
                     }
                     vertices.push_back(x);
@@ -381,15 +376,15 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
 
         //scale
-        if(strcmp(grupo->Value(),"scale") == 0){
-            if(grupo->Attribute("X")){
-                grupo->QueryFloatAttribute("X",&x);
+        if (strcmp(grupo->Value(), "scale") == 0) {
+            if (grupo->Attribute("X")) {
+                grupo->QueryFloatAttribute("X", &x);
             }
-            if(grupo->Attribute("Y")){
-                grupo->QueryFloatAttribute("Y",&y);
+            if (grupo->Attribute("Y")) {
+                grupo->QueryFloatAttribute("Y", &y);
             }
-            if(grupo->Attribute("Z")){
-                grupo->QueryFloatAttribute("Z",&z);
+            if (grupo->Attribute("Z")) {
+                grupo->QueryFloatAttribute("Z", &z);
             }
             sca.setX(x);
             sca.setY(y);
@@ -397,22 +392,22 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
 
         //rotate
-        if(strcmp(grupo->Value(),"rotate") == 0){
-            if(grupo->Attribute("X")){
-                grupo->QueryFloatAttribute("X",&x);
+        if (strcmp(grupo->Value(), "rotate") == 0) {
+            if (grupo->Attribute("X")) {
+                grupo->QueryFloatAttribute("X", &x);
             }
-            if(grupo->Attribute("Y")){
-                grupo->QueryFloatAttribute("Y",&y);
+            if (grupo->Attribute("Y")) {
+                grupo->QueryFloatAttribute("Y", &y);
             }
-            if(grupo->Attribute("Z")){
-                grupo->QueryFloatAttribute("Z",&z);
+            if (grupo->Attribute("Z")) {
+                grupo->QueryFloatAttribute("Z", &z);
             }
-            if(grupo->Attribute("angle")){
-                grupo->QueryFloatAttribute("angle",&angulo);
+            if (grupo->Attribute("angle")) {
+                grupo->QueryFloatAttribute("angle", &angulo);
             }
 
-            if(grupo->Attribute("time")){
-                grupo->QueryFloatAttribute("time",&timeRot);
+            if (grupo->Attribute("time")) {
+                grupo->QueryFloatAttribute("time", &timeRot);
             }
 
             rot.setX(x);
@@ -423,27 +418,26 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
 
         //Modelos
-        string bababui = grupo->Value();
-        if(strcmp(grupo->Value(),"models") == 0){
-            XMLElement* modelos = grupo->FirstChildElement();
-            while(modelos != nullptr){
+        if (strcmp(grupo->Value(), "models") == 0) {
+            XMLElement *modelos = grupo->FirstChildElement();
+            while (modelos != nullptr) {
                 const char *texture = "";
                 color[0] = -1.0f;
                 color[1] = -1.0f;
                 color[2] = -1.0f;
-                if(modelos->Attribute("file")) {
+                if (modelos->Attribute("file")) {
                     const char *nome = modelos->Attribute("file");
                     int flag = 0;
                     File aux;
                     if (nome != nullptr) {
-                        for(File f : Vbos){
-                            if(strcmp(f->name.c_str(),nome) == 0){
+                        for (File f : Vbos) {
+                            if (strcmp(f->name.c_str(), nome) == 0) {
                                 flag = 1;
                                 aux = f;
                                 break;
                             }
                         }
-                        if (flag == 0){
+                        if (flag == 0) {
                             aux = readFile(nome);
                         }
                         pvbo.push_back(aux->indexp);
@@ -452,17 +446,17 @@ void groupParser(XMLElement *grupo, Tree parentNode){
                         size.push_back(aux->size);
                     }
                 }
-                if(modelos->Attribute("texture")){
+                if (modelos->Attribute("texture")) {
                     texture = modelos->Attribute("texture");
                 }
-                if(modelos->Attribute("diffR")){
-                    modelos->QueryFloatAttribute("diffR",&color[0]);
+                if (modelos->Attribute("diffR")) {
+                    modelos->QueryFloatAttribute("diffR", &color[0]);
                 }
-                if(modelos->Attribute("diffG")){
-                    modelos->QueryFloatAttribute("diffG",&color[1]);
+                if (modelos->Attribute("diffG")) {
+                    modelos->QueryFloatAttribute("diffG", &color[1]);
                 }
-                if(modelos->Attribute("diffB")){
-                    modelos->QueryFloatAttribute("diffB",&color[2]);
+                if (modelos->Attribute("diffB")) {
+                    modelos->QueryFloatAttribute("diffB", &color[2]);
                 }
                 colors.push_back(color);
                 tex.push_back(texture);
@@ -472,7 +466,7 @@ void groupParser(XMLElement *grupo, Tree parentNode){
 
 
         //Subgrupos
-        if(strcmp(grupo->Value(),"group") == 0){
+        if (strcmp(grupo->Value(), "group") == 0) {
             //inicializar a subarvore do grupo para ser adicionada na arvore de classes
 
             Tree subTree = new struct node;
@@ -482,8 +476,8 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
         grupo = grupo->NextSiblingElement();
     }
-    g->setAsteroides(maxX,maxZ,numAsteroides);
-    Transformation transformation = Transformation(trans,rot,sca);
+    g->setAsteroides(maxX, maxZ, numAsteroides);
+    Transformation transformation = Transformation(trans, rot, sca);
     g->setTransformation(transformation);
     g->setSize(size);
     g->setnVbos(nvbo);
@@ -495,10 +489,10 @@ void groupParser(XMLElement *grupo, Tree parentNode){
 }
 
 
-int readXML(){
+int readXML() {
     //
     //init XML
-    XMLDocument config ;
+    XMLDocument config;
     XMLError eResult = config.LoadFile("config.xml");
     XMLCheckResult(eResult);
 
@@ -516,7 +510,7 @@ int readXML(){
         //inicializar a subarvore do grupo para ser adicionada na arvore de classes
         Tree subTree = new struct node;
         subTree->next.clear();
-        groupParser(grupo,subTree);
+        groupParser(grupo, subTree);
         classTree->next.push_back(subTree);
 
         grupo = grupo->NextSiblingElement();
@@ -528,42 +522,41 @@ int readXML(){
 
 void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
 
-    map<float,float> pontos;
+    map<float, float> pontos;
 
     int flagPonto = 1;
     srand(5151);
-    float r ,xf,zf,alpha;
-    for(int i = 0; i<=asteroides;i++ ){
+    float r, xf, zf, alpha;
+    for (int i = 0; i <= asteroides; i++) {
 
 
-
-        r = sqrt(rand()) / RAND_MAX;
+        r = sqrt(rand()) + 40 / RAND_MAX;
         alpha = rand() * 2 * M_PI / RAND_MAX;
 
-        xf = cos(alpha) * (r+ maxX);
-        zf = sin(alpha) * (r+ maxZ);
+        xf = cos(alpha) * (r + maxX * 7);
+        zf = sin(alpha) * (r + maxZ * 8);
 
 
         // 1 caso não exista overlap de asteroides & 0 caso exista
         for (auto itr : pontos) {
-            float fst= itr.first;
+            float fst = itr.first;
             float snd = itr.second;
-            float dst = (fst-xf) - (snd-zf); //guarda a dist. entre as asteroides
-            if(fabs(dst) < 8.0f){
+            float dst = (fst - xf) - (snd - zf); //guarda a dist. entre as asteroides
+            if (fabs(dst) < 8.0f) {
                 flagPonto = 0;
-                }else
-                {
-                    flagPonto = 1;
-                }
+            } else {
+                flagPonto = 1;
             }
+        }
 
-            if (fabs(xf) < r + maxX*7 && fabs(zf) < r + maxZ*8 && flagPonto ) {
-                glPushMatrix();
-                glTranslatef(xf,0.0f,zf);
-                glRotatef(90,0.0f,0.0f,1.0f);
+        if (fabs(xf) < r + maxX * 7 && fabs(zf) < r + maxZ * 8 && flagPonto) {
+            glPushMatrix();
+            glTranslatef(xf, sqrt(rand()) + 20 / RAND_MAX, zf);
+            glRotatef(90, 0.0f, 0.0f, 1.0f);
 
 
-            for (int j = 0; j < pNode->g->getpVbos().size(); j++){
+
+            for (int j = 0; j < pNode->g->getpVbos().size(); j++) {
 
                 glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[j]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
@@ -572,32 +565,30 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
             }
 
             glPopMatrix();
-            cout << xf <<" "<< zf << endl;
-            pontos.insert(pair<float,float>(xf,zf));
+            pontos.insert(pair<float, float>(xf, zf));
         }
     }
 
 }
 
-int readTree(Tree tree){
-    if(tree == nullptr){ return -1;}
+int readTree(Tree tree) {
+    if (tree == nullptr) { return -1; }
 
-    for(node *n : tree->next) {
+    for (node *n : tree->next) {
         glPushMatrix();
 
         //Detetar que é um grupo de asteroides
-        if(n->g->getNumAst() != 0){
+        if (n->g->getNumAst() != 0) {
             //
             n->g->getTransformation().apply(render);
             int numAsteroides = n->g->getNumAst();
             float maxX = n->g->getmaxX();
             float maxZ = n->g->getmaxZ();
             drawAsteroides(numAsteroides, maxX, maxZ, n);
-        }
-        else{
+        } else {
             n->g->getTransformation().apply(render);
 
-            for (int i = 0; i < n->g->getpVbos().size(); i++){
+            for (int i = 0; i < n->g->getpVbos().size(); i++) {
 
                 glBindBuffer(GL_ARRAY_BUFFER, n->g->getpVbos()[i]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
@@ -626,13 +617,12 @@ void renderScene() {
               0, 1, 0);
 
     // put the geometric transformations here
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     // put drawing instructions here
 
     //------------FPS
 
     frames++;
-
 
 
     int time = glutGet(GLUT_ELAPSED_TIME);
@@ -659,9 +649,9 @@ int main(int argc, char **argv) {
 
 // init GLUT and the window
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
-    glutInitWindowPosition(100,100);
-    glutInitWindowSize(800,800);
+    glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+    glutInitWindowPosition(100, 100);
+    glutInitWindowSize(800, 800);
     window = glutCreateWindow("CG@DI-UM");
 
 // Required callback registry
@@ -678,7 +668,7 @@ int main(int argc, char **argv) {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glEnable(GL_NORMALIZE);
-    glShadeModel (GL_SMOOTH);
+    glShadeModel(GL_SMOOTH);
     glEnableClientState(GL_VERTEX_ARRAY);
 
     readXML();

@@ -1,7 +1,7 @@
 <scene>
     <!-- Universo -->
     <group>
-        <scale X="80" Y="80" Z="80" />
+        <scale X="400" Y="400" Z="400" />
         <models>
             <model file="sphere.3d" texture = "universo.jpg" />
         </models>
@@ -15,10 +15,15 @@
         </models>
     </group>
 
+
     <group>
-        <asteroide num = "1000"  maxX ="80" maxZ = "170" />
+
+        <rotate time="30" X="0" Y="1" Z="0" />
+        <scale X="0.1" Y="0.1" Z="0.1" />
+        <asteroide num = "1500"  maxX ="70" maxZ = "140" />
         <models>
             <model file="cone.3d" />
+            <model file="sphere.3d" />
         </models>
     </group>
 

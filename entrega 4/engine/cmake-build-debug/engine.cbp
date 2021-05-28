@@ -4,120 +4,124 @@
 	<Project>
 		<Option title="engine"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
+				<Option working_dir="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine">
-				<Option output="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
+				<Option output="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/IL"/>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut"/>
+					<Add directory="C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew"/>
+					<Add directory="C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/devil"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 engine"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="engine/fast">
-				<Option output="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
+				<Option output="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug/engine.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/IL"/>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut"/>
+					<Add directory="C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew"/>
+					<Add directory="C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/devil"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 engine/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega\ 4/engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 engine/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\engine\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/classes/Group.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/classes/Group.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/classes/Point.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/classes/Point.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/classes/Transformation.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/classes/Transformation.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/classes/catmull.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/classes/catmull.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Group.h">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Group.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Point.h">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Point.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/main.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/main.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.cpp">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.cpp">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/CMakeLists.txt">
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
