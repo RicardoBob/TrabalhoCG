@@ -18,15 +18,14 @@ class Group {
 private:
     Transformation transformation;
     vector<GLuint> pVbos;
-    vector<GLuint> pVbosSize;
+    vector<GLuint> size;
     vector<GLuint> nVbos;
-    vector<GLuint> nVbosSize;
     vector<GLuint> tVbos;
-    vector<GLuint> tVbosSize;
     vector<string> textures;
     float maxX;
     float maxZ;
     int numAst;
+    vector<vector<float>> colors;
 public:
     Group();
     Group(Transformation t,vector<GLuint> pvb,vector<GLuint> nvb ,vector<GLuint> tvb,vector<string> texture,float maX ,float maZ ,int nAst);
@@ -39,17 +38,16 @@ public:
     void setpVbos(vector<GLuint> p);
     void setnVbos(vector<GLuint> n);
     void settVbos(vector<GLuint> t);
-    void setpVbosSize(vector<GLuint> p);
-    void setnVbosSize(vector<GLuint> n);
-    void settVbosSize(vector<GLuint> t);
+    void setSize(vector<GLuint> s);
     void setTextures(vector<string> t);
+
+    void setColors(vector<vector<float>> c);
     vector<GLuint> getpVbos();
     vector<GLuint> getnVbos();
     vector<GLuint> gettVbos();
-    vector<GLuint> getpVbosSize();
-    vector<GLuint> getnVbosSize();
-    vector<GLuint> gettVbosSize();
+    vector<GLuint> getSize();
     vector<string> getTextures();
+    vector<vector<float>> getColors();
 };
 
 #endif //ENGINE_GROUP_H

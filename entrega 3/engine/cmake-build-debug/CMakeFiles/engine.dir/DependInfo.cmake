@@ -4,19 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Group.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Point.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/main.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp" "C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/classes/Group.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/classes/Point.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/classes/Transformation.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/classes/catmull.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/main.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/tinyxml2-master/tinyxml2.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 3/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut"
-  "C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew"
   )
 
 # Targets to which this target links.

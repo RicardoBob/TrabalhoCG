@@ -1,0 +1,126 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Group.h
+string
+-
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+vector
+-
+Transformation.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h
+
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Point.h
+string
+-
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+vector
+-
+
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h
+string
+-
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+vector
+-
+Point.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Point.h
+
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h
+string
+-
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+vector
+-
+
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/main.cpp
+GLUT/glut.h
+-
+GL/glew.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+IL/il.h
+-
+cmath
+-
+iostream
+-
+fstream
+-
+string
+-
+map
+-
+iterator
+-
+sstream
+-
+vector
+-
+tuple
+-
+tinyxml2-master/tinyxml2.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h
+headers/Group.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Group.h
+headers/catmull.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h
+
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h
+ctype.h
+-
+limits.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stddef.h
+-
+cctype
+-
+climits
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+stdint.h
+-
+android/log.h
+-
+assert.h
+-
+

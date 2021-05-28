@@ -12,7 +12,7 @@ include_directories(${OpenGL_INCLUDE_DIRS})
 link_directories(${OpenGL_LIBRARY_DIRS})
 add_definitions(${OpenGL_DEFINITIONS})
 
-SET(CMAKE_CXX_FLAGS_DEBUG "-O2")
+SET(CMAKE_CXX_FLAGS "-O2")
 
 
 if(NOT OPENGL_FOUND)
@@ -55,7 +55,7 @@ if  (WIN32)
 
 else (WIN32) #Linux and Mac
 
-    SET(CMAKE_CXX_FLAGS_DEBUG "-O2")
+    SET(CMAKE_CXX_FLAGS "-O2")
 
     find_package(GLUT REQUIRED)
     include_directories(${GLUT_INCLUDE_DIR})

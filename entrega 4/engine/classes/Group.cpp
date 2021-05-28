@@ -18,17 +18,14 @@ void Group:: setpVbos(vector<GLuint> p){ this->pVbos = p;}
 void Group::setnVbos(vector<GLuint> n){this->nVbos = n;}
 void Group::settVbos(vector<GLuint> t){this->tVbos = t;}
 void Group::setTextures(vector<string> t){this->textures = t;}
+void Group::setColors(vector<vector<float>> c) {this->colors = c;}
 vector<GLuint> Group ::  getpVbos(){return this->pVbos;}
 vector<GLuint>Group ::  getnVbos(){return this->nVbos;}
 vector<GLuint> Group :: gettVbos(){return this->tVbos;}
 vector<string> Group :: getTextures(){return this->textures;}
-void Group:: setpVbosSize(vector<GLuint> p){ this->pVbosSize = p;}
-void Group::setnVbosSize(vector<GLuint> n){this->nVbosSize = n;}
-void Group::settVbosSize(vector<GLuint> t){this->tVbosSize = t;}
-vector<GLuint> Group ::  getpVbosSize(){return this->pVbosSize;}
-vector<GLuint>Group ::  getnVbosSize(){return this->nVbosSize;}
-vector<GLuint> Group :: gettVbosSize(){return this->tVbosSize;}
-
+void Group:: setSize(vector<GLuint> s){ this->size = s;}
+vector<GLuint> Group :: getSize(){return this->size;}
+vector<vector<float>> Group ::getColors() {return this->colors;}
 
 
 void Group :: setAsteroides(float maX ,float maZ ,int nAst){ this->numAst = nAst; this->maxX = maX; this->maxZ = maZ;}
@@ -36,5 +33,3 @@ int Group :: getNumAst(){return this->numAst;}
 float Group :: getmaxX(){return this->maxX;}
 float Group :: getmaxZ(){return this->maxZ;}
 
-
-}

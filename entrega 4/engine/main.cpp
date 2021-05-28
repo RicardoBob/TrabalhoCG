@@ -40,13 +40,14 @@ typedef struct node{
 //file struct
 typedef struct ficheiro{
     string name;
-    GLuint indexp,sizep,indexn,sizen,indext,sizet;
+    GLuint indexp;
+    GLuint indexn;
+    GLuint indext;
+    GLuint size;
 } *File;
 
 //------------VARIAVEIS GLOBAIS--------------
 vector<File> Vbos;
-vector<File> VbosTextura;
-vector<File> VbosNormais;
 Tree classTree;
 int iread ;
 bool render = true;
@@ -112,7 +113,6 @@ void processNormalKeys(unsigned char key, int x, int y){
 }
 bool mouseCaptured = true; //se o rato esta dentro da janela
 
-void drawAsteroides(int asteroides, float x, float z, node *pNode);
 
 void processSpecialKeys(int key, int x, int y){ //andar com a camera
     switch (key) {
@@ -178,7 +178,7 @@ void mouseMove(int x, int y){
 File readFile(string file){
     ifstream f("../../generator/cmake-build-debug/" + file);
     float x,y,z; // ponto
-    float tx,ty,tz; // textura
+    float tx,ty; // textura
     float nx,ny,nz; // normal
     string linha;
 
@@ -190,6 +190,10 @@ File readFile(string file){
 
     vector<float> vertext;
 
+    vertexp.clear();
+    vertexn.clear();
+    vertext.clear();
+
     while(getline(f,linha)) {
         istringstream in(linha);
         in >> x;
@@ -200,7 +204,6 @@ File readFile(string file){
         in >> nz;
         in >> tx;
         in >> ty;
-
 
         vertexp.push_back(x);
         vertexp.push_back(y);
@@ -214,11 +217,8 @@ File readFile(string file){
         vertext.push_back(ty);
 
     }
-    vbo->sizep = vertexp.size()/3;
-    vbo->sizen = vertexn.size()/3;
-    vbo->sizet = vertext.size()/2;
+    vbo->size = vertexp.size()/3;
     f.close();
-
     Vbos.push_back(vbo);
 
     //criar vbo
@@ -227,6 +227,7 @@ File readFile(string file){
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indexp);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexp.size(), vertexp.data(),GL_STATIC_DRAW);
 
+    /*
     //criar vbo
     glGenBuffers(1,&(vbo->indexn));
     //copiar vbo para a grafica
@@ -238,8 +239,9 @@ File readFile(string file){
     //copiar vbo para a grafica
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indext);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertext.size(), vertext.data(),GL_STATIC_DRAW);
-
+    */
     return vbo;
+
 }
 
 vector<GLuint> buildOrbita(vector<float> vertices){
@@ -263,16 +265,17 @@ vector<GLuint> buildOrbita(vector<float> vertices){
         gt += 0.01;
     }
 
-    GLuint res[2];
-    res[1] = vertex.size()/3;
+    GLuint res0;
+    GLuint res1;
+    res1 = vertex.size()/3;
 
-    glGenBuffers(1,&(res[0]));
-    glBindBuffer(GL_ARRAY_BUFFER,res[0]);
+    glGenBuffers(1,&res0);
+    glBindBuffer(GL_ARRAY_BUFFER,res0);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), vertex.data(),GL_STATIC_DRAW);
 
     vector<GLuint> vbo;
-    vbo.push_back(res[0]);
-    vbo.push_back(res[1]);
+    vbo.push_back(res0);
+    vbo.push_back(res1);
     return vbo;
 }
 
@@ -294,6 +297,17 @@ void groupParser(XMLElement *grupo, Tree parentNode){
 
     float maxZ = 0.0f;
 
+    vector<float> color;
+    color.push_back(-1.0f);
+    color.push_back(-1.0f);
+    color.push_back(-1.0f);
+
+    vector<vector<float>> colors;
+    vector<GLuint> pvbo;
+    vector<GLuint> nvbo;
+    vector<GLuint> tvbo;
+    vector<GLuint> size;
+    vector<string> tex;
     //
     while (grupo != nullptr){
         float x = 0.0f;
@@ -318,6 +332,8 @@ void groupParser(XMLElement *grupo, Tree parentNode){
             }
 
         }
+
+
 
         //translate
         if(strcmp(grupo->Value(),"translate") == 0){
@@ -407,14 +423,49 @@ void groupParser(XMLElement *grupo, Tree parentNode){
         }
 
         //Modelos
+        string bababui = grupo->Value();
         if(strcmp(grupo->Value(),"models") == 0){
-            XMLElement* modelos = grupo->FirstChildElement("model");
+            XMLElement* modelos = grupo->FirstChildElement();
             while(modelos != nullptr){
-                const char *nome = modelos->Attribute("file");
-                if(nome != nullptr) {
-                    file = string(nome);
-                    ficheiros.push_back(file);
+                const char *texture = "";
+                color[0] = -1.0f;
+                color[1] = -1.0f;
+                color[2] = -1.0f;
+                if(modelos->Attribute("file")) {
+                    const char *nome = modelos->Attribute("file");
+                    int flag = 0;
+                    File aux;
+                    if (nome != nullptr) {
+                        for(File f : Vbos){
+                            if(strcmp(f->name.c_str(),nome) == 0){
+                                flag = 1;
+                                aux = f;
+                                break;
+                            }
+                        }
+                        if (flag == 0){
+                            aux = readFile(nome);
+                        }
+                        pvbo.push_back(aux->indexp);
+                        nvbo.push_back(aux->indexn);
+                        tvbo.push_back(aux->indext);
+                        size.push_back(aux->size);
+                    }
                 }
+                if(modelos->Attribute("texture")){
+                    texture = modelos->Attribute("texture");
+                }
+                if(modelos->Attribute("diffR")){
+                    modelos->QueryFloatAttribute("diffR",&color[0]);
+                }
+                if(modelos->Attribute("diffG")){
+                    modelos->QueryFloatAttribute("diffG",&color[1]);
+                }
+                if(modelos->Attribute("diffB")){
+                    modelos->QueryFloatAttribute("diffB",&color[2]);
+                }
+                colors.push_back(color);
+                tex.push_back(texture);
                 modelos = modelos->NextSiblingElement();
             }
         }
@@ -434,7 +485,12 @@ void groupParser(XMLElement *grupo, Tree parentNode){
     g->setAsteroides(maxX,maxZ,numAsteroides);
     Transformation transformation = Transformation(trans,rot,sca);
     g->setTransformation(transformation);
-    g->setFile(ficheiros);
+    g->setSize(size);
+    g->setnVbos(nvbo);
+    g->setpVbos(pvbo);
+    g->settVbos(tvbo);
+    g->setTextures(tex);
+    g->setColors(colors);
     parentNode->g = g;
 }
 
@@ -470,6 +526,59 @@ int readXML(){
 }
 
 
+void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
+
+    map<float,float> pontos;
+
+    int flagPonto = 1;
+    srand(5151);
+    float r ,xf,zf,alpha;
+    for(int i = 0; i<=asteroides;i++ ){
+
+
+
+        r = sqrt(rand()) / RAND_MAX;
+        alpha = rand() * 2 * M_PI / RAND_MAX;
+
+        xf = cos(alpha) * (r+ maxX);
+        zf = sin(alpha) * (r+ maxZ);
+
+
+        // 1 caso não exista overlap de asteroides & 0 caso exista
+        for (auto itr : pontos) {
+            float fst= itr.first;
+            float snd = itr.second;
+            float dst = (fst-xf) - (snd-zf); //guarda a dist. entre as asteroides
+            if(fabs(dst) < 8.0f){
+                flagPonto = 0;
+                }else
+                {
+                    flagPonto = 1;
+                }
+            }
+
+            if (fabs(xf) < r + maxX*7 && fabs(zf) < r + maxZ*8 && flagPonto ) {
+                glPushMatrix();
+                glTranslatef(xf,0.0f,zf);
+                glRotatef(90,0.0f,0.0f,1.0f);
+
+
+            for (int j = 0; j < pNode->g->getpVbos().size(); j++){
+
+                glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[j]);
+                glVertexPointer(3, GL_FLOAT, 0, 0);
+                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[j]);
+
+            }
+
+            glPopMatrix();
+            cout << xf <<" "<< zf << endl;
+            pontos.insert(pair<float,float>(xf,zf));
+        }
+    }
+
+}
+
 int readTree(Tree tree){
     if(tree == nullptr){ return -1;}
 
@@ -484,105 +593,26 @@ int readTree(Tree tree){
             float maxX = n->g->getmaxX();
             float maxZ = n->g->getmaxZ();
             drawAsteroides(numAsteroides, maxX, maxZ, n);
-            readTree(n);
-            glPopMatrix();
         }
         else{
-        n->g->getTransformation().apply(render);
+            n->g->getTransformation().apply(render);
 
-        int flag = 0;
-        File aux;
+            for (int i = 0; i < n->g->getpVbos().size(); i++){
 
-        for (string nome : n->g->getFile()){
-            for (File vbo : Vbos) {
-                if (nome == vbo->name) {
-                    aux = vbo;
-                    flag = 1;
-                    break;
-                }
+                glBindBuffer(GL_ARRAY_BUFFER, n->g->getpVbos()[i]);
+                glVertexPointer(3, GL_FLOAT, 0, 0);
+
+                //glBindBuffer(GL_ARRAY_BUFFER, n->g->getnVbos()[i]);
+                //glVertexPointer(3, GL_FLOAT, 0, 0);
+                glDrawArrays(GL_TRIANGLES, 0, n->g->getSize()[i]);
             }
-
-            if (flag == 0) {
-                aux = readFile(nome);
-                Vbos.push_back(aux);
-            }
-
-            glBindBuffer(GL_ARRAY_BUFFER, aux->index);
-            glVertexPointer(3, GL_FLOAT, 0, 0);
-            glDrawArrays(GL_TRIANGLES, 0, aux->size);
         }
-
         readTree(n);
         glPopMatrix();
-
-    }
     }
     return 1;
 }
 
-void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
-
-    map<float,float> pontos;
-
-    int flagPonto = 1;
-    srand(5151);
-    float r ,xf,zf,alpha;
-    for(int i = 0; i<=asteroides;i++ ){
-
-
-
-        r = sqrt(rand())+40 / RAND_MAX;
-        alpha = rand() * 2 * M_PI / RAND_MAX;
-
-        xf = cos(alpha) * (r+ maxX*7);
-        zf = sin(alpha) * (r+ maxZ*8);
-
-
-        // 1 caso não exista overlap de asteroides & 0 caso exista
-        for (auto itr : pontos) {
-            float fst= itr.first;
-            float snd = itr.second;
-            float dst = (fst-xf) - (snd-zf); //guarda a dist. entre as asteroides
-            if(fabs(dst) < 8.0f){
-                flagPonto = 0;
-            }else{
-                flagPonto = 1;
-            }
-        }
-
-        if (fabs(xf) < r + maxX*7 && fabs(zf) < r + maxZ*8 && flagPonto ) {
-            glPushMatrix();
-            glTranslatef(xf,0.0f,zf);
-            glRotatef(90,0.0f,0.0f,1.0f);
-
-            int flag = 0;
-            File aux;
-
-            for (string nome : pNode->g->getFile()){
-                for (File vbo : Vbos) {
-                    if (nome == vbo->name) {
-                        aux = vbo;
-                        flag = 1;
-                        break;
-                    }
-                }
-
-                if (flag == 0) {
-                    aux = readFile(nome);
-                    Vbos.push_back(aux);
-                }
-
-                glBindBuffer(GL_ARRAY_BUFFER, aux->index);
-                glVertexPointer(3, GL_FLOAT, 0, 0);
-                glDrawArrays(GL_TRIANGLES, 0, aux->size);
-            }
-            glPopMatrix();
-
-            pontos.insert(pair<float,float>(xf,zf));
-        }
-    }
-
-}
 
 void renderScene() {
 
@@ -624,7 +654,6 @@ void renderScene() {
 
 int main(int argc, char **argv) {
     //ler
-    readXML();
 
     timebase = glutGet(GLUT_ELAPSED_TIME);
 
@@ -651,6 +680,8 @@ int main(int argc, char **argv) {
     glEnable(GL_NORMALIZE);
     glShadeModel (GL_SMOOTH);
     glEnableClientState(GL_VERTEX_ARRAY);
+
+    readXML();
 
 // enter GLUT's main cycle
     glutMainLoop();

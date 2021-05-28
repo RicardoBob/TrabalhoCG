@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/classes.cpp" "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.o"
-  "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/main.cpp" "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"
-  "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/tinyxml2-master/tinyxml2.cpp" "/home/ricardo/Desktop/Universidade/3ano/CG/trabalho/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 2/engine/classes.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/classes.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 2/engine/main.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.o"
+  "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 2/engine/tinyxml2-master/tinyxml2.cpp" "/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 2/engine/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
