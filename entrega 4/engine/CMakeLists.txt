@@ -15,6 +15,7 @@ add_definitions(${OpenGL_DEFINITIONS})
 SET(CMAKE_CXX_FLAGS_DEBUG "-O2")
 
 
+
 if(NOT OPENGL_FOUND)
     message(ERROR " OPENGL not found!")
 endif(NOT OPENGL_FOUND)

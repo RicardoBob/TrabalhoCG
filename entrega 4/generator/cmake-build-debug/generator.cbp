@@ -91,6 +91,9 @@
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/box.cpp">
 			<Option target="generator"/>
 		</Unit>
+		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/boxInverted.cpp">
+			<Option target="generator"/>
+		</Unit>
 		<Unit filename="C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/cone.cpp">
 			<Option target="generator"/>
 		</Unit>

@@ -10,6 +10,9 @@ CMakeFiles\generator.dir\modelos\bezier.cpp.obj: ..\modelos\modelos.h
 CMakeFiles\generator.dir\modelos\box.cpp.obj: ..\modelos\box.cpp
 CMakeFiles\generator.dir\modelos\box.cpp.obj: ..\modelos\modelos.h
 
+CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj: ..\modelos\boxInverted.cpp
+CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj: ..\modelos\modelos.h
+
 CMakeFiles\generator.dir\modelos\cone.cpp.obj: ..\modelos\cone.cpp
 CMakeFiles\generator.dir\modelos\cone.cpp.obj: ..\modelos\modelos.h
 

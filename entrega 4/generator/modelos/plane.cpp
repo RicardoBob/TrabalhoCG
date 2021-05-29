@@ -10,17 +10,19 @@ void plano(float a){
 
     ofstream fileQuadrado("plane.3d", ios::trunc);
 
+    // vertice, normal, textura
+
     //Triangulo 1
 
-    fileQuadrado   << a << " 0 " << -a  << endl ; //(1,0,-1)
-    fileQuadrado   << -a << " 0 " << -a << endl; //(-1,0,-1)
-    fileQuadrado   << -a << " 0 " << a << endl; //(-1,0,1)
+    fileQuadrado   << a << " 0 " << -a  << "0" << "1" << "" << "0" << endl ; //(1,0,-1)
+    fileQuadrado   << -a << " 0 " << -a << "0" << "1" << "" << "0" << endl; //(-1,0,-1)
+    fileQuadrado   << -a << " 0 " << a << "0" << "1" << "" << "0" << endl; //(-1,0,1)
 
     //Triangulo 2
 
-    fileQuadrado   << a << " 0 " << -a << endl; //(1,0,-1)
-    fileQuadrado   << -a << " 0 " << a << endl; //(-1,0,1)
-    fileQuadrado   << a << " 0 " << a << endl;  //(1,0,1)
+    fileQuadrado   << a << " 0 " << -a << "0" << "1" << "" << "0" << endl; //(1,0,-1)
+    fileQuadrado   << -a << " 0 " << a << "0" << "1" << "" << "0" << endl; //(-1,0,1)
+    fileQuadrado   << a << " 0 " << a << "0" << "1" << "" << "0" << endl;  //(1,0,1)
 
 
     fileQuadrado.close();

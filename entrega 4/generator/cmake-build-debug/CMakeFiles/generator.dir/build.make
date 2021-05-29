@@ -175,6 +175,25 @@ CMakeFiles\generator.dir\modelos\sphere.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\generator.dir\modelos\sphere.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\modelos\sphere.cpp"
 <<
 
+CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj: CMakeFiles\generator.dir\flags.make
+CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj: ..\modelos\boxInverted.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/generator.dir/modelos/boxInverted.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\generator.dir\modelos\boxInverted.cpp.obj /FdCMakeFiles\generator.dir\ /FS -c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\modelos\boxInverted.cpp"
+<<
+
+CMakeFiles\generator.dir\modelos\boxInverted.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/modelos/boxInverted.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\generator.dir\modelos\boxInverted.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\modelos\boxInverted.cpp"
+<<
+
+CMakeFiles\generator.dir\modelos\boxInverted.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/modelos/boxInverted.cpp.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\generator.dir\modelos\boxInverted.cpp.s /c "C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\modelos\boxInverted.cpp"
+<<
+
 # Object files for target generator
 generator_OBJECTS = \
 "CMakeFiles\generator.dir\main.cpp.obj" \
@@ -182,7 +201,8 @@ generator_OBJECTS = \
 "CMakeFiles\generator.dir\modelos\box.cpp.obj" \
 "CMakeFiles\generator.dir\modelos\plane.cpp.obj" \
 "CMakeFiles\generator.dir\modelos\cone.cpp.obj" \
-"CMakeFiles\generator.dir\modelos\sphere.cpp.obj"
+"CMakeFiles\generator.dir\modelos\sphere.cpp.obj" \
+"CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj"
 
 # External object files for target generator
 generator_EXTERNAL_OBJECTS =
@@ -193,9 +213,10 @@ generator.exe: CMakeFiles\generator.dir\modelos\box.cpp.obj
 generator.exe: CMakeFiles\generator.dir\modelos\plane.cpp.obj
 generator.exe: CMakeFiles\generator.dir\modelos\cone.cpp.obj
 generator.exe: CMakeFiles\generator.dir\modelos\sphere.cpp.obj
+generator.exe: CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj
 generator.exe: CMakeFiles\generator.dir\build.make
 generator.exe: CMakeFiles\generator.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable generator.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable generator.exe"
 	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\generator.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\generator.dir\objects1.rsp @<<
  /out:generator.exe /implib:generator.lib /pdb:"C:\Users\igor1\Desktop\CG\TrabalhoCG\entrega 4\generator\cmake-build-debug\generator.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

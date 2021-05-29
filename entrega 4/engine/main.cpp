@@ -48,9 +48,25 @@ typedef struct ficheiro {
     GLuint size;
 } *File;
 
+//light struct
+typedef struct luz{
+    string type;
+    float pos[4];
+    float dir[4];
+    float diff[4];
+    float amb[4];
+    float spec[4];
+    float cutoff;
+    float exp;
+    float quad;
+    float lin;
+} *Light;
+
 //------------VARIAVEIS GLOBAIS--------------
 vector<File> Vbos;
 Tree classTree;
+vector<Light> lights;
+
 int iread;
 bool render = true;
 //-----------------CAMERA--------------------
@@ -115,6 +131,8 @@ void processNormalKeys(unsigned char key, int x, int y) {
 
 bool mouseCaptured = true; //se o rato esta dentro da janela
 
+
+void setLights();
 
 void processSpecialKeys(int key, int x, int y) { //andar com a camera
     switch (key) {
@@ -223,13 +241,12 @@ File readFile(string file) {
     glBindBuffer(GL_ARRAY_BUFFER, vbo->indexp);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexp.size(), vertexp.data(), GL_STATIC_DRAW);
 
-    /*
     //criar vbo
-    glGenBuffers(1,&(vbo->indexn));
-    //copiar vbo para a grafica
+    glGenBuffers(1,&(vbo->indexn));//copiar vbo para a grafica
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indexn);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexn.size(), vertexn.data(),GL_STATIC_DRAW);
 
+    /*
     //criar vbo
     glGenBuffers(1,&(vbo->indext));
     //copiar vbo para a grafica
@@ -276,6 +293,94 @@ vector<GLuint> buildOrbita(vector<float> vertices) {
 }
 
 
+void lightsParser(XMLElement *grupo){
+    XMLElement* light = grupo->FirstChildElement();
+    while (light != nullptr) {
+        Light luz = new struct luz;
+        luz->pos[3] = 1.0f;
+        luz->dir[3] = 0.0f;
+        luz->diff[0] = 1.0f;
+        luz->diff[1] = 1.0f;
+        luz->diff[2] = 1.0f;
+        luz->diff[3] = 1.0f;
+        luz->amb[0] = 0.2f;
+        luz->amb[1] = 0.2f;
+        luz->amb[2] = 0.2f;
+        luz->amb[3] = 1.0f;
+        luz->spec[0] = 1.0f;
+        luz->spec[1] = 1.0f;
+        luz->spec[2] = 1.0f;
+        luz->spec[3] = 1.0f;
+
+        //Modelo
+        if (light->Attribute("type")) {
+            luz->type = light->Attribute("type");
+        }
+        if (light->Attribute("diffR")) {
+            light->QueryFloatAttribute("diffR", &(luz->diff[0]));
+        }
+        if (light->Attribute("diffG")) {
+            light->QueryFloatAttribute("diffG", &(luz->diff[1]));
+        }
+        if (light->Attribute("diffB")) {
+            light->QueryFloatAttribute("diffB", &(luz->diff[2]));
+        }
+        if (light->Attribute("specR")) {
+            light->QueryFloatAttribute("specR", &(luz->spec[0]));
+        }
+        if (light->Attribute("specG")) {
+            light->QueryFloatAttribute("specG", &(luz->spec[1]));
+        }
+        if (light->Attribute("specB")) {
+            light->QueryFloatAttribute("specB", &(luz->spec[2]));
+        }
+        if (light->Attribute("ambR")) {
+            light->QueryFloatAttribute("ambiR",&(luz->amb[0]));
+        }
+        if (light->Attribute("ambG")) {
+            light->QueryFloatAttribute("ambiG", &(luz->amb[1]));
+        }
+        if (light->Attribute("ambB")) {
+            light->QueryFloatAttribute("ambiB", &(luz->amb[2]));
+        }
+        if (light->Attribute("posX")) {
+            light->QueryFloatAttribute("posX",&(luz->pos[0]));
+        }
+        if (light->Attribute("posY")) {
+            light->QueryFloatAttribute("posY", &(luz->pos[1]));
+        }
+        if (light->Attribute("posZ")) {
+            light->QueryFloatAttribute("posZ", &(luz->pos[2]));
+        }
+        if (light->Attribute("dirX")) {
+            light->QueryFloatAttribute("dirX",&(luz->dir[0]));
+        }
+        if (light->Attribute("dirY")) {
+            light->QueryFloatAttribute("dirY", &(luz->dir[1]));
+        }
+        if (light->Attribute("dirZ")) {
+            light->QueryFloatAttribute("dirZ", &(luz->dir[2]));
+        }
+        if (light->Attribute("cutoff")) {
+            light->QueryFloatAttribute("cutoff", &(luz->cutoff));
+        }
+        if (light->Attribute("exp")) {
+            light->QueryFloatAttribute("exp", &(luz->exp));
+        }
+        if (light->Attribute("lin")) {
+            light->QueryFloatAttribute("lin", &(luz->lin));
+        }
+        if (light->Attribute("quad")) {
+            light->QueryFloatAttribute("quad", &(luz->quad));
+        }
+
+        lights.push_back(luz);
+
+        light = light->NextSiblingElement();
+    }
+}
+
+
 void groupParser(XMLElement *grupo, Tree parentNode) {
     //inicializar vars
     grupo = grupo->FirstChildElement();
@@ -293,9 +398,9 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
     float maxZ = 0.0f;
 
     vector<float> color;
-    color.push_back(-1.0f);
-    color.push_back(-1.0f);
-    color.push_back(-1.0f);
+    for(int j = 0; j < 12; j++){
+        color.push_back(-1.0f);
+    }
 
     vector<vector<float>> colors;
     vector<GLuint> pvbo;
@@ -422,9 +527,9 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
             XMLElement *modelos = grupo->FirstChildElement();
             while (modelos != nullptr) {
                 const char *texture = "";
-                color[0] = -1.0f;
-                color[1] = -1.0f;
-                color[2] = -1.0f;
+                for(int j = 0; j < 12; j++){
+                    color[j] = -1.0f;
+                }
                 if (modelos->Attribute("file")) {
                     const char *nome = modelos->Attribute("file");
                     int flag = 0;
@@ -458,6 +563,37 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
                 if (modelos->Attribute("diffB")) {
                     modelos->QueryFloatAttribute("diffB", &color[2]);
                 }
+                if (modelos->Attribute("specR")) {
+                    modelos->QueryFloatAttribute("specR", &color[3]);
+                }
+                if (modelos->Attribute("specG")) {
+                    modelos->QueryFloatAttribute("specG", &color[4]);
+                }
+                if (modelos->Attribute("specB")) {
+                    modelos->QueryFloatAttribute("specB", &color[5]);
+                }
+                if (modelos->Attribute("ambR")) {
+                    modelos->QueryFloatAttribute("ambiR", &color[6]);
+                }
+                if (modelos->Attribute("ambG")) {
+                    modelos->QueryFloatAttribute("ambiG", &color[7]);
+                }
+                if (modelos->Attribute("ambB")) {
+                    modelos->QueryFloatAttribute("ambiB", &color[8]);
+                }
+                if (modelos->Attribute("emiB")) {
+                    modelos->QueryFloatAttribute("emiB", &color[9]);
+                }
+                if (modelos->Attribute("emiR")) {
+                    modelos->QueryFloatAttribute("emiR", &color[10]);
+                }
+                if (modelos->Attribute("emiG")) {
+                    modelos->QueryFloatAttribute("emiG", &color[11]);
+                }
+                if (modelos->Attribute("shiny")) {
+                    modelos->QueryFloatAttribute("shiny", &color[12]);
+                }
+
                 colors.push_back(color);
                 tex.push_back(texture);
                 modelos = modelos->NextSiblingElement();
@@ -506,16 +642,25 @@ int readXML() {
         return -1;
     }
 
+    grupo = grupo->FirstChildElement();
+    if (grupo == nullptr) {
+        return -1;
+    }
+
+    cout << grupo->Value() << endl;
+    if (strcmp(grupo->Value(), "lights") == 0) {
+        lightsParser(grupo);
+        grupo = grupo->NextSiblingElement();
+    }
     while (grupo != nullptr) {
         //inicializar a subarvore do grupo para ser adicionada na arvore de classes
         Tree subTree = new struct node;
         subTree->next.clear();
         groupParser(grupo, subTree);
         classTree->next.push_back(subTree);
-
         grupo = grupo->NextSiblingElement();
-
     }
+
     return 1;
 }
 
@@ -558,9 +703,33 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
 
             for (int j = 0; j < pNode->g->getpVbos().size(); j++) {
 
-                glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[j]);
+                if(strcmp(pNode->g->getTextures()[i].c_str(),"") == 0){
+                    vector<float> cor = pNode->g->getColors()[i];
+                    float diff[4] = {cor[0],cor[1],cor[2],1.0f};
+                    float spec[4] = {cor[3],cor[4],cor[5],1.0f};
+                    float amb[4] = {cor[6],cor[7],cor[8],1.0f};
+                    float emi[4] = {cor[9],cor[10],cor[11],1.0f};
+                    glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
+                    glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
+                    glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
+                    glMaterialfv(GL_FRONT, GL_EMISSION, emi);
+                    glMaterialf(GL_FRONT, GL_SHININESS, cor[12]);
+                }
+                else{
+                    float diff[4] = {0.714f, 0.4284f, 0.18144f,1.0f};
+                    float spec[4] = {0.393548f, 0.271906f, 0.166721f,1.0f};
+                    float amb[4] = {0.2125f, 0.1275f, 0.054f, 1.0f};
+                    float emi[4] = {1.0f,0.0f,0.0f,1.0f};
+                    glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
+                    glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
+                    glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
+                    glMaterialfv(GL_FRONT, GL_EMISSION, emi);
+                    glMaterialf(GL_FRONT, GL_SHININESS, 25.6f);
+                }
+
+                glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[i]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
-                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[j]);
+                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[i]);
 
             }
 
@@ -580,21 +749,47 @@ int readTree(Tree tree) {
         //Detetar que é um grupo de asteroides
         if (n->g->getNumAst() != 0) {
             //
-            n->g->getTransformation().apply(render);
             int numAsteroides = n->g->getNumAst();
             float maxX = n->g->getmaxX();
             float maxZ = n->g->getmaxZ();
+
+            n->g->getTransformation().apply(render);
             drawAsteroides(numAsteroides, maxX, maxZ, n);
         } else {
             n->g->getTransformation().apply(render);
 
             for (int i = 0; i < n->g->getpVbos().size(); i++) {
 
+                if(strcmp(n->g->getTextures()[i].c_str(),"") == 0){
+                    vector<float> cor = n->g->getColors()[i];
+                    float diff[4] = {cor[0],cor[1],cor[2],1.0f};
+                    float spec[4] = {cor[3],cor[4],cor[5],1.0f};
+                    float amb[4] = {cor[6],cor[7],cor[8],1.0f};
+                    float emi[4] = {cor[9],cor[10],cor[11],1.0f};
+                    glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
+                    glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
+                    glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
+                    glMaterialfv(GL_FRONT, GL_EMISSION, emi);
+                    glMaterialf(GL_FRONT, GL_SHININESS, cor[12]);
+                }
+                else{
+                    float diff[4] = {0.8f, 0.8f, 0.8f,1.0f};
+                    float spec[4] = {0.8f, 0.8f, 0.8f,1.0f};
+                    float amb[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+                    float emi[4] = {0.8f,0.8f,0.8f,1.0f};
+                    glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
+                    glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
+                    glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
+                    glMaterialfv(GL_FRONT, GL_EMISSION, emi);
+                    glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
+                }
+
                 glBindBuffer(GL_ARRAY_BUFFER, n->g->getpVbos()[i]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
 
-                //glBindBuffer(GL_ARRAY_BUFFER, n->g->getnVbos()[i]);
-                //glVertexPointer(3, GL_FLOAT, 0, 0);
+                glBindBuffer(GL_ARRAY_BUFFER, n->g->getnVbos()[i]);
+                glNormalPointer(GL_FLOAT, 0, 0);
+
                 glDrawArrays(GL_TRIANGLES, 0, n->g->getSize()[i]);
             }
         }
@@ -605,10 +800,23 @@ int readTree(Tree tree) {
 }
 
 
+void setLights() {
+    for(int i = 0; i < fmin(8,lights.size()); i++){
+        Light luz = lights[i];
+        if(strcmp(luz->type.c_str(),"DIRECTIONAL") != 0) {
+            glLightfv(GL_LIGHT0 + i, GL_POSITION, luz->pos);
+        }
+    }
+}
+
+
 void renderScene() {
+
+    setLights();
 
     // clear buffers
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor(0.0f,0.0f,0.0f,0.0f);
 
     // set the camera
     glLoadIdentity();
@@ -634,16 +842,59 @@ void renderScene() {
         const char *c = str.c_str();
         glutSetWindowTitle(c);
     }
+
+
     readTree(classTree);
-    //cout << Vbos.size() << endl;
     // End of frame
     glutSwapBuffers();
 
 }
 
 
+void initLights(){
+    for(int i = 0; i < fmin(8,lights.size()); i++){
+        Light light = lights[i];
+        glEnable(GL_LIGHT0+i);
+        glLightfv(GL_LIGHT0 + i, GL_AMBIENT, light->amb);
+        glLightfv(GL_LIGHT0 + i, GL_DIFFUSE, light->diff);
+        glLightfv(GL_LIGHT0 + i, GL_SPECULAR, light->spec);
+
+        if(strcmp((light->type).c_str(),"POINT") == 0){
+            glLightf(GL_LIGHT0 + i,  GL_LINEAR_ATTENUATION, light->lin);
+            glLightf(GL_LIGHT0 + i, GL_QUADRATIC_ATTENUATION, light->quad);
+        }
+        if(strcmp((light->type).c_str(),"DIRECTIONAL") == 0){
+            glLightfv(GL_LIGHT0 + i,GL_SPOT_DIRECTION, light->dir);
+        }
+        if(strcmp((light->type).c_str(),"SPOT") == 0){
+            glLightfv(GL_LIGHT0 + i, GL_SPOT_DIRECTION, light->dir);
+            glLightf(GL_LIGHT0 + i, GL_SPOT_CUTOFF, light->cutoff);
+            glLightf(GL_LIGHT0 + i,GL_SPOT_EXPONENT, light->exp);
+            glLightf(GL_LIGHT0 + i, GL_LINEAR_ATTENUATION, light->lin);
+            glLightf(GL_LIGHT0 + i, GL_QUADRATIC_ATTENUATION, light->quad);
+        }
+    }
+}
+
+void initGL(){
+
+    readXML();
+
+    glEnable(GL_LIGHTING);
+
+    initLights();
+
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_CULL_FACE);
+    glEnable(GL_NORMALIZE);
+    glShadeModel(GL_SMOOTH);
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_NORMAL_ARRAY);
+
+}
+
+
 int main(int argc, char **argv) {
-    //ler
 
     timebase = glutGet(GLUT_ELAPSED_TIME);
 
@@ -665,14 +916,8 @@ int main(int argc, char **argv) {
 
 //  OpenGL settings
     glewInit();
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
-    glEnable(GL_NORMALIZE);
-    glShadeModel(GL_SMOOTH);
-    glEnableClientState(GL_VERTEX_ARRAY);
 
-    readXML();
-
+    initGL();
 // enter GLUT's main cycle
     glutMainLoop();
 

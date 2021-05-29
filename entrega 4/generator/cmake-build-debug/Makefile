@@ -208,6 +208,33 @@ modelos\box.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\box.cpp.s
 .PHONY : modelos\box.cpp.s
 
+modelos\boxInverted.obj: modelos\boxInverted.cpp.obj
+
+.PHONY : modelos\boxInverted.obj
+
+# target to build an object file
+modelos\boxInverted.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\boxInverted.cpp.obj
+.PHONY : modelos\boxInverted.cpp.obj
+
+modelos\boxInverted.i: modelos\boxInverted.cpp.i
+
+.PHONY : modelos\boxInverted.i
+
+# target to preprocess a source file
+modelos\boxInverted.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\boxInverted.cpp.i
+.PHONY : modelos\boxInverted.cpp.i
+
+modelos\boxInverted.s: modelos\boxInverted.cpp.s
+
+.PHONY : modelos\boxInverted.s
+
+# target to generate assembly for a file
+modelos\boxInverted.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\generator.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\generator.dir\modelos\boxInverted.cpp.s
+.PHONY : modelos\boxInverted.cpp.s
+
 modelos\cone.obj: modelos\cone.cpp.obj
 
 .PHONY : modelos\cone.obj
@@ -307,6 +334,9 @@ help:
 	@echo ... modelos/box.obj
 	@echo ... modelos/box.i
 	@echo ... modelos/box.s
+	@echo ... modelos/boxInverted.obj
+	@echo ... modelos/boxInverted.i
+	@echo ... modelos/boxInverted.s
 	@echo ... modelos/cone.obj
 	@echo ... modelos/cone.i
 	@echo ... modelos/cone.s

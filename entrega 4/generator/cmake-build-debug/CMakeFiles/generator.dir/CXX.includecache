@@ -6,27 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/main.cpp
-cmath
--
-iostream
--
-fstream
--
-cstring
--
-modelos/modelos.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/bezier.cpp
-modelos.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/box.cpp
-modelos.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/cone.cpp
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/boxInverted.cpp
 modelos.h
 C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
 
@@ -40,15 +20,5 @@ fstream
 cstring
 -
 string
--
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/plane.cpp
-modelos.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/sphere.cpp
-modelos.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
-vector
 -
 

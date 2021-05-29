@@ -82,19 +82,19 @@ void sphere(float radius, int slices, int stacks) {
             // normal
             // textura
 
-            fileSphere << p1x << " " << p1y << " " << p1z << " "  << p1x/radius << " " << p1y/radius << " " << p1z/radius << " "<< textureX << " " << textureY-(1.f/(float)stacks) << " " << 0 << endl;
+            fileSphere << p1x << " " << p1y << " " << p1z << " "  << p1x/radius << " " << p1y/radius << " " << p1z/radius << " "<< textureX << " " << textureY-(1.f/(float)stacks) << " "  << endl;
 
-            fileSphere << p2x << " " << p2y << " " << p2z  << " "<< p2x/radius << " " << p2y/radius << " " << p2z/radius << " "  <<  textureX+(1.f/(float) slices) << " " << textureY-(1.f/(float) stacks) << " "  << 0 <<endl;
+            fileSphere << p2x << " " << p2y << " " << p2z  << " "<< p2x/radius << " " << p2y/radius << " " << p2z/radius << " "  <<  textureX+(1.f/(float) slices) << " " << textureY-(1.f/(float) stacks) << " "  << endl;
 
-            fileSphere << p4x << " " << p4y << " " << p4z << " " << p4x/radius << " " << p4y/radius << " " << p4z/radius << " "  << textureX+(1.f/(float) slices) << " " << textureY << " "  << 0 << endl;
+            fileSphere << p4x << " " << p4y << " " << p4z << " " << p4x/radius << " " << p4y/radius << " " << p4z/radius << " "  << textureX+(1.f/(float) slices) << " " << textureY << " "  << endl;
 
 
 
-            fileSphere << p1x << " " << p1y << " " << p1z << " "  << p1x/radius << " " << p1y/radius << " " << p1z/radius << " "<< textureX << " " << textureY-(1.f/(float)stacks) << " " << 0 << endl;
+            fileSphere << p1x << " " << p1y << " " << p1z << " "  << p1x/radius << " " << p1y/radius << " " << p1z/radius << " "<< textureX << " " << textureY-(1.f/(float)stacks) << " "  << endl;
 
-            fileSphere << p4x << " " << p4y << " " << p4z << " " << p4x/radius << " " << p4y/radius << " " << p4z/radius << " "  << textureX+(1.f/(float) slices) << " " << textureY << " "  << 0 << endl;
+            fileSphere << p4x << " " << p4y << " " << p4z << " " << p4x/radius << " " << p4y/radius << " " << p4z/radius << " "  << textureX+(1.f/(float) slices) << " " << textureY << " "  << endl;
 
-            fileSphere << p3x << " " << p3y << " " << p3z << " " << p3x/radius << " " << p3y/radius << " " << p3z/radius << " " << textureX << " " << textureY << " " << 0 << endl;
+            fileSphere << p3x << " " << p3y << " " << p3z << " " << p3x/radius << " " << p3y/radius << " " << p3z/radius << " " << textureX << " " << textureY << " " << endl;
 
 
         }

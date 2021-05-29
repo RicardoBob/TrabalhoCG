@@ -44,6 +44,23 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    if (std::strcmp(argv[1], "boxinv") == 0) { // generate box ladox ladoy ladoz slices box.3d
+        if (argc == 6 || argc == 5) {
+            float ladoX = (atof(argv[2])) / 2.0;
+            float ladoY = (atof(argv[3])) / 2.0;
+            float ladoZ = (atof(argv[4])) / 2.0;
+            if (argc == 6) {
+                int slices = (atoi(argv[5]));
+                caixaInverted(ladoX, ladoY, ladoZ, slices);
+            } else {
+                caixaInverted(ladoX, ladoY, ladoZ, 1);
+            }
+        } else {
+            printf("Comando invalido");
+        }
+    }
+
+
     if (std::strcmp(argv[1], "sphere") == 0) { // generate box ladox ladoy ladoz slices box.3d
         if (argc == 5) {
             float radius = (atof(argv[2]));

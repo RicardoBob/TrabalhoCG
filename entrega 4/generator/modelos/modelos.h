@@ -17,6 +17,7 @@
 #define _USE_MATH_DEFINES
 void plano(float a);
 void caixa(float ladoX, float ladoY,float ladoZ, int slices);
+void caixaInverted(float ladoX, float ladoY,float ladoZ, int slices);
 void cone(float radius, float height, int slices, int stacks);
 void sphere(float radius, int slices, int stacks);
 void bezier2file(std::string ficheiroALer, int tessellation);
