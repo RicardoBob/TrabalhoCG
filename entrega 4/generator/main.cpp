@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    if (std::strcmp(argv[1], "boxinv") == 0) { // generate box ladox ladoy ladoz slices box.3d
+    if (std::strcmp(argv[1], "boxinv") == 0) { // generate boxinv ladox ladoy ladoz slices box.3d
         if (argc == 6 || argc == 5) {
             float ladoX = (atof(argv[2])) / 2.0;
             float ladoY = (atof(argv[3])) / 2.0;

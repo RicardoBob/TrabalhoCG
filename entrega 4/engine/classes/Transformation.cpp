@@ -30,18 +30,18 @@ void Transformation ::apply(bool render){
         float Y[4] = {0,1,0};
         float Z[4];
 
-        if(render){drawOrbita(translate.getOrbita(),translate.getSize());}
+        if(render){
+            glDisable(GL_LIGHTING);
+            glClearColor(0,0,0,0);
+            drawOrbita(translate.getOrbita(),translate.getSize());
+            glEnable(GL_LIGHTING);
+        }
 
 
         float gt = ((translate.getCurve().size())+time)/translate.getTime();
 
 
         getGlobalCatmullRomPoint(gt, pos, deriv, translate.getCurve());
-
-
-
-
-        //cout  << pos[0]  << pos[1]<<pos[2] << endl;
 
         glTranslatef(pos[0],pos[1],pos[2]);
 

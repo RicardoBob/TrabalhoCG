@@ -5,9 +5,9 @@
 #include <GL/glew.h>
 #include <stdlib.h>
 #include <GL/glut.h>
-#include <IL/il.h>
-
 #endif
+
+#include <IL/il.h>
 
 #ifndef XMLCheckResult
 #define XMLCheckResult(a_eResult) if (a_eResult != XML_SUCCESS) { printf("Error: %i\n", a_eResult); return a_eResult; }
@@ -254,13 +254,10 @@ File readFile(string file) {
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indexn);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexn.size(), vertexn.data(),GL_STATIC_DRAW);
 
-
     //criar vbo
     glGenBuffers(1,&(vbo->indext));
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indext);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertext.size(), vertext.data(),GL_STATIC_DRAW);
-
-
 
     return vbo;
 
@@ -302,8 +299,8 @@ vector<GLuint> buildOrbita(vector<float> vertices) {
 }
 
 
-int loadTexture(string s) {
-    s = ("../texturas/" + s);
+int loadTexture(std::string s) {
+
     unsigned int t,tw,th;
     unsigned char *texData;
     unsigned int texID;
@@ -322,13 +319,14 @@ int loadTexture(string s) {
     glGenTextures(1,&texID);
 
     glBindTexture(GL_TEXTURE_2D,texID);
-    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_WRAP_S,	GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_WRAP_T,	GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_WRAP_S,		GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_WRAP_T,		GL_REPEAT);
 
-    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_MAG_FILTER,   	GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
+    glGenerateMipmap(GL_TEXTURE_2D);
 
     glBindTexture(GL_TEXTURE_2D, 0);
 
@@ -571,7 +569,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
             XMLElement *modelos = grupo->FirstChildElement();
             while (modelos != nullptr) {
                 GLuint idTex = -1;
-                const char *texture = "";
+                string texture = "";
                 for(int j = 0; j < 12; j++){
                     color[j] = -1.0f;
                 }
@@ -601,7 +599,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
                     Textura aux;
                     texture = modelos->Attribute("texture");
                     for(Textura t : texturas){
-                        if(strcmp(texture,t->name.c_str()) == 0){
+                        if(strcmp(texture.c_str(),t->name.c_str()) == 0){
                             find = 1;
                             aux = t;
                             break;
@@ -609,7 +607,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
                     }
                     if (find == 0){
                         aux = new struct tex;
-                        aux->idtext = loadTexture(texture);
+                        aux->idtext = loadTexture("../texturas/" + texture);
                         aux->name = texture;
                         texturas.push_back(aux);
                     }
@@ -708,7 +706,6 @@ int readXML() {
         return -1;
     }
 
-    cout << grupo->Value() << endl;
     if (strcmp(grupo->Value(), "lights") == 0) {
         lightsParser(grupo);
         grupo = grupo->NextSiblingElement();
@@ -762,34 +759,27 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
 
 
             for (int j = 0; j < pNode->g->getpVbos().size(); j++) {
-                if(pNode->g->getTextures()[j] == -1){
+                if (pNode->g->getTextures()[j] == -1) {
                     vector<float> cor = pNode->g->getColors()[j];
-                    float diff[4] = {cor[0],cor[1],cor[2],1.0f};
-                    float spec[4] = {cor[3],cor[4],cor[5],1.0f};
-                    float amb[4] = {cor[6],cor[7],cor[8],1.0f};
-                    float emi[4] = {cor[9],cor[10],cor[11],1.0f};
+                    float diff[4] = {cor[0], cor[1], cor[2], 1.0f};
+                    float spec[4] = {cor[3], cor[4], cor[5], 1.0f};
+                    float amb[4] = {cor[6], cor[7], cor[8], 1.0f};
+                    float emi[4] = {cor[9], cor[10], cor[11], 1.0f};
                     glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
                     glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
                     glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
                     glMaterialfv(GL_FRONT, GL_EMISSION, emi);
                     glMaterialf(GL_FRONT, GL_SHININESS, cor[12]);
-                }
-                else{
-                    float diff[4] = {0.8f, 0.8f, 0.8f,1.0f};
-                    float spec[4] = {0.8f, 0.8f, 0.8f,1.0f};
+                } else {
+                    float diff[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+                    float spec[4] = {0.8f, 0.8f, 0.8f, 1.0f};
                     float amb[4] = {0.8f, 0.8f, 0.8f, 1.0f};
-                    float emi[4] = {0.8f,0.8f,0.8f,1.0f};
+                    float emi[4] = {0.8f, 0.8f, 0.8f, 1.0f};
                     glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
                     glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
                     glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
                     glMaterialfv(GL_FRONT, GL_EMISSION, emi);
                     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-                }
-
-                GLuint idTex = pNode->g->getTextures()[j];
-
-                if(idTex != -1){
-                    glBindTexture(GL_TEXTURE_2D, idTex);
                 }
 
                 glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[j]);
@@ -798,24 +788,25 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
                 glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getnVbos()[j]);
                 glNormalPointer(GL_FLOAT, 0, 0);
 
-                if(idTex != -1) {
-                    glBindBuffer(GL_ARRAY_BUFFER,idTex);
-                    glTexCoordPointer(2,GL_FLOAT,0,0);
+                GLuint idTex = pNode->g->getTextures()[j];
+
+                if (idTex != -1) {
+                    glBindTexture(GL_TEXTURE_2D, idTex);
+                    glBindBuffer(GL_ARRAY_BUFFER, pNode->g->gettVbos()[j]);
+                    glTexCoordPointer(2, GL_FLOAT, 0, 0);
                 }
 
-                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[j]);
-
-                if(idTex != -1){
-                    glBindTexture(GL_TEXTURE_2D, 0);
-                }
-
+                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[i]);
+                glBindTexture(GL_TEXTURE_2D, 0);
             }
+
 
             glPopMatrix();
             pontos.insert(pair<float, float>(xf, zf));
         }
     }
 }
+
 
 
 int readTree(Tree tree) {
@@ -862,26 +853,22 @@ int readTree(Tree tree) {
                     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
                 }
 
-                GLuint idTex = n->g->getTextures()[i];
-
-
                 glBindBuffer(GL_ARRAY_BUFFER, n->g->getpVbos()[i]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
 
                 glBindBuffer(GL_ARRAY_BUFFER, n->g->getnVbos()[i]);
                 glNormalPointer(GL_FLOAT, 0, 0);
 
+                GLuint idTex = n->g->getTextures()[i];
+
                 if(idTex != -1) {
-
-
-                    glBindBuffer(GL_ARRAY_BUFFER,idTex);
-                    glTexCoordPointer(2,GL_FLOAT,0,0);
                     glBindTexture(GL_TEXTURE_2D, idTex);
+                    glBindBuffer(GL_ARRAY_BUFFER,n->g->gettVbos()[i]);
+                    glTexCoordPointer(2,GL_FLOAT,0,0);
                 }
 
                 glDrawArrays(GL_TRIANGLES, 0, n->g->getSize()[i]);
                 glBindTexture(GL_TEXTURE_2D, 0);
-
             }
         }
         readTree(n);
@@ -899,6 +886,7 @@ void setLights() {
         }
     }
 }
+
 
 
 void renderScene() {
@@ -920,7 +908,6 @@ void renderScene() {
     // put drawing instructions here
 
     //------------FPS
-
     frames++;
 
 
@@ -933,7 +920,6 @@ void renderScene() {
         const char *c = str.c_str();
         glutSetWindowTitle(c);
     }
-
 
     readTree(classTree);
     // End of frame
@@ -978,7 +964,6 @@ void initGL(){
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glEnable(GL_NORMALIZE);
-    glShadeModel(GL_SMOOTH);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_NORMAL_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Group.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Group.h
 string
 -
 GL/glew.h
@@ -18,9 +18,9 @@ GL/glut.h
 vector
 -
 Transformation.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Point.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Point.h
 string
 -
 GL/glew.h
@@ -32,7 +32,7 @@ GL/glut.h
 vector
 -
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Transformation.h
 string
 -
 GL/glew.h
@@ -44,9 +44,9 @@ GL/glut.h
 vector
 -
 Point.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Point.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Point.h
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h
 string
 -
 GL/glew.h
@@ -58,7 +58,7 @@ GL/glut.h
 vector
 -
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/main.cpp
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/main.cpp
 GLUT/glut.h
 -
 GL/glew.h
@@ -88,13 +88,13 @@ vector
 tuple
 -
 tinyxml2-master/tinyxml2.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h
 headers/Group.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/Group.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/Group.h
 headers/catmull.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/headers/catmull.h
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h
+/home/ricardo/Desktop/Universidade/CG/TrabalhoCG/entrega 4/engine/tinyxml2-master/tinyxml2.h
 ctype.h
 -
 limits.h
@@ -122,33 +122,5 @@ stdint.h
 android/log.h
 -
 assert.h
--
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/devil/IL/il.h
-stdio.h
--
-wchar.h
--
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glew/GL/glew.h
-stddef.h
--
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-OpenGL/glu.h
--
-GL/glu.h
--
-
-C:/Users/igor1/Desktop/CG/TrabalhoCG/toolkit/toolkits/glut/GL/glut.h
-windows.h
--
-GL/gl.h
--
-GL/glu.h
 -
 
