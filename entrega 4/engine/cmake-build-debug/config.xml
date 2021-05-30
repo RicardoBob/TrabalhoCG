@@ -166,7 +166,7 @@
             </translate>
             <scale X="0.22" Y="0.22" Z="0.22"/>
             <models>
-                <model file="sphere.3d" texure = "lua.jpg"/>
+                <model file="sphere.3d" texture = "lua.jpg"/>
             </models>
         </group>
     </group>
