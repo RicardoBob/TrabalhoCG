@@ -48,6 +48,11 @@ typedef struct ficheiro {
     GLuint size;
 } *File;
 
+typedef struct tex{
+    string name;
+    GLuint idtext;
+}*Textura;
+
 //light struct
 typedef struct luz{
     string type;
@@ -66,6 +71,7 @@ typedef struct luz{
 vector<File> Vbos;
 Tree classTree;
 vector<Light> lights;
+vector<Textura> texturas;
 
 int iread;
 bool render = true;
@@ -196,6 +202,8 @@ File readFile(string file) {
     float nx, ny, nz; // normal
     string linha;
 
+
+
     File vbo = new struct ficheiro;
     vbo->name = file;
     vector<float> vertexp;
@@ -246,13 +254,14 @@ File readFile(string file) {
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indexn);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexn.size(), vertexn.data(),GL_STATIC_DRAW);
 
-    /*
+
     //criar vbo
     glGenBuffers(1,&(vbo->indext));
-    //copiar vbo para a grafica
     glBindBuffer(GL_ARRAY_BUFFER,vbo->indext);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertext.size(), vertext.data(),GL_STATIC_DRAW);
-    */
+
+
+
     return vbo;
 
 }
@@ -290,6 +299,41 @@ vector<GLuint> buildOrbita(vector<float> vertices) {
     vbo.push_back(res0);
     vbo.push_back(res1);
     return vbo;
+}
+
+
+int loadTexture(string s) {
+    s = ("../texturas/" + s);
+    unsigned int t,tw,th;
+    unsigned char *texData;
+    unsigned int texID;
+
+    ilInit();
+    ilEnable(IL_ORIGIN_SET);
+    ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
+    ilGenImages(1,&t);
+    ilBindImage(t);
+    ilLoadImage((ILstring)s.c_str());
+    tw = ilGetInteger(IL_IMAGE_WIDTH);
+    th = ilGetInteger(IL_IMAGE_HEIGHT);
+    ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
+    texData = ilGetData();
+
+    glGenTextures(1,&texID);
+
+    glBindTexture(GL_TEXTURE_2D,texID);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_WRAP_S,	GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_WRAP_T,	GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,	GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
+
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    return texID;
+
 }
 
 
@@ -398,7 +442,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
     float maxZ = 0.0f;
 
     vector<float> color;
-    for(int j = 0; j < 12; j++){
+    for(int j = 0; j <= 12; j++){
         color.push_back(-1.0f);
     }
 
@@ -407,7 +451,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
     vector<GLuint> nvbo;
     vector<GLuint> tvbo;
     vector<GLuint> size;
-    vector<string> tex;
+    vector<GLuint> tex;
     //
     while (grupo != nullptr) {
         float x = 0.0f;
@@ -526,6 +570,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
         if (strcmp(grupo->Value(), "models") == 0) {
             XMLElement *modelos = grupo->FirstChildElement();
             while (modelos != nullptr) {
+                GLuint idTex = -1;
                 const char *texture = "";
                 for(int j = 0; j < 12; j++){
                     color[j] = -1.0f;
@@ -552,7 +597,23 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
                     }
                 }
                 if (modelos->Attribute("texture")) {
+                    int find = 0;
+                    Textura aux;
                     texture = modelos->Attribute("texture");
+                    for(Textura t : texturas){
+                        if(strcmp(texture,t->name.c_str()) == 0){
+                            find = 1;
+                            aux = t;
+                            break;
+                        }
+                    }
+                    if (find == 0){
+                        aux = new struct tex;
+                        aux->idtext = loadTexture(texture);
+                        aux->name = texture;
+                        texturas.push_back(aux);
+                    }
+                    idTex = aux->idtext;
                 }
                 if (modelos->Attribute("diffR")) {
                     modelos->QueryFloatAttribute("diffR", &color[0]);
@@ -595,7 +656,7 @@ void groupParser(XMLElement *grupo, Tree parentNode) {
                 }
 
                 colors.push_back(color);
-                tex.push_back(texture);
+                tex.push_back(idTex);
                 modelos = modelos->NextSiblingElement();
             }
         }
@@ -700,11 +761,9 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
             glRotatef(90, 0.0f, 0.0f, 1.0f);
 
 
-
             for (int j = 0; j < pNode->g->getpVbos().size(); j++) {
-
-                if(strcmp(pNode->g->getTextures()[i].c_str(),"") == 0){
-                    vector<float> cor = pNode->g->getColors()[i];
+                if(pNode->g->getTextures()[j] == -1){
+                    vector<float> cor = pNode->g->getColors()[j];
                     float diff[4] = {cor[0],cor[1],cor[2],1.0f};
                     float spec[4] = {cor[3],cor[4],cor[5],1.0f};
                     float amb[4] = {cor[6],cor[7],cor[8],1.0f};
@@ -716,20 +775,39 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
                     glMaterialf(GL_FRONT, GL_SHININESS, cor[12]);
                 }
                 else{
-                    float diff[4] = {0.714f, 0.4284f, 0.18144f,1.0f};
-                    float spec[4] = {0.393548f, 0.271906f, 0.166721f,1.0f};
-                    float amb[4] = {0.2125f, 0.1275f, 0.054f, 1.0f};
-                    float emi[4] = {1.0f,0.0f,0.0f,1.0f};
+                    float diff[4] = {0.8f, 0.8f, 0.8f,1.0f};
+                    float spec[4] = {0.8f, 0.8f, 0.8f,1.0f};
+                    float amb[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+                    float emi[4] = {0.8f,0.8f,0.8f,1.0f};
                     glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
                     glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
                     glMaterialfv(GL_FRONT, GL_DIFFUSE, diff);
                     glMaterialfv(GL_FRONT, GL_EMISSION, emi);
-                    glMaterialf(GL_FRONT, GL_SHININESS, 25.6f);
+                    glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
                 }
 
-                glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[i]);
+                GLuint idTex = pNode->g->getTextures()[j];
+
+                if(idTex != -1){
+                    glBindTexture(GL_TEXTURE_2D, idTex);
+                }
+
+                glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getpVbos()[j]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
-                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[i]);
+
+                glBindBuffer(GL_ARRAY_BUFFER, pNode->g->getnVbos()[j]);
+                glNormalPointer(GL_FLOAT, 0, 0);
+
+                if(idTex != -1) {
+                    glBindBuffer(GL_ARRAY_BUFFER,idTex);
+                    glTexCoordPointer(2,GL_FLOAT,0,0);
+                }
+
+                glDrawArrays(GL_TRIANGLES, 0, pNode->g->getSize()[j]);
+
+                if(idTex != -1){
+                    glBindTexture(GL_TEXTURE_2D, 0);
+                }
 
             }
 
@@ -737,8 +815,8 @@ void drawAsteroides(int asteroides, float maxX, float maxZ, node *pNode) {
             pontos.insert(pair<float, float>(xf, zf));
         }
     }
-
 }
+
 
 int readTree(Tree tree) {
     if (tree == nullptr) { return -1; }
@@ -760,7 +838,7 @@ int readTree(Tree tree) {
 
             for (int i = 0; i < n->g->getpVbos().size(); i++) {
 
-                if(strcmp(n->g->getTextures()[i].c_str(),"") == 0){
+                if(n->g->getTextures()[i] == -1){
                     vector<float> cor = n->g->getColors()[i];
                     float diff[4] = {cor[0],cor[1],cor[2],1.0f};
                     float spec[4] = {cor[3],cor[4],cor[5],1.0f};
@@ -784,13 +862,26 @@ int readTree(Tree tree) {
                     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
                 }
 
+                GLuint idTex = n->g->getTextures()[i];
+
+
                 glBindBuffer(GL_ARRAY_BUFFER, n->g->getpVbos()[i]);
                 glVertexPointer(3, GL_FLOAT, 0, 0);
 
                 glBindBuffer(GL_ARRAY_BUFFER, n->g->getnVbos()[i]);
                 glNormalPointer(GL_FLOAT, 0, 0);
 
+                if(idTex != -1) {
+
+
+                    glBindBuffer(GL_ARRAY_BUFFER,idTex);
+                    glTexCoordPointer(2,GL_FLOAT,0,0);
+                    glBindTexture(GL_TEXTURE_2D, idTex);
+                }
+
                 glDrawArrays(GL_TRIANGLES, 0, n->g->getSize()[i]);
+                glBindTexture(GL_TEXTURE_2D, 0);
+
             }
         }
         readTree(n);
@@ -890,6 +981,8 @@ void initGL(){
     glShadeModel(GL_SMOOTH);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_NORMAL_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glEnable(GL_TEXTURE_2D);
 
 }
 

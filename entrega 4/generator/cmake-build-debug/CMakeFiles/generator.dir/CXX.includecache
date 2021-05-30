@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/boxInverted.cpp
-modelos.h
-C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
-
 C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
 cmath
 -
@@ -20,5 +16,11 @@ fstream
 cstring
 -
 string
+-
+
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/sphere.cpp
+modelos.h
+C:/Users/igor1/Desktop/CG/TrabalhoCG/entrega 4/generator/modelos/modelos.h
+vector
 -
 

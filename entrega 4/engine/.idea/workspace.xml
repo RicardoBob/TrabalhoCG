@@ -14,39 +14,35 @@
     <list default="true" id="a475d398-e8f7-480b-8ce5-499f3a9245da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Group.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Group.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Group.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Point.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/Transformation.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/classes/catmull.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/tinyxml2-master/tinyxml2.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/engine.dir/vc140.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/engine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/Group.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/Group.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/boxInverted.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/boxInverted.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/sphere.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/modelos/sphere.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/CMakeFiles/generator.dir/vc140.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/box.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/box.3d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/boxInverted.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/boxInverted.3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/generator.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/cone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/cone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/modelos.h" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/modelos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generator/modelos/plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/plane.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/cmake-build-debug/sphere.3d" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/cmake-build-debug/sphere.3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../generator/modelos/boxInverted.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/boxInverted.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../generator/modelos/sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../generator/modelos/sphere.cpp" afterDir="false" />
     </list>
-    <list id="5d00c843-3e90-4f62-a5fd-ce471feaa770" name="Changes by Bruna" comment="">
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list id="5d00c843-3e90-4f62-a5fd-ce471feaa770" name="Changes by Bruna" comment="" />
     <list id="75aceced-529d-4fab-b58b-785754d25cec" name="Changes by Guilherme" comment="" />
     <list id="0297fbbb-2317-4be9-a0f0-8200da9103c9" name="Changes by Igor" comment="" />
     <list id="de60e777-0d32-4648-96f0-913742789edd" name="Changes by igor1" comment="" />
@@ -78,38 +74,32 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/main.cpp">
       <ranges>
-        <range start1="50" end1="50" start2="50" end2="64" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="53" end1="53" start2="67" end2="69" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="118" end1="118" start2="134" end2="136" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="225" end1="226" start2="243" end2="243" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="227" end1="229" start2="244" end2="245" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="232" end1="232" start2="248" end2="249" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="277" end1="277" start2="294" end2="382" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="295" end1="298" start2="400" end2="403" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="424" end1="427" start2="529" end2="532" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="459" end1="459" start2="564" end2="573" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="460" end1="460" start2="574" end2="596" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="508" end1="508" start2="644" end2="654" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="514" end1="515" start2="660" end2="660" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="516" end1="517" start2="661" end2="661" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="518" end1="518" start2="662" end2="663" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="560" end1="561" start2="705" end2="730" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="562" end1="563" start2="731" end2="732" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="582" end1="582" start2="751" end2="755" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="583" end1="586" start2="756" end2="756" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="591" end1="594" start2="761" end2="761" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="595" end1="597" start2="762" end2="792" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="605" end1="605" start2="800" end2="801" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="606" end1="606" start2="802" end2="811" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="608" end1="608" start2="813" end2="815" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="611" end1="611" start2="818" end2="819" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="636" end1="636" start2="844" end2="846" changelist="5d00c843-3e90-4f62-a5fd-ce471feaa770" />
-        <range start1="637" end1="638" start2="847" end2="847" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="642" end1="642" start2="851" end2="877" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
-        <range start1="643" end1="643" start2="878" end2="895" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="645" end1="646" start2="897" end2="897" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="667" end1="672" start2="918" end2="918" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
-        <range start1="673" end1="675" start2="919" end2="920" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="49" end1="49" start2="49" end2="54" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="68" end1="68" start2="73" end2="74" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="197" end1="197" start2="203" end2="205" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="248" end1="249" start2="256" end2="257" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="251" end1="252" start2="259" end2="259" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="254" end1="255" start2="261" end2="264" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="293" end1="293" start2="302" end2="337" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="400" end1="401" start2="444" end2="445" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="409" end1="410" start2="453" end2="454" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="528" end1="528" start2="572" end2="573" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="554" end1="554" start2="599" end2="601" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="555" end1="555" start2="602" end2="616" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="597" end1="598" start2="658" end2="659" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="700" end1="701" start2="761" end2="761" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="704" end1="707" start2="764" end2="766" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="718" end1="722" start2="777" end2="781" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="726" end1="727" start2="785" end2="786" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="729" end1="730" start2="788" end2="795" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="731" end1="732" start2="796" end2="810" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="739" end1="740" start2="817" end2="817" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="741" end1="741" start2="818" end2="819" changelist="a475d398-e8f7-480b-8ce5-499f3a9245da" />
+        <range start1="762" end1="763" start2="840" end2="841" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="786" end1="786" start2="864" end2="867" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="791" end1="791" start2="872" end2="880" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="793" end1="793" start2="882" end2="884" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
+        <range start1="892" end1="892" start2="983" end2="985" changelist="75fa8cf9-088c-418e-96b9-04c6bb59b4bf" />
       </ranges>
     </file>
   </component>
@@ -139,19 +129,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="engine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="engine" TARGET_NAME="engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="engine" RUN_TARGET_NAME="engine">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -201,6 +186,9 @@
       <workItem from="1622240272792" duration="3467000" />
       <workItem from="1622245513108" duration="538000" />
       <workItem from="1622289698951" duration="19555000" />
+      <workItem from="1622369560061" duration="2170000" />
+      <workItem from="1622372115036" duration="16528000" />
+      <workItem from="1622397412482" duration="435000" />
     </task>
     <servers />
   </component>
@@ -221,13 +209,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>296</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">

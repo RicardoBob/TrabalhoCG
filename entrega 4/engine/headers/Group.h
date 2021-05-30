@@ -21,14 +21,14 @@ private:
     vector<GLuint> size;
     vector<GLuint> nVbos;
     vector<GLuint> tVbos;
-    vector<string> textures;
+    vector<GLuint> textures;
     float maxX;
     float maxZ;
     int numAst;
     vector<vector<float>> colors;
 public:
     Group();
-    Group(Transformation t,vector<GLuint> pvb,vector<GLuint> nvb ,vector<GLuint> tvb,vector<string> texture,float maX ,float maZ ,int nAst);
+    Group(Transformation t,vector<GLuint> pvb,vector<GLuint> nvb ,vector<GLuint> tvb,vector<GLuint> texture,float maX ,float maZ ,int nAst);
     void setTransformation(Transformation t);
     Transformation getTransformation();
     void setAsteroides(float maX, float maZ, int nAst);
@@ -39,14 +39,14 @@ public:
     void setnVbos(vector<GLuint> n);
     void settVbos(vector<GLuint> t);
     void setSize(vector<GLuint> s);
-    void setTextures(vector<string> t);
+    void setTextures(vector<GLuint> t);
 
     void setColors(vector<vector<float>> c);
     vector<GLuint> getpVbos();
     vector<GLuint> getnVbos();
     vector<GLuint> gettVbos();
     vector<GLuint> getSize();
-    vector<string> getTextures();
+    vector<GLuint> getTextures();
     vector<vector<float>> getColors();
 };
 
